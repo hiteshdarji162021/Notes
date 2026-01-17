@@ -1,11 +1,13 @@
-# Day 1 – JavaScript & V8 Engine (Playwright Training)
+# Day 1 – JavaScript & V8 Engine
 
 > **Audience:** Students & Working Professionals
-> **Purpose:** Strong JavaScript foundation before Playwright
+> **Purpose:** Strong JavaScript foundation
 
 ---
 
 ## 1. What is JavaScript and Why Is It Popular?
+
+![alt text](image-3.png)
 
 **JavaScript** is a high-level, interpreted programming language mainly used to build interactive web applications.
 
@@ -46,32 +48,7 @@ Large & enterprise apps → **TypeScript**
 
 ---
 
-## 3. Installing & Running JavaScript
-
-### Step 1: Initialize Project
-
-```bash
-
-npm init  -> ask input and create Package.json   OR
-npm init -y  -> Create Package.json
-
-```
-
-👉 This creates `package.json`
-
-### Step 2: Run JavaScript File
-
-```bash
-node index.js
-```
-
-> Here `index.js` is the file name
-
-✅ **No extra installation required for JavaScript**
-
----
-
-## 4. JavaScript Engines & Execution Flow
+## 3. JavaScript Engines & Execution Flow
 
 ### JavaScript Engines in Browsers
 
@@ -83,7 +60,7 @@ node index.js
 
 ---
 
-## 5. JavaScript Outside Browser – Node.js
+## 4. JavaScript Outside Browser – Node.js
 
 **Node.js** allows JavaScript to run outside the browser.
 
@@ -100,7 +77,7 @@ node index.js
 
 ---
 
-## 6. Popular IDEs and Their Focus
+## 5. Popular IDEs and Their Focus
 
 | IDE                | Optimized For               |
 | ------------------ | --------------------------- |
@@ -112,7 +89,10 @@ node index.js
 
 ---
 
-## 7. JavaScript Architecture (V8 Engine)
+## 6. JavaScript Architecture (V8 Engine)
+
+![alt text](image-1.png)
+![alt text](image-2.png)
 
 ### 1️⃣ Parsing → AST (Abstract Syntax Tree)
 
@@ -230,7 +210,9 @@ Optimized Machine Code
 ↓
 CPU Execution
 
-## 8. What Is Node.js?
+---
+
+## 7. What Is Node.js?
 
 > **“Node.js is a JavaScript runtime environment built on the V8 engine. It allows JavaScript to run outside the browser by providing core libraries and system-level APIs. It is not a programming language and not just a library.”**
 
@@ -258,7 +240,7 @@ Notes:
 
 ---
 
-## 9. Error Detection Comparison (100 LOC Example)
+## 8. Error Detection Comparison (100 LOC Example)
 
 | Language   | When errors are found |
 | ---------- | --------------------- |
@@ -268,7 +250,7 @@ Notes:
 
 ---
 
-## 10. Runtime & JIT Summary
+## 9. Runtime & JIT Summary
 
 | Language   | AOT        | JIT         | Runtime |
 | ---------- | ---------- | ----------- | ------- |
@@ -277,7 +259,7 @@ Notes:
 
 ---
 
-## 11. Performance (General)
+## 10. Performance (General)
 
 | Language   | Runtime Speed          |
 | ---------- | ---------------------- |
@@ -286,7 +268,9 @@ Notes:
 | TypeScript | slower then JavaScript |
 | Python     | Slowest                |
 
-## 12. Development Speed
+---
+
+## 11. Development Speed
 
 | Language   | Dev Speed | Why                |
 | ---------- | --------- | ------------------ |
@@ -294,10 +278,40 @@ Notes:
 | TypeScript | Fast      | Safety + tooling   |
 | JavaScript | Medium    | Flexible but risky |
 
+---
+
+## 12. Installing & Running JavaScript
+
+### Step 1: Initialize Project
+
+```bash
+
+npm init  -> ask input and create Package.json   OR
+npm init -y  -> Create Package.json
+
+```
+
+👉 This creates `package.json`
+
+### Step 2: Run JavaScript File
+
+```bash
+node index.js
+```
+
+> Here `index.js` is the file name
+
+✅ **No extra installation required for JavaScript**
+
+---
+
 ## 13. Commands to view Bytecode
 
 ```bash
+For print bytecode
 node --print-bytecode yourfile.js
+
+For see which code hotcode assign turbo
 
 See JIT Optimization
 node --trace-opt yourfile.js
@@ -311,5 +325,3 @@ node --trace-ic yourfile.js
 Full Trace
 node --trace-opt --trace-deopt --trace-ic yourfile.js
 ```
-
-✅ **Day 1 Completed – Strong Foundation for Playwright**
