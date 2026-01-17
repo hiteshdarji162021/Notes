@@ -114,17 +114,6 @@ node index.js
 
 ## 7. JavaScript Architecture (V8 Engine)
 
-# JavaScript Architecture (V8 Engine) – Simple Explanation
-
-## What happens when JavaScript code runs?
-
-JavaScript does **NOT** run directly on the CPU.  
-It goes through **multiple internal steps** inside the **V8 engine**.
-
----
-
-## Step-by-Step JavaScript Execution Flow
-
 ### 1️⃣ Parsing → AST (Abstract Syntax Tree)
 
 - JavaScript source code enters the engine
@@ -241,7 +230,7 @@ Optimized Machine Code
 ↓
 CPU Execution
 
-## 12. What Is Node.js? (Interview Ready)
+## 8. What Is Node.js?
 
 > **“Node.js is a JavaScript runtime environment built on the V8 engine. It allows JavaScript to run outside the browser by providing core libraries and system-level APIs. It is not a programming language and not just a library.”**
 
@@ -269,7 +258,7 @@ Notes:
 
 ---
 
-## Error Detection Comparison (100 LOC Example)
+## 9. Error Detection Comparison (100 LOC Example)
 
 | Language   | When errors are found |
 | ---------- | --------------------- |
@@ -279,7 +268,7 @@ Notes:
 
 ---
 
-## Runtime & JIT Summary
+## 10. Runtime & JIT Summary
 
 | Language   | AOT        | JIT         | Runtime |
 | ---------- | ---------- | ----------- | ------- |
@@ -288,7 +277,7 @@ Notes:
 
 ---
 
-## Performance (General)
+## 11. Performance (General)
 
 | Language   | Runtime Speed          |
 | ---------- | ---------------------- |
@@ -297,7 +286,7 @@ Notes:
 | TypeScript | slower then JavaScript |
 | Python     | Slowest                |
 
-## 5️⃣ Development Speed
+## 12. Development Speed
 
 | Language   | Dev Speed | Why                |
 | ---------- | --------- | ------------------ |
@@ -305,7 +294,7 @@ Notes:
 | TypeScript | Fast      | Safety + tooling   |
 | JavaScript | Medium    | Flexible but risky |
 
-#### View Bytecode
+## 13. Commands to view Bytecode
 
 ```bash
 node --print-bytecode yourfile.js
@@ -321,6 +310,6 @@ node --trace-ic yourfile.js
 
 Full Trace
 node --trace-opt --trace-deopt --trace-ic yourfile.js
+```
 
 ✅ **Day 1 Completed – Strong Foundation for Playwright**
-```
