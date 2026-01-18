@@ -11,12 +11,14 @@ This document gives a **clear, end-to-end understanding** of `var`, `let`, and `
 
 ## 1️⃣ Comparison Table: `var` vs `let` vs `const`
 
+## 1️⃣ Comparison Table: `var` vs `let` vs `const`
+
 | Feature         | `var`                            | `let`                 | `const`           |
-| --------------- | -------------------------------- | --------------------- | ----------------- | --- |
+| --------------- | -------------------------------- | --------------------- | ----------------- |
 | Scope           | Function scope                   | Block scope           | Block scope       |
-| Hoisting        | Yes (initialized as `undefined`) | Yes (error)           | Yes (error)       |
+| Hoisting        | Yes (initialized as `undefined`) | Yes (TDZ → error)     | Yes (TDZ → error) |
 | Re-declaration  | ✅ Yes                           | ❌ No                 | ❌ No             |
-| Re-assignment   | ✅ Yes                           | ✅ Yes                | ❌ No             |     |
+| Re-assignment   | ✅ Yes                           | ✅ Yes                | ❌ No             |
 | Recommended use | ❌ Avoid                         | ✅ When value changes | ✅ Default choice |
 
 ---

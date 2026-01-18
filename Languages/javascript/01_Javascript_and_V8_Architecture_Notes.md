@@ -380,6 +380,9 @@ Notes:
 npm init  -> ask input and create Package.json   OR
 npm init -y  -> Create Package.json
 
+And set Type ="module". Type="common" for old lagacy code of javascript project.
+![alt text](image.png)
+
 ```
 
 👉 This creates `package.json`
