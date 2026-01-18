@@ -1,4 +1,4 @@
-# Day 1 – JavaScript & V8 Engine
+# JavaScript & V8 Engine
 
 > **Audience:** Students & Working Professionals
 > **Purpose:** Strong JavaScript foundation
@@ -194,9 +194,121 @@ add(1, 2); // number
 add("1", "2"); // string
 ```
 
+## When Maglev introduce in Node Js and purpose of that? and what impact before and after Maglev?
+
+- **Maglev was introduced in 2023**
+- First shipped with **V8 (Chrome 117)**
+- Available in **Node.js 20 and above** (Node bundles V8)
+
+👉 Practically:
+
+> **If you are using Node.js 20+, Maglev is part of your runtime.**
+
+---
+
+## ❓ Why Was Maglev Introduced? (Purpose)
+
+Before Maglev, V8 had only **two execution options**:
+
+1. **Ignition (Interpreter)** – low cost but slow
+2. **TurboFan (Heavy JIT)** – very fast but expensive to compile
+
+There was a **large performance gap** between them.
+
+---
+
+## 🔴 Problems Before Maglev
+
+- Many functions were:
+  - Too hot for Ignition
+  - Not heavy enough for TurboFan
+- TurboFan compilation cost was often **higher than the benefit**
+- Result:
+  - Inconsistent performance
+  - Wasted CPU time
+  - Some hot functions stayed slow
+
+---
+
+## 🎯 Purpose of Maglev (One Line)
+
+> **Maglev is a mid-tier JIT compiler that provides fast optimization with much lower compilation cost than TurboFan.**
+
+---
+
+## 🧠 Architecture: Before vs After Maglev
+
+### 🔴 BEFORE Maglev (Till ~2022)
+
+### 🔴 Before Maglev
+
+| Aspect                | Situation              |
+| --------------------- | ---------------------- |
+| Startup time          | Fast                   |
+| Warm code performance | ❌ Inconsistent        |
+| TurboFan usage        | ❌ Often too expensive |
+| CPU usage             | ❌ Sometimes wasted    |
+| Real-world apps       | ❌ Performance spikes  |
+
+---
+
+### 🟢 After Maglev
+
+| Aspect                | Situation                 |
+| --------------------- | ------------------------- |
+| Startup time          | Fast                      |
+| Warm code performance | ✅ Much better            |
+| TurboFan usage        | ✅ Only when worth it     |
+| CPU usage             | ✅ Balanced               |
+| Real-world apps       | ✅ Smoother & predictable |
+
+---
+
+## 🔁 Ignition vs Maglev vs TurboFan (Clear Roles)
+
+| Stage      | Role                        | Compilation Cost | Usage                 |
+| ---------- | --------------------------- | ---------------- | --------------------- |
+| Ignition   | Run code + collect feedback | Very Low         | Always first          |
+| **Maglev** | Fast optimization           | Medium           | Most hot functions    |
+| TurboFan   | Maximum optimization        | High             | Rare, heavy functions |
+
+---
+
+## 🚀 What Changed for Developers?
+
+### Before Maglev
+
+- Many hot functions remained slow
+- TurboFan optimization was risky
+- Performance jumps were uneven
+
+### After Maglev
+
+- Hot user functions get optimized quickly
+- Less dependence on TurboFan
+- More predictable performance
+
+👉 **Most real-world user code now stops at Maglev (which is ideal).**
+
+---
+
+## 🧠 Memory Hook (For Students)
+
+> **Ignition = Run  
+> Maglev = Speed  
+> TurboFan = Maximum Speed**
+
+---
+
+## ✅ Final Exam / Interview Answer
+
+> **“Maglev was introduced in 2023 (Node.js 20+) as a mid-tier JIT compiler between Ignition and TurboFan. It reduces the performance gap, lowers compilation cost, and improves real-world JavaScript performance by optimizing hot functions quickly without the heavy overhead of TurboFan.”**
+
+---
+
 ## 7. What Is Node.js?
 
-> **“Node.js is a JavaScript runtime environment built on the V8 engine. It allows JavaScript to run outside the browser by providing core libraries and system-level APIs. It is not a programming language and not just a library.”**
+> **“Node.js is a JavaScript runtime environment built on the V8 engine. It allows JavaScript to run outside the browser by providing core libraries and system-level APIs. ”**
 
 ### What Node.js REALLY Is
 
