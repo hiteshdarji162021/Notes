@@ -14,8 +14,6 @@
 ### Why JavaScript Was Created?
 
 - To add **Logic** to web pages.HTML and CSS can not do this things.
-- To handle **events** (click, hover, submit)
-- To manipulate **HTML & CSS dynamically**
 
 ### Why JavaScript Is So Popular?
 
@@ -340,7 +338,6 @@ Notes:
 | ---------- | --------------------- |
 | JavaScript | runtime               |
 | TypeScript | compile-time          |
-| Python     | Runtime               |
 
 ---
 
