@@ -9,9 +9,7 @@ This document gives a **clear, end-to-end understanding** of `var`, `let`, and `
 
 ---
 
-## 1️⃣ Comparison Table: `var` vs `let` vs `const`
-
-## 1️⃣ Comparison Table: `var` vs `let` vs `const`
+## 1 Comparison Table: `var` vs `let` vs `const`
 
 | Feature         | `var`                            | `let`                 | `const`           |
 | --------------- | -------------------------------- | --------------------- | ----------------- |
@@ -23,7 +21,7 @@ This document gives a **clear, end-to-end understanding** of `var`, `let`, and `
 
 ---
 
-## 2️⃣ Function Example Using `var`
+## 2 Function Example Using `var`
 
 ```js
 var a = 10;
@@ -46,7 +44,7 @@ console.log(a); // 10
 
 ---
 
-## 3️⃣ Function Example Using `let`,
+## 3 Function Example Using `let`,
 
 ```js
 let a = 10;
@@ -166,30 +164,7 @@ let userMap = new Map(); // Map
 let uniqueSet = new Set([1, 2, 3]); // Set
 ```
 
-## 3️⃣ Mutable vs Immutable Summary
-
-### Immutable (Primitive) - Can not change value
-
-- String
-- Number
-- Boolean
-- Undefined
-- Null
-- Symbol
-- BigInt
-
-### Mutable (Non-Primitive) - Change value
-
-- Object
-- Array
-- Function
-- Map
-- Set
-- Date
-
-## 4. Data type
-
-## Size of Primitive Data Types (Approximate)
+## 6. Size of Primitive Data Types (Approximate)
 
 > ⚠️ JavaScript does NOT define fixed sizes.  
 > Sizes depend on the JavaScript engine (Chrome/Edge = V8, Firefox = SpiderMonkey). that way size is not important in javascript.
