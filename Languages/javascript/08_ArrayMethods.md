@@ -316,6 +316,109 @@ hahaha
 
 ---
 
+### 🔹 `substring()` – Extract part of a string
+
+```js
+let text = "JavaScript";
+let result = text.substring(0, 4);
+console.log(result);
+```
+
+**Output**
+
+```
+Java
+```
+
+**Explanation**
+
+- `substring(start, end)` extracts characters from `start` index to `end - 1`
+- End index is **NOT included**
+- Does **not modify** the original string
+
+---
+
+### Example: Extract middle part
+
+```js
+let text2 = "JavaScript";
+console.log(text2.substring(4, 10));
+```
+
+**Output**
+
+```
+Script
+```
+
+---
+
+### Example: When start > end (Important behavior)
+
+```js
+let text3 = "JavaScript";
+console.log(text3.substring(6, 2));
+```
+
+**Output**
+
+```
+vaSc
+```
+
+**Explanation**
+
+- `substring()` automatically **swaps values** if `start > end`
+- This behavior is unique to `substring()`
+
+---
+
+### Example: Negative index handling
+
+```js
+let text4 = "JavaScript";
+console.log(text4.substring(-4, 4));
+```
+
+**Output**
+
+```
+Java
+```
+
+**Explanation**
+
+- Negative values are treated as `0`
+- This can be confusing for beginners
+
+---
+
+## 📊 Difference Between `slice()` and `substring()` (Very Important)
+
+| Feature                | `slice()`             | `substring()`          |
+| ---------------------- | --------------------- | ---------------------- |
+| Type                   | String & Array method | String method only     |
+| Negative index         | ✅ Supported          | ❌ Treated as 0        |
+| start > end            | ❌ No swap            | ✅ Automatically swaps |
+| End index included     | ❌ No                 | ❌ No                  |
+| Mutability             | Immutable             | Immutable              |
+| Preferred in modern JS | ✅ Yes                | ⚠️ Less preferred      |
+| Common use             | Flexible extraction   | Simple extraction      |
+
+---
+
+### 🧠 Architect Recommendation
+
+> **Use `slice()` for most cases.**
+>
+> Use `substring()` only when you want **safe handling without negative indexes** or when working with **legacy code**.
+
+---
+
+### One‑Line Interview Answer
+
+> **“Both `slice()` and `substring()` extract parts of a string, but `slice()` supports negative indexes while `substring()` does not and swaps indexes automatically.”**
+
 ## ✅ Key Takeaways
 
 ✔ `slice()` is immutable

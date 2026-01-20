@@ -232,11 +232,12 @@ console.log(language2.endsWith("abc")); //false
 
 //7. padStart()
 let id = "71";
-console.log(id.padStart(5, "0"));  //00071- total length should be 5 and add 0 for that
+console.log(id.padStart(5, "0")); //00071- total length should be 5 and add 0 for that
 
 //8.padEnd();
 let id1 = "71";
-console.log(id1.padEnd(5, "0"));  //71000- total length should be 5 and add 0 for that
+console.log(id1.padEnd(5, "0")); //71000- total length should be 5 and add 0 for that
 
 //9. repeat
 console.log("ha".repeat(3));
+
