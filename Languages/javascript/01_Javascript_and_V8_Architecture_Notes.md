@@ -136,8 +136,9 @@ for (let i = 0; i < 10; i++) {
 
 // Keep process alive briefly
 console.log("done");
-![alt text](image-1.png)
 ```
+
+![alt text](image-1.png)
 
 Case-2 Ignition +maglev
 
@@ -154,25 +155,27 @@ for (let i = 0; i < 1000; i++) {
 }
 // Keep process alive briefly
 console.log("done");
-![alt text](image-2.png)
 ```
+
+![alt text](image-2.png)
 
 Case-3 Magvel
 
 ```js
 // Simple, predictable, hot function
 function add(a, b) {
- return a + b;
+  return a + b;
 }
 
 // Warm-up loop → make function HOT
 for (let i = 0; i < 10000; i++) {
- add(1, 2);
+  add(1, 2);
 }
 // Keep process alive briefly
 console.log("done");
-![alt text](image-4.png)
 ```
+
+![alt text](image-4.png)
 
 Case-4 Turbo Fan
 
@@ -188,8 +191,9 @@ for (let i = 0; i < 100000; i++) {
 }
 // Keep process alive briefly
 console.log("done");
-![alt text](image-5.png)
 ```
+
+![alt text](image-5.png)
 
 > ⚠️ Exact numbers are not fixed. V8 decides dynamically.
 
