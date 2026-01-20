@@ -7,7 +7,7 @@
 
 ## 1. What is JavaScript and Why Is It Popular?
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 **JavaScript** is a high-level, interpreted programming language mainly used to build interactive web applications.
 
@@ -89,7 +89,7 @@ Large & enterprise apps → **TypeScript**
 
 ## 6. JavaScript Architecture (V8 Engine)
 
-![alt text](<Javascript engine.png>)
+![alt text](images/image-6.png)
 
 ---
 
@@ -122,8 +122,6 @@ Large & enterprise apps → **TypeScript**
 Case-1 Ignition
 
 ```js
-"use strict";
-
 // Simple, predictable, hot function
 function add(a, b) {
   return a + b;
@@ -138,12 +136,11 @@ for (let i = 0; i < 10; i++) {
 console.log("done");
 ```
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 Case-2 Ignition +maglev
 
 ```js
-"use strict";
 // Simple, predictable, hot function
 function add(a, b) {
   return a + b;
@@ -157,7 +154,7 @@ for (let i = 0; i < 1000; i++) {
 console.log("done");
 ```
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 Case-3 Magvel
 
@@ -175,7 +172,7 @@ for (let i = 0; i < 10000; i++) {
 console.log("done");
 ```
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 Case-4 Turbo Fan
 
@@ -193,7 +190,7 @@ for (let i = 0; i < 100000; i++) {
 console.log("done");
 ```
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 > ⚠️ Exact numbers are not fixed. V8 decides dynamically.
 

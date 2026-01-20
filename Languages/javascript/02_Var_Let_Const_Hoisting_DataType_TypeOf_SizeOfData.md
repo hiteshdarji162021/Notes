@@ -121,13 +121,20 @@ This classification is **same for JavaScript and TypeScript at runtime**.
 ### 🔹 Examples (Primitive)
 
 ```js
-let age = 30; // Number
-let name = "Hitesh"; // String
-let isActive = true; // Boolean
-let x; // Undefined
-let data = null; // Null
+let age = 30;
+console.log("number type of", typeof age); //number
+let names = "Hitesh";
+console.log("string type of", typeof names); //string
+let isActive = true;
+console.log("boolean type of", typeof isActive); //boolean
+let x;
+console.log("undined type of", typeof x); //undefined
+let data = null;
+console.log("null type of", typeof data); //object
 let id = Symbol("id"); // Symbol
+console.log("symbol type of", typeof id); //symbol
 let bigNum = 123456789n; // BigInt
+console.log("big integer type of", typeof bigNum); //bigint
 ```
 
 ## NonPrimitive
@@ -151,17 +158,20 @@ let bigNum = 123456789n; // BigInt
 ### 🔹 Examples (Non-Primitive)
 
 ```js
-let user = { name: "Hitesh", age: 30 }; // Object
+let user = { name: "Hitesh", age: 30 };
+console.log("object type of ", typeof user); //Object
 let numbers = [1, 2, 3, 4]; // Array
-
+console.log("array type is", typeof numbers); //Object
 function greet() {
-  // Function
   console.log("Hello");
 }
-
-let today = new Date(); // Date
+console.log("function type of ", typeof greet); //function
+let today = new Date(); //Object
+console.log("date type of ", typeof today); //Object
 let userMap = new Map(); // Map
-let uniqueSet = new Set([1, 2, 3]); // Set
+console.log("map type of", typeof userMap); //Object
+let uniqueSet = new Set([1, 2, 3]);
+console.log("set type of ", typeof uniqueSet); //Object
 ```
 
 ## 6. Size of Primitive Data Types (Approximate)
