@@ -78,6 +78,7 @@ console.log("Hitesh" * +"Darji"); // NaN
 ### Addition (`+`)
 
 ```js
+//for + its try to concant
 console.log(1 + 1); // 2
 console.log(1 + "1"); // 11
 console.log("1" + 1); // 11
@@ -85,6 +86,8 @@ console.log("1" + "1"); // 11
 ```
 
 ### Subtraction (`-`)
+
+- apart from + for all other operation - or \* or / its automatically convert string to number and do arathmatic opeartion
 
 ```js
 console.log(5 - 2); // 3
@@ -164,6 +167,7 @@ ASCII values represent the **numeric codes** assigned to characters. JavaScript 
 ```js
 let a = "A";
 console.log(a.charCodeAt(0)); // 65
+// if we not set charCodeAt(0) => then by default it take 0 index so  a.charCodeAt() is also fine
 
 console.log(a.charCodeAt(0) + "B".charCodeAt(0)); // 65 + 66 = 131
 
