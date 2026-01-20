@@ -162,6 +162,8 @@ console.log(typeof undefined); // undefined
 | ----------------- |
 | false             |
 | 0                 |
+| -0                |
+| 0n (big int)      |
 | "" (empty string) |
 | null              |
 | undefined         |
@@ -178,6 +180,112 @@ console.log(typeof undefined); // undefined
 | []           |
 | {}           |
 | function(){} |
+
+### ❌ Falsy Values – Execution Check
+
+### JavaScript Code
+
+```js
+console.log("---- FALSY VALUES CHECK ----");
+
+if (false) console.log("false → EXECUTED");
+else console.log("false → NOT executed");
+
+if (0) console.log("0 → EXECUTED");
+else console.log("0 → NOT executed");
+
+if (-0) console.log("-0 → EXECUTED");
+else console.log("-0 → NOT executed");
+
+if (0n) console.log("0n → EXECUTED");
+else console.log("0n → NOT executed");
+
+if ("") console.log('"" → EXECUTED');
+else console.log('"" → NOT executed');
+
+if (null) console.log("null → EXECUTED");
+else console.log("null → NOT executed");
+
+if (undefined) console.log("undefined → EXECUTED");
+else console.log("undefined → NOT executed");
+
+if (NaN) console.log("NaN → EXECUTED");
+else console.log("NaN → NOT executed");
+```
+
+### Output
+
+```txt
+---- FALSY VALUES CHECK ----
+false → NOT executed
+0 → NOT executed
+-0 → NOT executed
+0n → NOT executed
+"" → NOT executed
+null → NOT executed
+undefined → NOT executed
+NaN → NOT executed
+```
+
+---
+
+### 🧠 Explanation
+
+All the above values are **falsy** in JavaScript. When used inside `if(condition)`, the condition evaluates to **false**, so the `if` block is skipped and the `else` block runs.
+
+---
+
+### ✅ Truthy Values – Execution Check
+
+### JavaScript Code
+
+```js
+console.log("---- TRUTHY VALUES CHECK ----");
+
+if (true) console.log("true → EXECUTED");
+
+if (1) console.log("1 → EXECUTED");
+if (-1) console.log("-1 → EXECUTED");
+if (100) console.log("100 → EXECUTED");
+
+if ("hello") console.log('"hello" → EXECUTED');
+if (" ") console.log('" " (space) → EXECUTED');
+
+if ([]) console.log("[] → EXECUTED");
+if ({}) console.log("{} → EXECUTED");
+
+if (function () {}) console.log("function(){} → EXECUTED");
+```
+
+### Output
+
+```txt
+---- TRUTHY VALUES CHECK ----
+true → EXECUTED
+1 → EXECUTED
+-1 → EXECUTED
+100 → EXECUTED
+"hello" → EXECUTED
+" " (space) → EXECUTED
+[] → EXECUTED
+{} → EXECUTED
+function(){} → EXECUTED
+```
+
+---
+
+### 📌 Final Rule (Very Important)
+
+> **Only 8 values are falsy in JavaScript:**  
+> `false`, `0`, `-0`, `0n`, `""`, `null`, `undefined`, `NaN`
+
+👉 **Everything else is truthy** and will execute inside an `if` condition.
+
+---
+
+### 🎯 Interview / Exam One-Liner
+
+> In JavaScript, `if` statements execute only for truthy values. Falsy values always skip the `if` block.
 
 ---
 
