@@ -173,7 +173,7 @@ console.log(n.length);
 
 ## 4️⃣ Array Methods
 
-### `push()- add value at end`
+### `push()-add value at end`
 
 ```js
 let n1 = [1, 2, 3];
@@ -189,7 +189,7 @@ console.log(n1);
 
 ---
 
-### `Unshift() - add to the beginning`
+### `unshift() add to the beginning`
 
 ```js
 let n2 = [1, 2, 3];
@@ -205,7 +205,7 @@ console.log(n2);
 
 ---
 
-### `pop()-remove from the end`
+### `pop() -remove from the end`
 
 ```js
 let n3 = [1, 2, 3];
@@ -223,7 +223,7 @@ console.log(n3);
 
 ---
 
-### `shift() -remove from the beginning`
+### `shift()-remove from the beginning`
 
 ```js
 let n4 = [1, 2, 3];
@@ -355,24 +355,150 @@ Concat copied array: 1,2,3,4,5,6,7,8
 
 ---
 
-## 5️⃣ Loops
+## 5️⃣ Loops (When to Use Which Loop)
 
-### Index `for`
+This section explains **WHY a loop is used**, with **different examples, code, and output** for each loop type.
+
+---
+
+### 1️⃣ Index-based `for` Loop (When INDEX matters)
+
+**Use Case**
+
+- When you need **index number**
+- When you want **skip / break / reverse**
+- When accessing **next or previous element**
+
+#### Example: Print item with index
 
 ```js
-let f = ["Apple", "Banana", "Orange"];
-for (let i = 0; i < f.length; i++) {
-  console.log(f[i]);
+let users = ["Admin", "Manager", "Tester"];
+
+for (let i = 0; i < users.length; i++) {
+  console.log(i + " => " + users[i]);
 }
 ```
 
 **Output**
 
 ```
-Apple
-Banana
-Orange
+0 => Admin
+1 => Manager
+2 => Tester
 ```
+
+#### Example: Reverse order
+
+```js
+for (let i = users.length - 1; i >= 0; i--) {
+  console.log(users[i]);
+}
+```
+
+**Output**
+
+```
+Tester
+Manager
+Admin
+```
+
+---
+
+### 2️⃣ `for..of` Loop (When VALUE matters)
+
+**Use Case**
+
+- When you only care about **values**
+- Clean and readable code
+- Best for **arrays and collections**
+
+#### Example: Process values
+
+```js
+let prices = [100, 200, 300];
+
+for (let price of prices) {
+  console.log(price * 2);
+}
+```
+
+**Output**
+
+```
+200
+400
+600
+```
+
+#### Example: Stop when condition met
+
+```js
+for (let price of prices) {
+  if (price === 200) break;
+  console.log(price);
+}
+```
+
+**Output**
+
+```
+100
+```
+
+---
+
+### 3️⃣ `forEach()` Loop (When APPLY action on all items)
+
+**Use Case**
+
+- When you want to **apply same logic to every element**
+- No breaking required
+- Best for logging, formatting
+
+#### Example: Print formatted output
+
+```js
+let files = ["a.txt", "b.txt", "c.txt"];
+
+files.forEach((file, index) => {
+  console.log(index + 1 + ": " + file);
+});
+```
+
+**Output**
+
+```
+1: a.txt
+2: b.txt
+3: c.txt
+```
+
+#### ❌ Limitation Example (Cannot break)
+
+```js
+files.forEach((file) => {
+  if (file === "b.txt") return;
+  console.log(file);
+});
+```
+
+**Output**
+
+```
+a.txt
+c.txt
+```
+
+---
+
+### 🔍 Architect Summary (Very Important)
+
+| Loop Type | When to Use           | Key Advantage    | Limitation          |
+| --------- | --------------------- | ---------------- | ------------------- |
+| `for`     | Index-based logic     | Full control     | More code           |
+| `for..of` | Value-based iteration | Clean & readable | No index by default |
+| `forEach` | Apply action to all   | Short syntax     | Cannot break        |
 
 ---
 
@@ -458,3 +584,178 @@ console.log(Array.from("Hello"));
 ```
 
 ---
+
+## 7️⃣ Mutable vs Immutable Array Methods (Very Important Concept)
+
+This section helps students **visually understand** which array methods **change the original array** and which ones **do not**.
+
+---
+
+### 🔴 Mutable Methods (They MODIFY original array)
+
+> Mutable = original array data **changes in memory**
+
+#### Example: `push()` (Mutable)
+
+```js
+let nums1 = [1, 2, 3];
+nums1.push(4);
+console.log(nums1);
+```
+
+**Output**
+
+```
+[ 1, 2, 3, 4 ]
+```
+
+➡ Original array is changed
+
+---
+
+#### Example: `pop()` (Mutable)
+
+```js
+let nums2 = [1, 2, 3];
+nums2.pop();
+console.log(nums2);
+```
+
+**Output**
+
+```
+[ 1, 2 ]
+```
+
+---
+
+#### Example: `shift()` (Mutable)
+
+```js
+let nums3 = [1, 2, 3];
+nums3.shift();
+console.log(nums3);
+```
+
+**Output**
+
+```
+[ 2, 3 ]
+```
+
+---
+
+#### Example: `unshift()` (Mutable)
+
+```js
+let nums4 = [1, 2, 3];
+nums4.unshift(0);
+console.log(nums4);
+```
+
+**Output**
+
+```
+[ 0, 1, 2, 3 ]
+```
+
+---
+
+### 🟢 Immutable Methods (They DO NOT modify original array)
+
+> Immutable = original array remains **unchanged**
+
+#### Example: Spread Copy (Immutable)
+
+```js
+let a = [1, 2, 3];
+let b = [...a];
+console.log(a);
+console.log(b);
+```
+
+**Output**
+
+```
+[ 1, 2, 3 ]
+[ 1, 2, 3 ]
+```
+
+➡ `a` remains unchanged
+
+---
+
+#### Example: `concat()` (Immutable)
+
+```js
+let x = [1, 2];
+let y = [3, 4];
+let z = x.concat(y);
+console.log(x);
+console.log(z);
+```
+
+**Output**
+
+```
+[ 1, 2 ]
+[ 1, 2, 3, 4 ]
+```
+
+---
+
+#### Example: `slice()` (Immutable)
+
+```js
+let data = [10, 20, 30, 40];
+let part = data.slice(1, 3);
+console.log(data);
+console.log(part);
+```
+
+**Output**
+
+```
+[ 10, 20, 30, 40 ]
+[ 20, 30 ]
+```
+
+---
+
+### ⚠️ Dangerous Example (Mutation Bug)
+
+```js
+let original = [1, 2, 3];
+let ref = original;
+ref.push(4);
+console.log(original);
+```
+
+**Output**
+
+```
+[ 1, 2, 3, 4 ]
+```
+
+➡ Both variables point to **same memory reference**
+
+---
+
+### 🧠 Architect Rule (Must Remember)
+
+| Situation                 | Use                 |
+| ------------------------- | ------------------- |
+| Shared data               | Immutable methods   |
+| Temporary local data      | Mutable methods     |
+| Team / large codebase     | Immutable preferred |
+| Performance-critical code | Mutable (with care) |
+
+---
+
+## ✅ Final Notes
+
+✔ Code + Output = Clear understanding
+✔ Always verify output while learning
+✔ Practice by modifying values
+
+📘 **Next**: Objects & Functions
