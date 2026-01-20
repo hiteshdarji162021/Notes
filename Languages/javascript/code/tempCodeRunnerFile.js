@@ -1,10 +1,3 @@
-let isloggedin = false;
-isloggedin ? showDashboard() : showLoginPage();
-
-function showDashboard() {
-  console.log("User is logged in, showing dashboard");
-}
-
-function showLoginPage() {
-  console.log("User is not logged in, showing login page");
-}
+let originalArray = [1, 2, 3, 4, 5];
+let spreadCopiedArray = [...originalArray];
+console.log(`Spread copied array: ${spreadCopiedArray}`);
