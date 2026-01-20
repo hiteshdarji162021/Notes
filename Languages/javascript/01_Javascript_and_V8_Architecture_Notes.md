@@ -112,12 +112,84 @@ Large & enterprise apps → **TypeScript**
 
 ### 4️⃣ Optimization Call Count Rule (Approx)
 
-| Function Call Count | V8 Decision    |
-| ------------------- | -------------- |
-| 1–10                | Ignition       |
-| 100–1,000           | Maglev (maybe) |
-| 10,000+             | Maglev         |
-| 100,000+            | TurboFan       |
+| Function Call Count | V8 Decision       |
+| ------------------- | ----------------- |
+| 1–10                | Ignition          |
+| 100–1,000           | Ignition + Maglev |
+| 10,000+             | Maglev            |
+| 100,000+            | TurboFan          |
+
+Case-1 Ignition
+
+```js
+"use strict";
+
+// Simple, predictable, hot function
+function add(a, b) {
+  return a + b;
+}
+
+// Warm-up loop → make function HOT
+for (let i = 0; i < 10; i++) {
+  add(1, 2);
+}
+
+// Keep process alive briefly
+console.log("done");
+![alt text](image-1.png)
+```
+
+Case-2 Ignition +maglev
+
+```js
+"use strict";
+// Simple, predictable, hot function
+function add(a, b) {
+  return a + b;
+}
+
+// Warm-up loop → make function HOT
+for (let i = 0; i < 1000; i++) {
+  add(1, 2);
+}
+// Keep process alive briefly
+console.log("done");
+![alt text](image-2.png)
+```
+
+Case-3 Magvel
+
+```js
+// Simple, predictable, hot function
+function add(a, b) {
+ return a + b;
+}
+
+// Warm-up loop → make function HOT
+for (let i = 0; i < 10000; i++) {
+ add(1, 2);
+}
+// Keep process alive briefly
+console.log("done");
+![alt text](image-4.png)
+```
+
+Case-4 Turbo Fan
+
+```js
+// Simple, predictable, hot function
+function add(a, b) {
+  return a + b;
+}
+
+// Warm-up loop → make function HOT
+for (let i = 0; i < 100000; i++) {
+  add(1, 2);
+}
+// Keep process alive briefly
+console.log("done");
+![alt text](image-5.png)
+```
 
 > ⚠️ Exact numbers are not fixed. V8 decides dynamically.
 
@@ -127,12 +199,12 @@ Large & enterprise apps → **TypeScript**
 
 ### ✅ Corrected Table (NO CONFUSION)
 
-| Case       | Function Name     | Who Wrote It | Approx Call Count | Optimizer               | Your Code Optimized? |
-| ---------- | ----------------- | ------------ | ----------------- | ----------------------- | -------------------- |
-| Case-1     | `isPathSeparator` | Node.js      | 1000+ (internal)  | Maglev                  | ❌ No                |
-| Case-2     | Your function     | You          | 10K–100K          | Maglev                  | ✅ Yes               |
-| Case-3     | `afterWrite`      | Node.js      | 100K–Millions     | Maglev → TurboFan (OSR) | ❌ No                |
-| Small loop | Top-level loop    | You          | < 10              | Ignition                | ❌ No                |
+| Case   | Function Name                         | Approx Call Count | Optimizer               |
+| ------ | ------------------------------------- | ----------------- | ----------------------- |
+| Case-1 | isPathSeparator`                      | < 10              | Ignition                |
+| Case-2 | `isPathSeparator`+ Anonymous function | 1000 (internal)   | Ignition + Maglev       |
+| Case-3 | `isPathSeparator`+ Anonymous function | 10K–100K          | Maglev                  |
+| Case-4 | `isPathSeparator`+ Anonymous function | 100K–Millions     | Maglev → TurboFan (OSR) |
 
 ---
 
