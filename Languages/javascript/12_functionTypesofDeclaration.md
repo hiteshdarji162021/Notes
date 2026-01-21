@@ -332,6 +332,8 @@ true
 | Use in callbacks | ⚠️                   | ✅                  | ✅             | ❌   |
 | Industry usage   | ✅                   | ✅                  | ⭐⭐⭐         | ⚠️   |
 
+- Lexical means we can use this keywrod inside arrow function. we can use object refrencename like. user.name like this instead of this.name.
+
 ---
 
 ## 🧠 Industry Best Practices
