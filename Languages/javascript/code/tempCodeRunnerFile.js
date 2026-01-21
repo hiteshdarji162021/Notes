@@ -1,6 +1,6 @@
-let testing = function getTrainerName() {
-  console.log("get the trainer name");
-};
+function print1(name = "hitesh") {
+  console.log("hi", name);
+}
 
-testing(); //correct. call with function refrence name.
-console.log(testing.name);
+print1(); //hi hitesh  - Here if we not pass any value then take default 'hitesh'
+print1("gabbar"); //hi gabbar
