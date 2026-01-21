@@ -1,15 +1,6 @@
-function testing() {
-  console.log("testing");
-  pop();
-}
+let testing = function getTrainerName() {
+  console.log("get the trainer name");
+};
 
-function pop() {
-  console.log("pop called");
-  result();
-}
-
-function result() {
-  console.log("result");
-}
-
-testing();
+testing(); //correct. call with function refrence name.
+console.log(testing.name);

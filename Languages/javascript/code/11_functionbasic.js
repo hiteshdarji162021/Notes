@@ -88,3 +88,11 @@ console.log(browserLaunched);
 if (browserLaunched) {
   console.log("url open");
 }
+
+let testing = function getTrainerName() {
+  console.log("get the trainer name");
+};
+
+testing(); //correct. call with function refrence name.
+console.log(testing.name); //getTrainerName  - Here get actual functionanme with .name
+getTrainerName(); //Error can not call with functionanme.
