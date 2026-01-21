@@ -1,22 +1,12 @@
-let u1 = {
-  name: "Hitesh",
-  age: 35,
-  status: "active",
-};
+let user4 = `{
+  "userId": 2,
+  "id": 18,
+  "title": "test title",
+  "body": "test body"
+}`;
 
-let u2 = {
-  name: "ronak",
-  age: 30,
-  status: "inactive",
-};
+let u4 = JSON.parse(user4);
 
-let u3 = {
-  name: "dhruvesh",
-  age: 32,
-  status: "active",
-};
-
-u1 = u2 = u3;
-console.log(u1); //ronak
-console.log(u2); //dhruvesh
-console.log(u3); //dhruvesh
+console.log(u4);
+console.log(typeof u4);
+console.log(typeof user4);
