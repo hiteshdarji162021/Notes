@@ -1,12 +1,27 @@
-let user4 = `{
-  "userId": 2,
-  "id": 18,
-  "title": "test title",
-  "body": "test body"
-}`;
+function launchBrowser(browserName) {
+  console.log("browser name is", browserName);
+  switch (browserName.trim().toLowerCase()) {
+    case "chrome":
+      console.log("browser is chrome", browserName);
+      return true;
+    case "firefox":
+      console.log("browser is ff", browserName);
+      return true;
+    case "edge":
+      console.log("browser is edge", browserName);
+      return true;
+    case "safari":
+      console.log("browser is safari", browserName);
+      return true;
+    default:
+      console.log("incorrect browser name");
+      return false;
+  }
+}
 
-let u4 = JSON.parse(user4);
+let browserLaunched = launchBrowser("safari");
+console.log(browserLaunched);
 
-console.log(u4);
-console.log(typeof u4);
-console.log(typeof user4);
+if (browserLaunched) {
+  console.log("url open");
+}
