@@ -595,3 +595,188 @@ GC **never touches stack memory**.
 > - `null` removes reference, not memory
 
 ---
+
+## 23 Stack Memory Uses RAM (Important Concept)
+
+### Concept
+
+> **Stack memory is a part of RAM.**
+
+- Stack is not a separate hardware
+- Heap is also part of RAM
+- Difference is **HOW memory is managed**, not where it exists
+
+```
+RAM
+ ├─ Stack Memory
+ └─ Heap Memory
+```
+
+---
+
+## 24 Stack Memory Works on LIFO
+
+### Concept
+
+> **LIFO = Last In, First Out**
+
+- Last function called → first function finished
+- Stack follows execution order strictly
+
+---
+
+## 25 Program Example – LIFO in Action
+
+### Code
+
+```js
+function first() {
+  console.log("Inside first");
+  second();
+  console.log("First ends");
+}
+
+function second() {
+  console.log("Inside second");
+  third();
+  console.log("Second ends");
+}
+
+function third() {
+  console.log("Inside third");
+}
+
+first();
+```
+
+---
+
+## 26 Call Stack Execution (Step-by-Step)
+
+### Stack Push Order
+
+```
+Call first()
+Stack:
+[first]
+
+Call second()
+Stack:
+[first]
+[second]
+
+Call third()
+Stack:
+[first]
+[second]
+[third]   ← Last In
+```
+
+### Stack Pop Order
+
+```
+Return third()   → POP
+Return second()  → POP
+Return first()   → POP
+```
+
+👉 **Last In (third) → First Out** ✅
+
+---
+
+## 27 Actual Output
+
+```
+Inside first
+Inside second
+Inside third
+Second ends
+First ends
+```
+
+---
+
+## 28 Stack Memory Characteristics
+
+| Feature    | Stack Memory             |
+| ---------- | ------------------------ |
+| Uses RAM   | ✅ Yes                   |
+| Order      | LIFO                     |
+| Allocation | Automatic                |
+| Cleanup    | Automatic (function end) |
+| Speed      | Very Fast                |
+| Size       | Small                    |
+| Managed by | JavaScript Engine        |
+
+---
+
+## 29 Heap Memory Characteristics (For Comparison)
+
+| Feature    | Heap Memory       |
+| ---------- | ----------------- |
+| Uses RAM   | ✅ Yes            |
+| Order      | No order          |
+| Allocation | Dynamic           |
+| Cleanup    | Garbage Collector |
+| Speed      | Slower than stack |
+| Size       | Large             |
+| Managed by | Garbage Collector |
+
+---
+
+## 30 Which Uses More Memory – Stack or Heap?
+
+### Answer
+
+> **Heap uses MORE memory than stack**
+
+### Why?
+
+- Heap stores:
+  - Objects
+  - Arrays
+  - Functions
+  - Closures
+- Stack stores:
+  - Primitives
+  - References
+  - Call frames
+
+---
+
+## 31 Which Is More Complex to Manage?
+
+### Answer
+
+> **Heap memory is MORE complex to manage**
+
+| Memory | Complexity | Reason                          |
+| ------ | ---------- | ------------------------------- |
+| Stack  | Low        | LIFO, automatic cleanup         |
+| Heap   | High       | GC, reachability, fragmentation |
+
+---
+
+## 🔥 Stack vs Heap – Final Comparison Table
+
+| Feature     | Stack            | Heap              |
+| ----------- | ---------------- | ----------------- |
+| Uses RAM    | ✅               | ✅                |
+| Order       | LIFO             | None              |
+| Memory Size | Small            | Large             |
+| Speed       | Fast             | Slower            |
+| Cleanup     | Automatic        | Garbage Collector |
+| Complexity  | Simple           | Complex           |
+| Stores      | Primitives, refs | Objects, arrays   |
+
+---
+
+## 🧠 Golden Rules (Remember Forever)
+
+> - Stack = execution flow (LIFO)
+> - Heap = object lifetime
+> - Both use RAM
+> - Stack is simple and fast
+> - Heap is powerful but complex
+
+---
