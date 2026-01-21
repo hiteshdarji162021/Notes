@@ -234,69 +234,167 @@ null
 
 ## 8️⃣ `Object.freeze()` – Full Lock
 
-### Code
+### Concept
+
+> `Object.freeze()` makes an object **completely immutable**.
+
+❌ Cannot add property  
+❌ Cannot update property  
+❌ Cannot delete property
+
+---
+
+### Example 1️⃣: Freeze existing object
 
 ```js
-let config = Object.freeze({
-  baseURL: "https://api.test.com",
-  timeout: 30000,
+let user = {
+  name: "hitesh",
+  city: "Dehgam",
+};
+
+console.log(user);
+// { name: 'hitesh', city: 'Dehgam' }
+
+Object.freeze(user);
+
+// update
+user.city = "Ahmedabad"; // ❌ ignored
+
+// add
+user.age = 30; // ❌ ignored
+
+// delete
+delete user.name; // ❌ ignored
+
+console.log(user);
+// { name: 'hitesh', city: 'Dehgam' }
+```
+
+---
+
+### Example 2️⃣: Freeze at creation (BEST PRACTICE)
+
+```js
+let user1 = Object.freeze({
+  name: "hitesh",
+  city: "Dehgam",
 });
 
-config.timeout = 1000; // ignored
-
-console.log(config);
+user1.city = "Ahmedabad"; // ❌ ignored
+console.log(user1);
+// { name: 'hitesh', city: 'Dehgam' }
 ```
 
-### Output
+---
 
+### ✅ Real Use Cases of `freeze`
+
+```js
+// Application / automation config
+export const config = Object.freeze({
+  baseURL: "https://api.test.com",
+  timeout: 30000,
+  retries: 2,
+});
 ```
-{ baseURL: 'https://api.test.com', timeout: 30000 }
-```
 
-### Use Case
+**Why freeze?**
 
-- Config
-- Constants
-- Selectors in automation
+- Prevent accidental changes
+- Safe for parallel tests
+- Single source of truth
+
+**Used in real projects**
+
+- Config objects
+- Constants & enums
+- Automation selectors
+- Environment values
 
 ---
 
 ## 9️⃣ `Object.seal()` – Fixed Shape, Mutable Values
 
-### Code
+### Concept
 
-```js
-let emp = { name: "Hitesh", city: "Dehgam" };
+> `Object.seal()` locks the **object structure**, but allows **value updates**.
 
-Object.seal(emp);
-
-emp.city = "Ahmedabad"; // allowed
-emp.salary = 2000; // ignored
-
-delete emp.name; // ignored
-
-console.log(emp);
-```
-
-### Output
-
-```
-{ name: 'Hitesh', city: 'Ahmedabad' }
-```
-
-### Use Case
-
-- API payloads with fixed structure
-- Forms where only values change
+❌ Cannot add property  
+❌ Cannot delete property  
+✅ Can update existing values
 
 ---
 
-## 🔥 Final Decision Table
+### Example
 
-| Situation                   | Recommended       |
+```js
+let emp = {
+  name: "Dhruvesh",
+  city: "Dehgam",
+};
+
+console.log(emp);
+// { name: 'Dhruvesh', city: 'Dehgam' }
+
+Object.seal(emp);
+
+// update (allowed)
+emp.city = "Nandol";
+console.log(emp);
+// { name: 'Dhruvesh', city: 'Nandol' }
+
+// add (not allowed)
+emp.salary = 2000;
+console.log(emp);
+// { name: 'Dhruvesh', city: 'Nandol' }
+
+// delete (not allowed)
+delete emp.city;
+console.log(emp);
+// { name: 'Dhruvesh', city: 'Nandol' }
+```
+
+---
+
+### ✅ Real Use Cases of `seal`
+
+```js
+// API request payload (keys must stay same)
+let orderPayload = Object.seal({
+  productId: null,
+  quantity: 1,
+  coupon: null,
+});
+
+orderPayload.productId = 101; // ✅ allowed
+orderPayload.quantity = 2; // ✅ allowed
+```
+
+**Why seal?**
+
+- Backend expects fixed keys
+- Only values change per request
+- Prevents payload shape breaking
+
+**Used in real projects**
+
+- API request bodies
+- Form data objects
+- DTOs (Data Transfer Objects)
+
+---
+
+## 🔥 `freeze` vs `seal` – Decision Table
+
+| Scenario                    | Use               |
 | --------------------------- | ----------------- |
-| Config / constants          | `Object.freeze()` |
+| App / framework config      | `Object.freeze()` |
+| Automation selectors        | `Object.freeze()` |
+| Constants / enums           | `Object.freeze()` |
 | API payload template        | `Object.freeze()` |
+| API request body (runtime)  | `Object.seal()`   |
+| Form data                   | `Object.seal()`   |
+| Config / constants          | `Object.freeze()` |
 | Per-test data               | Copy object       |
 | Fixed keys, changing values | `Object.seal()`   |
 | Shared app state            | Reference         |
