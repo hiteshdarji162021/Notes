@@ -632,7 +632,7 @@ address -> {"city":"dehgam","zip":382305}
 
 ---
 
-## A️⃣ Reference Assignment (`=`)
+## Reference Assignment (`=`)
 
 ### Code
 
@@ -689,7 +689,7 @@ test1.role = "admin";
 
 ---
 
-## B️⃣ Copy using Spread Operator (`...`)
+## Copy using Spread Operator (`...`)
 
 ### Code
 
