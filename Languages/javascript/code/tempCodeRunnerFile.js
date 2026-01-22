@@ -1,14 +1,52 @@
-let product = {
-  name: "hitesh",
-  age: 33,
-  city: "dehgam",
-  ispermenent: true,
-};
+function startMachin(callback) {
+  setTimeout(() => {
+    console.log("1. Start Machin");
+    callback();
+  }, 5000);
+}
 
-// let { name, age } = product;
-// console.log(name);
-// console.log(age);
+function bilwater(callback) {
+  setTimeout(() => {
+    console.log("2. bil water");
+    callback();
+  }, 3000);
+}
 
-let { ispermenent, city } = product;
-console.log(ispermenent);
-console.log(city);
+function addCoffeePowder(callback) {
+  setTimeout(() => {
+    console.log("3. add Coffee Powder");
+    callback();
+  }, 4000);
+}
+
+function popinCup(callback) {
+  setTimeout(() => {
+    console.log("4. pop in Cup");
+    callback();
+  }, 3000);
+}
+
+function servecofee(callback) {
+  setTimeout(() => {
+    console.log("5. serve cofee");
+    callback();
+  }, 1000);
+}
+
+// startMachin(()=>{})
+// bilwater(()=>{})
+// addCoffeePowder(()=>{})
+// popinCup(()=>{})
+// servecofee(()=>{})
+
+startMachin(() => {
+  bilwater(() => {
+    addCoffeePowder(() => {
+      popinCup(() => {
+        servecofee(() => {
+          console.log("done");
+        });
+      });
+    });
+  });
+});
