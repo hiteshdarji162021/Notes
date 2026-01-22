@@ -1,6 +1,14 @@
-function print1(name = "hitesh") {
-  console.log("hi", name);
-}
+let product = {
+  name: "hitesh",
+  age: 33,
+  city: "dehgam",
+  ispermenent: true,
+};
 
-print1(); //hi hitesh  - Here if we not pass any value then take default 'hitesh'
-print1("gabbar"); //hi gabbar
+// let { name, age } = product;
+// console.log(name);
+// console.log(age);
+
+let { ispermenent, city } = product;
+console.log(ispermenent);
+console.log(city);
