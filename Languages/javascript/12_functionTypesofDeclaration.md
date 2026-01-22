@@ -275,52 +275,6 @@ SUBODH
 
 ---
 
-## 7️⃣ Array Callback Functions (`forEach`, `some`)
-
-### `forEach()` – No Return
-
-```js
-let product = ["macbook", "samsung", "iphone", "sim", "keyboard"];
-
-product.forEach((ele) => {
-  console.log(ele);
-});
-```
-
-### Output
-
-```
-macbook
-samsung
-iphone
-sim
-keyboard
-```
-
-### `some()` – Returns Boolean
-
-```js
-let product1 = ["macbook", "samsung", "iphone", "sim", "keyboard"];
-
-let flag = product1.some((ele) => {
-  return ele === "iphone";
-});
-
-console.log(flag);
-```
-
-### Output
-
-```
-true
-```
-
-### Use Case
-
-- Search conditions
-- Validation logic
-
----
 
 ## 🔥 Comparison Table (SAVE THIS)
 
