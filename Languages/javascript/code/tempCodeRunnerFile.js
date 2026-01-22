@@ -33,20 +33,21 @@ function servecofee(callback) {
   }, 1000);
 }
 
-// startMachin(()=>{})
-// bilwater(()=>{})
-// addCoffeePowder(()=>{})
-// popinCup(()=>{})
-// servecofee(()=>{})
+//not work
+startMachin(() => {});
+bilwater(() => {});
+addCoffeePowder(() => {});
+popinCup(() => {});
+servecofee(() => {});
 
-startMachin(() => {
-  bilwater(() => {
-    addCoffeePowder(() => {
-      popinCup(() => {
-        servecofee(() => {
-          console.log("done");
-        });
-      });
-    });
-  });
-});
+// startMachin(() => {
+//   bilwater(() => {
+//     addCoffeePowder(() => {
+//       popinCup(() => {
+//         servecofee(() => {
+//           console.log("done");
+//         });
+//       });
+//     });
+//   });
+// });

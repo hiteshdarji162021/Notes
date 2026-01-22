@@ -1,0 +1,80 @@
+function startMachin() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("1. machin started");
+      resolve();
+    }, 5000);
+  });
+}
+
+function bilWater() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("2. boil water");
+      resolve();
+    }, 4000);
+  });
+}
+
+function addCoffeePowder() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("3. cofee powder added");
+      resolve();
+    }, 3000);
+  });
+}
+
+function popInCup(callback) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("4 pop in cup");
+      resolve();
+    }, 2000);
+  });
+}
+
+function serveCoffee(callback) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("5. cofee served");
+      resolve();
+    }, 1000);
+  });
+}
+
+//Using then for call promises in sequance
+startMachin()
+  .then(() => bilWater())
+  .then(() => addCoffeePowder())
+  .then(() => popInCup())
+  .then(() => serveCoffee())
+  .then(() => {
+    console.log("Coffee is ready to serve!");
+  });
+
+console.log(
+  "============================async await=============================",
+);
+//async await
+async function makeCoffee() {
+  await startMachin();
+  await bilWater();
+  await addCoffeePowder();
+  await popInCup();
+  await serveCoffee();
+  console.log("Coffee is ready to serve!");
+}
+makeCoffee();
+
+console.log(
+  "=====================================================================",
+);
+
+async function fetchUserData() {
+  console.log("featch the data");
+  let respones = await fetch("https://jsonplaceholder.typicode.com/users/1");
+  let data = await respones.json();
+  console.log(data.name);
+}
+fetchUserData();
