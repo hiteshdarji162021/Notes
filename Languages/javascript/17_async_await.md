@@ -21,9 +21,28 @@ They allow us to write async code that **looks synchronous**, but still runs **n
 ### Old Style (then/catch – harder to read)
 
 ```js
+function getUserData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let success = true;
+      if (success) {
+        resolve("success");
+      } else {
+        reject("error");
+      }
+    }, 2000);
+  });
+}
+
 getUserData()
   .then((message) => console.log(message))
   .catch((error) => console.log(error));
+```
+
+### Output
+
+```
+success
 ```
 
 Problems:
@@ -180,11 +199,20 @@ console.log(get, show);
 
 ---
 
-## 9️⃣ Fire & Forget (Do NOT use await)
+## 9️⃣ Incorrect sequnace if not use await
 
 ### Use Case: Email / Logging
 
 ```js
+function sendEmail(emailid) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(`Email sent to ${emailid}`);
+      resolve();
+    }, 2000);
+  });
+}
+
 sendEmail("hitesh@gmail.com");
 console.log("checkout order");
 ```
@@ -201,12 +229,43 @@ Email sent to hitesh@gmail.com
 ## 🔟 Await vs No Await
 
 ```js
+function sendEmail1(emailid) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(`Email sent to ${emailid}`);
+      resolve();
+      return true;
+    }, 2000);
+  });
+}
+
 let status1 = sendEmail1("hitesh@gmail.com");
 console.log(status1); // Promise <pending>
+```
 
+### Output
+
+```
+Promise { <pending> }
+checkout order
+Email sent to hitesh@gmail.com
+```
+
+---
+
+```js
 let status2 = await sendEmail1("hitesh@gmail.com");
 console.log("checkout order");
 ```
+
+### Output
+
+```
+Email sent to hitesh@gmail.com
+checkout order
+```
+
+---
 
 ### Key Learning
 
