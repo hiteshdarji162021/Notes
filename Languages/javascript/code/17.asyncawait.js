@@ -162,6 +162,7 @@ function sendEmail1(emailid) {
 //1. approch
 let status1 = sendEmail1("hitesh@gmail.com");
 console.log(status1); // Promise <Pending>  as not write await with send email
+console.log("checkout order");
 
 //2. approch - proper output
 let status2 = await sendEmail1("hitesh@gmail.com");
