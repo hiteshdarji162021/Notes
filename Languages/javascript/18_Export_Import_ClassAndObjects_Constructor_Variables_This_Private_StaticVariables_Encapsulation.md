@@ -142,6 +142,13 @@ class Car {
     console.log(`Test driving the car ${this.name} priced at ${this.#price}`);
   }
 
+  sum = function () {
+    console.log("anonymous function");
+  };
+  sub = () => {
+    console.log("arrow function");
+  };
+
   setPrice(newPrice) {
     this.#price = newPrice;
   }
@@ -154,6 +161,8 @@ class Car {
 let c1 = new Car("BMW", 50000);
 console.log(c1.name);
 c1.testDriver();
+c1.sum();
+c1.sub();
 ```
 
 ### Output
@@ -161,6 +170,9 @@ c1.testDriver();
 ```
 BMW
 Test driving the car BMW priced at 50000
+anonymous function
+arrow function
+
 ```
 
 ### Key Rules
