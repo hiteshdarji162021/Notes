@@ -1,3 +1,6 @@
+//common memory allocation for all static variable and methods. memoery allocation at time and use while execution.
+
+
 class employee {
   static timeOut = 10;
   static readExcelData() {
