@@ -25,7 +25,7 @@ function addCoffeePowder() {
   });
 }
 
-function popInCup(callback) {
+function popInCup() {
   return new Promise((resolve) => {
     setTimeout(() => {
       console.log("4 pop in cup");
@@ -34,7 +34,7 @@ function popInCup(callback) {
   });
 }
 
-function serveCoffee(callback) {
+function serveCoffee() {
   return new Promise((resolve) => {
     setTimeout(() => {
       console.log("5. cofee served");
@@ -43,12 +43,11 @@ function serveCoffee(callback) {
   });
 }
 
-//Using then for call promises in sequance
 startMachin()
-  .then(() => bilWater())
-  .then(() => addCoffeePowder())
-  .then(() => popInCup())
-  .then(() => serveCoffee())
+  .then(bilWater)
+  .then(addCoffeePowder)
+  .then(popInCup)
+  .then(serveCoffee)
   .then(() => {
     console.log("Coffee is ready to serve!");
   });

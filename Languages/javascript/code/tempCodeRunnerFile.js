@@ -1,53 +1,67 @@
-function startMachin(callback) {
-  setTimeout(() => {
-    console.log("1. Start Machin");
-    callback();
-  }, 5000);
+function startMachin() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("1. machin started");
+      resolve();
+    }, 5000);
+  });
 }
 
-function bilwater(callback) {
-  setTimeout(() => {
-    console.log("2. bil water");
-    callback();
-  }, 3000);
+function bilWater() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("2. boil water");
+      resolve();
+    }, 4000);
+  });
 }
 
-function addCoffeePowder(callback) {
-  setTimeout(() => {
-    console.log("3. add Coffee Powder");
-    callback();
-  }, 4000);
+function addCoffeePowder() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("3. cofee powder added");
+      resolve();
+    }, 3000);
+  });
 }
 
-function popinCup(callback) {
-  setTimeout(() => {
-    console.log("4. pop in Cup");
-    callback();
-  }, 3000);
+function popInCup() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("4 pop in cup");
+      resolve();
+    }, 2000);
+  });
 }
 
-function servecofee(callback) {
-  setTimeout(() => {
-    console.log("5. serve cofee");
-    callback();
-  }, 1000);
+function serveCoffee() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("5. cofee served");
+      resolve();
+    }, 1000);
+  });
 }
 
-//not work
-startMachin(() => {});
-bilwater(() => {});
-addCoffeePowder(() => {});
-popinCup(() => {});
-servecofee(() => {});
-
-// startMachin(() => {
-//   bilwater(() => {
-//     addCoffeePowder(() => {
-//       popinCup(() => {
-//         servecofee(() => {
-//           console.log("done");
-//         });
-//       });
-//     });
+// startMachin()
+//   .then(bilWater)
+//   .then(addCoffeePowder)
+//   .then(popInCup)
+//   .then(serveCoffee)
+//   .then(() => {
+//     console.log("Coffee is ready to serve!");
 //   });
-// });
+
+console.log(
+  "============================async await=============================",
+);
+//async await
+async function makeCoffee() {
+  startMachin();
+  bilWater();
+  addCoffeePowder();
+  await popInCup();
+  await serveCoffee();
+  console.log("Coffee is ready to serve!");
+}
+makeCoffee();

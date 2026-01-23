@@ -189,14 +189,14 @@ addCoffeePowder(() => {});
 popinCup(() => {});
 servecofee(() => {});
 
-// startMachin(() => {
-//   bilwater(() => {
-//     addCoffeePowder(() => {
-//       popinCup(() => {
-//         servecofee(() => {
-//           console.log("done");
-//         });
-//       });
-//     });
-//   });
-// });
+startMachin(() => {
+  bilwater(() => {
+    addCoffeePowder(() => {
+      popinCup(() => {
+        servecofee(() => {
+          console.log("done");
+        });
+      });
+    });
+  });
+});
