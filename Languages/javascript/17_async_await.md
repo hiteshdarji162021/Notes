@@ -63,7 +63,7 @@ Problems:
 
 ---
 
-## 4️⃣ Example 1 – Basic Async/Await with Promise
+## 4️⃣ Modern way to use Promise
 
 ```js
 function getUserData() {
@@ -79,7 +79,7 @@ function getUserData() {
   });
 }
 
-async function showUsrData() {
+async function showUserData() {
   try {
     console.log("user data");
     let name = await getUserData();
@@ -89,7 +89,7 @@ async function showUsrData() {
   }
 }
 
-showUsrData();
+showUserData();
 ```
 
 ### Output
@@ -239,8 +239,8 @@ function sendEmail1(emailid) {
   });
 }
 
-let status1 = sendEmail1("hitesh@gmail.com");
-console.log(status1); // Promise <pending>
+let status1 = sendEmail1("hitesh@gmail.com"); //not using await even its written promise
+console.log(status1);
 ```
 
 ### Output
