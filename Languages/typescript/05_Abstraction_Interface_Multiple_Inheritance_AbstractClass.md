@@ -10,7 +10,7 @@ This diagram visually explains **how inheritance and interfaces flow together** 
 
 👉 Use this image while explaining to students **before showing code**.
 
-![Inheritance and Interface Flow Diagram](sandbox:/mnt/data/4fd0b7c1-fe87-44e7-86e5-ce5dd02c1d50.png)
+![alt text](images/inheritanceinterfaceflow.png)
 
 ### How students should read this diagram
 
