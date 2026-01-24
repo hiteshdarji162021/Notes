@@ -1,26 +1,38 @@
-import { Employee } from "./03_export_AccessModifiers_Public_Private_Protected";
+class UserBuilder {
+    private user: any = {};
 
 
-class User extends Employee {
-
-    constructor(name: string, age: number, salary: number, isActive: boolean) {
-        super(name, age, salary, isActive);
+    setName(name: string) :UserBuilder {
+        this.user.name = name;
+        console.log('name is ', name);
+        return this;
     }
 
 
-    static start(): void {
-        let u1 = new User('tom', 20, 3.44, true);
-        console.log(u1.name);
-        console.log(u1.age);
-        console.log(u1.isActive);
-        //console.log(u1.salary);//CT error
-        console.log(u1.getSalary());
-
-        u1.getUserData();//protected
+    setEmail(email: string):UserBuilder {
+        this.user.email = email;
+        console.log('email is ', email);
+        return this;
     }
 
 
+    setRole(role: string):UserBuilder {
+        this.user.role = role;
+        console.log('role is ', role);
+        return this;
+    }
 
+
+    build() {
+       
+        return this.user;
+    }
 }
 
-User.start();
+
+// usage
+const payload = new UserBuilder()
+    .setName('Hitesh')
+    .setEmail('test@mail.com')
+    .setRole('admin')
+    .build();
