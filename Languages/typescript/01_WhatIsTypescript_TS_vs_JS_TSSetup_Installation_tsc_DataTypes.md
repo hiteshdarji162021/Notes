@@ -198,6 +198,26 @@ This comparison helps you understand **why TypeScript exists**.
 
 ---
 
+## 13 add tsconfig.json file
+
+```js
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "es2015",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node", "@playwright/test"]
+  },
+  "include": ["tests/**/*.ts", "playwright.config.ts"]
+}
+```
+
 ### Core Difference (in one line)
 
 > **JavaScript finds errors at runtime**  

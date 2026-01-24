@@ -92,8 +92,8 @@ if (typeof value === 'string') {
 function add1(a: number, b: number): number {
     return a + b;
 }  
-let sum = add1(5, 10);
-console.log(sum);
+let sum1 = add1(5, 10);
+console.log(sum1);
 
 
 
