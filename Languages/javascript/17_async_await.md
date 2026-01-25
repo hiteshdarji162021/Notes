@@ -4,7 +4,7 @@
 - Parallel Execution using Promise.all + await
 - Sequential Execution
 
-## Why we learn Promises?
+## Why we learn?
 
 - async and await - modern way for perform sync operation and wait for some operation.
 - Parallel Execution using Promise.all + await - For fast execution.

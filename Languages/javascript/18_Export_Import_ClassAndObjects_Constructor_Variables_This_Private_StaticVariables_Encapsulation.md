@@ -1,8 +1,16 @@
-# JavaScript Modules, Private Variables & Static Members – Complete Guide
+# What covered in notes
 
----
+- `export` & `import`
+- Private Variables & Methods (`#`)
+- Static Variables & Static Methods
 
-## 1️⃣ JavaScript Modules: `export` & `import`
+## Why we learn?
+
+- `export` & `import` - For inheritance
+- Private Variables & Methods (`#`) - For encpsulation
+- Static Variables & Static Methods -Access by Classname
+
+## 1. JavaScript Modules: `export` & `import`
 
 JavaScript modules help us **split code into multiple files**, making applications:
 
@@ -14,7 +22,7 @@ Each file is treated as its **own scope**.
 
 ---
 
-## 2️⃣ Named Export (Single Export)
+### Named Export (Single Export)
 
 ### Code
 
@@ -33,7 +41,7 @@ export function add(a, b) {
 
 ---
 
-## 3️⃣ Named Export (Multiple Export at Once)
+### Named Export (Multiple Export at Once)
 
 ### Code
 
@@ -54,7 +62,7 @@ export { p2, add1 };
 
 ---
 
-## 4️⃣ Default Export (Only One Per File)
+### Default Export (Only One Per File)
 
 ### Code
 
@@ -70,7 +78,7 @@ export default price;
 
 ---
 
-## 5️⃣ Importing Modules (Named + Default + Alias)
+### Importing Modules (Named + Default + Alias)
 
 ### Code
 
@@ -96,7 +104,7 @@ console.log(price); // 100
 
 ---
 
-## 6️⃣ Import Everything Using `* as`
+### Import Everything Using `* as`
 
 ### Code
 
@@ -121,7 +129,7 @@ console.log(mymath.add(100, 200));
 
 ---
 
-## 7️⃣ Private Variables & Methods (`#`) – Encapsulation
+## 2. Private Variables & Methods (`#`) – Encapsulation
 
 ### Code
 
@@ -201,7 +209,7 @@ console.log(c1.getPrice()); // 55000
 
 ---
 
-## 9️⃣ Private Methods – Real-Time Example
+### Private Methods – Real-Time Example
 
 ### Code
 
@@ -253,7 +261,7 @@ browser launched successfully
 
 ---
 
-## 🔟 Static Variables & Static Methods
+## 3. Static Variables & Static Methods
 
 ### Code
 
