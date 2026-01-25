@@ -1,8 +1,21 @@
 # JavaScript Functions – Types, Hoisting, Parameters, Return & Overloading Patterns
 
+# What covered in notes
+
+- function
+- Function Hoisting (Call Before Definition)
+- function with parameters and return
+- JSDoc (`/** */`) 
+
+
+## Why we learn function?
+
+- We learn functions to reuse logic, organize code, and avoid duplication while keeping automation scripts clean and maintainable.
+- Javascript doc(`/** */`)- add comment above fuction to get more idea on parametes and return type
+
 ---
 
-## 1️⃣ Named Function (Reusable / Factory Code)
+## 1.  Named Function (Reusable / Factory Code)
 
 ### Concept
 
@@ -44,7 +57,7 @@ sum function
 
 ---
 
-## 2️⃣ Function Hoisting (Call Before Definition)
+## 2.  Function Hoisting (Call Before Definition)
 
 ### Concept
 
@@ -75,7 +88,7 @@ i am great
 
 ---
 
-## 3️⃣ Function with Parameters (No Return)
+## 3. Function with Parameters (No Return)
 
 ### Code
 
@@ -101,7 +114,7 @@ add(10, 20);
 
 ---
 
-## 4️⃣ JSDoc (`/** */`) – Type Hinting in JavaScript
+## 4. JSDoc (`/** */`) – Type Hinting in JavaScript
 
 ### Concept
 
@@ -136,7 +149,7 @@ my trainer name hitesh
 
 ---
 
-## 5️⃣ Function with Return Value
+## 5.  Function with Return Value
 
 ### Code
 
@@ -212,7 +225,7 @@ url open
 
 ---
 
-## 7️⃣ Function Expression & Function Name Property
+## 6. Function Expression & Function Name Property
 
 ### Code
 
@@ -239,7 +252,7 @@ getTrainerName
 
 ---
 
-## 8️⃣ Function Overloading (NOT Supported in JavaScript)
+## 7.  Function Overloading (NOT Supported in JavaScript)
 
 ### Concept
 
@@ -263,7 +276,7 @@ function login(a) {
 
 ---
 
-## 9️⃣ Correct Alternatives to Function Overloading
+## 8. Correct Alternatives to Function Overloading
 
 ### Option 1️⃣ – Different Function Names (BEST)
 
@@ -307,7 +320,7 @@ let l3 = function (u, p, o) {
 
 ---
 
-## 🔟 Function Returning Array (Real Business Logic)
+## 9.  Function Returning Array (Real Business Logic)
 
 ### Code
 
@@ -371,7 +384,7 @@ console.log(employee("hitesh"));
 
 ---
 
-## 1️⃣1️⃣ Function with Object Parameter (Call by Reference)
+## 10. Function with Object Parameter (Call by Reference)
 
 ### Code
 

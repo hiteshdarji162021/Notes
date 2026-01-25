@@ -1,5 +1,3 @@
-# JavaScript Memory Model – Stack vs Heap vs Garbage Collection
-
 # What covered in notes
 
 - Stack memory
