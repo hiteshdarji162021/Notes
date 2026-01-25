@@ -1,6 +1,10 @@
-## 1️⃣ What is a Promise?
+# What covered in notes
 
-A **Promise** in JavaScript represents a value that is **not available now**, but **will be available in the future**.
+- promises
+
+## Why we learn function?
+
+- Promises- A **Promise** in JavaScript represents a value that is **not available now**, but **will be available in the future**.
 
 Think of Promise like a **real-life promise**:
 
@@ -211,20 +215,50 @@ doubleAmountAfter2Seconds(5)
 
 ---
 
-## Example 7: Promise.all()
+## 8. `Promise.all()`
+
+> Runs multiple promises **in parallel** and waits until **ALL succeed**.
+
+### Rules
+
+- ✅ All promises must resolve
+- ❌ If any promise rejects → immediately goes to `catch`
+
+---
+
+### Example
 
 ```js
+const promise1 = Promise.resolve("page loaded");
+const promise2 = Promise.resolve("api success");
+const promise3 = Promise.resolve("user logged in");
+
 Promise.all([promise1, promise2, promise3])
   .then((result) => console.log(result))
   .catch((error) => console.log(error));
 ```
 
-### Rule
+**Output**
 
-- All promises must resolve
-- If any promise rejects → immediately goes to catch
+```
+[ 'page loaded', 'api success', 'user logged in' ]
+```
 
-### Output
+---
+
+### ❌ Failure Case
+
+```js
+const p1 = Promise.resolve("step1");
+const p2 = Promise.reject("promise 2 fail");
+const p3 = Promise.resolve("step3");
+
+Promise.all([p1, p2, p3])
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+**Output**
 
 ```
 promise 2 fail
@@ -232,24 +266,265 @@ promise 2 fail
 
 ---
 
-## Example 8: Promise.race()
+### ✅ Playwright Web Use Case
 
 ```js
-Promise.race([promise11, promise12, promise13])
+await Promise.all([
+  page.goto(baseURL),
+  page.waitForResponse(
+    (res) => res.url().includes("/login") && res.status() === 200,
+  ),
+  page.waitForSelector("#dashboard"),
+]);
+```
+
+➡ Use when **ALL conditions must pass** before proceeding.
+
+---
+
+## 9. `Promise.race()`
+
+> Resolves or rejects as soon as the **FIRST promise settles**.
+
+### Rules
+
+- First **resolved OR rejected** promise wins
+
+---
+
+### Example
+
+```js
+const promise11 = new Promise((res) =>
+  setTimeout(() => res("promise 11 pass"), 100),
+);
+const promise12 = new Promise((res) =>
+  setTimeout(() => res("promise 12 pass"), 300),
+);
+
+Promise.race([promise11, promise12])
   .then((result) => console.log(result))
   .catch((error) => console.log(error));
 ```
 
-### Rule
+**Output**
 
-- First settled promise (resolve or reject) wins
+```
+promise 11 pass
+```
+
+---
+
+### ✅ Playwright Web Use Case (Timeout or Success)
+
+```js
+await Promise.race([
+  page.waitForSelector("#success"),
+  page.waitForTimeout(5000).then(() => {
+    throw new Error("Timeout waiting for success message");
+  }),
+]);
+```
+
+➡ Use when **first event decides the flow**.
+
+---
+
+## 10. `Promise.allSettled()` (Very Important in Automation)
+
+> Waits for **ALL promises to finish**, regardless of pass or fail.
+
+### Rules
+
+- Never goes to `catch`
+- Returns **status + value/reason** for each promise
+
+---
+
+### Example
+
+```js
+const p1 = Promise.resolve("login success");
+const p2 = Promise.reject("profile api failed");
+const p3 = Promise.resolve("logout success");
+
+Promise.allSettled([p1, p2, p3]).then((results) => console.log(results));
+```
+
+**Output**
+
+```
+[
+  { status: 'fulfilled', value: 'login success' },
+  { status: 'rejected', reason: 'profile api failed' },
+  { status: 'fulfilled', value: 'logout success' }
+]
+```
+
+# Promise.any() –
+
+`Promise.any()` is a **powerful but often ignored** Promise method. It is extremely useful in **real automation scenarios** where **any one success is enough**.
+
+---
+
+## 11. What is `Promise.any()`?
+
+> **`Promise.any()` resolves as soon as ANY one promise resolves.**  
+> It ignores rejected promises **unless ALL promises fail**.
+
+---
+
+## 2️⃣ Basic Example
+
+```js
+Promise.any([
+  Promise.reject("API 1 failed"),
+  Promise.resolve("API 2 success"),
+  Promise.reject("API 3 failed"),
+])
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
+```
 
 ### Output
 
 ```
-promise 11 pass
-working as expected
+API 2 success
 ```
+
+---
+
+## 3️⃣ Failure Case (All Promises Fail)
+
+```js
+Promise.any([Promise.reject("error 1"), Promise.reject("error 2")])
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Output
+
+```
+AggregateError: All promises were rejected
+```
+
+---
+
+## 4️⃣ Playwright Web Automation – Real Use Case
+
+### Scenario
+
+> Application may open from **multiple environments** (prod / staging / backup).  
+> Test should continue if **any one URL works**.
+
+### Code
+
+```js
+await Promise.any([
+  page.goto("https://prod.app.com"),
+  page.goto("https://staging.app.com"),
+  page.goto("https://backup.app.com"),
+]);
+
+await page.waitForSelector("#login");
+```
+
+### Why `Promise.any()` here?
+
+- Only **one environment** needs to respond
+- Faster execution
+- Avoid unnecessary failures
+
+---
+
+## 5️⃣ Playwright Web – Login via Multiple Methods
+
+```js
+await Promise.any([page.click("#loginWithEmail"), page.click("#loginWithSSO")]);
+```
+
+➡ Test proceeds if **any login option is available**
+
+---
+
+## 6️⃣ Playwright API Testing – Real Use Case
+
+### Scenario
+
+> Fetch user data from **multiple mirror APIs**.  
+> Any one valid response is acceptable.
+
+### Code
+
+```js
+const response = await Promise.any([
+  request.get("/api/v1/user"),
+  request.get("/api/v2/user"),
+  request.get("/api/backup/user"),
+]);
+
+console.log(response.status());
+```
+
+### Output
+
+```
+200
+```
+
+---
+
+## 7️⃣ When NOT to Use `Promise.any()`
+
+❌ When **all steps must pass** → use `Promise.all()`  
+❌ When you need **full result report** → use `Promise.allSettled()`
+
+---
+
+### ✅ Playwright API Use Case (Best Real Scenario)
+
+```js
+const results = await Promise.allSettled([
+  request.get("/login"),
+  request.get("/profile"),
+  request.get("/orders"),
+]);
+
+results.forEach((res, index) => {
+  if (res.status === "fulfilled") {
+    console.log(`API ${index} passed`);
+  } else {
+    console.log(`API ${index} failed:`, res.reason);
+  }
+});
+```
+
+➡ Use when **you want full report instead of stopping on first failure**.
+
+---
+
+# 📊 Comparison Table (Automation Perspective)
+
+| Method               | Stops on Failure | Waits for All | Best Use Case          |
+| -------------------- | ---------------- | ------------- | ---------------------- |
+| `Promise.all`        | ✅ Yes           | ❌ No         | All steps must pass    |
+| `Promise.race`       | ❌               | ❌            | First event wins       |
+| `Promise.allSettled` | ❌               | ✅ Yes        | Reporting & monitoring |
+| `Promise.any`        | First success    | ✅ Yes        | Fallback logic         |
+
+---
+
+## 🧠 Playwright Architect Rules
+
+- Use **Promise.all** when **all actions are mandatory**
+- Use **Promise.race** for **timeouts / first-response logic**
+- Use **Promise.allSettled** for **API health checks & reports**
+
+---
+
+## 🎯 Interview One-Liner
+
+> **`Promise.all` fails fast, `Promise.race` finishes first, and `Promise.allSettled` reports everything.**
 
 ---
 
