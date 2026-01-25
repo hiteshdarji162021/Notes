@@ -1,3 +1,16 @@
+# What covered in notes
+
+- `console.log()` vs `process.stdout.write()`
+- File Path Handling
+- Array Declaration
+- Array loops
+
+## Why we learn loop and ternary operator?
+- To control how output is printed during test execution and debugging.
+- To reliably access test data, uploads, and config files across environments.
+- To store and manage collections of test data efficiently.
+- To iterate over test data and perform repetitive test actions automatically.
+
 ## 1️⃣ `console.log()` vs `process.stdout.write()`
 
 ### 🔹 `console.log()`

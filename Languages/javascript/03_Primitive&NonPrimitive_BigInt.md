@@ -165,3 +165,143 @@ Objects    → Heap  → Mutable
 | String              | ~2 bytes / character | ~2 bytes / character   | ~2 bytes / character | UTF-16 encoding           |
 
 ---
+
+# 4. Why Do We Need BigInt?
+
+JavaScript `Number` type has **limitations** when dealing with very large integers.
+
+---
+
+## 1️⃣ Safe Integer Range in JavaScript
+
+```js
+console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991
+```
+
+👉 Any integer **beyond this range cannot be trusted** when using `Number`.
+
+---
+
+## 2️⃣ Other Important Number Limits (Floating-Point)
+
+```js
+console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
+console.log(Number.MIN_VALUE); // 5e-324
+```
+
+- `MAX_VALUE` → Largest possible number JavaScript can represent
+- `MIN_VALUE` → Smallest positive number JavaScript can represent
+
+⚠️ These are **floating‑point limits**, not safe integers.
+
+---
+
+## 3️⃣ What is BigInt?
+
+> **BigInt is a data type that allows working with integers larger than `Number.MAX_SAFE_INTEGER` with exact precision.**
+
+---
+
+## 4️⃣ How to Create a BigInt
+
+```js
+let val = 5n; // `n` at the end makes it BigInt
+console.log(val);
+```
+
+👉 Always add **`n` at the end** of the integer.
+
+---
+
+## 5️⃣ Important Rules of BigInt
+
+### ✅ Rule 1: Only Integers Allowed
+
+```js
+10n   // ✅ valid
+10.5n // ❌ invalid (BigInt does not support decimals)
+```
+
+---
+
+### ✅ Rule 2: BigInt Operations Must Use BigInt Only
+
+```js
+console.log(10n + 10n); // ✅ Works
+```
+
+```js
+console.log(10 + 10n); // ❌ TypeError
+```
+
+👉 **Number and BigInt cannot be mixed** in arithmetic operations.
+
+---
+
+## 6️⃣ Working with Very Large Numbers
+
+### ✅ Using BigInt (Correct Result)
+
+```js
+let n1 = 1111111111111111111111n;
+let n2 = 2222222222222222222222n;
+
+console.log(n1 + n2); // 3333333333333333333333n
+```
+
+✔️ Exact and accurate result.
+
+---
+
+### ❌ Using Number (Unsafe Result)
+
+```js
+let p1 = 1111111111111111111111;
+let p2 = 2222222222222222222222;
+
+console.log(p1 + p2); // 3.333333333333333e+21
+```
+
+❌ Precision is lost and result is unreliable.
+
+---
+
+## 7️⃣ BigInt vs Number (Comparison)
+
+| Feature                  | Number  | BigInt    |
+| ------------------------ | ------- | --------- |
+| Max safe integer         | Limited | Unlimited |
+| Decimal support          | ✅ Yes  | ❌ No     |
+| Precision for large ints | ❌ Lost | ✅ Exact  |
+| `n` suffix required      | ❌ No   | ✅ Yes    |
+| Mixing allowed           | ✅ Yes  | ❌ No     |
+
+---
+
+## 8️⃣ When Should You Use BigInt?
+
+✅ Use BigInt when:
+
+- Working with **very large integers**
+- Financial systems (IDs, counters)
+- Cryptography
+- Database‑generated large IDs
+
+❌ Do NOT use BigInt when:
+
+- Decimal values are required
+- Numbers are small and performance is critical
+
+---
+
+## 🧠 Memory Hook
+
+> **Large integer + accuracy needed → BigInt**  
+> **Decimal or normal range → Number**
+
+---
+
+## 🎯 Interview One‑Liner
+
+> **BigInt is a JavaScript data type used to represent integers larger than `Number.MAX_SAFE_INTEGER` and requires an `n` suffix.**
