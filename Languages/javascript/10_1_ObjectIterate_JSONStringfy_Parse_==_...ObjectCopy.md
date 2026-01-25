@@ -282,8 +282,6 @@ Still prints `[object Object]` for nested data
 
 ### `for..of` with `Object.entries()` + `JSON.stringify()`
 
-Objects cannot be printed directly in string concatenation.
-
 ---
 
 ## ✅ Correct Way (Nested Object Handling)
