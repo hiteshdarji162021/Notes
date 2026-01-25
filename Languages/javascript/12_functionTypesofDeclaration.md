@@ -1,5 +1,3 @@
-# JavaScript Functions – Default Params, Function Expressions, Arrow Functions, IIFE & Array Callbacks
-
 # What covered in notes
 
 - Default Params
