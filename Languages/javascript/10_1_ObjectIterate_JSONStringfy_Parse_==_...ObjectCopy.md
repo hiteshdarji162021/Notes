@@ -61,7 +61,28 @@ model => x1
 
 ---
 
-### `for..of`
+### `for..of` Only
+
+```js
+let car1 = {
+  name: "bmw",
+  price: 40,
+  model: "x1",
+};
+for (let cr of car1) {
+  console.log(cr);
+}
+```
+
+### Output
+
+```
+TypeError: car1 is not iterable
+```
+
+---
+
+### `for..of` + Object.entries
 
 ```js
 let car = {
@@ -237,8 +258,6 @@ for (let key in user) {
 name -> hitesh
 address -> [object Object]
 ```
-
-👉 This is **expected behavior**, not a bug
 
 ---
 

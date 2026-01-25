@@ -3,6 +3,6 @@ let car1 = {
   price: 40,
   model: "x1",
 };
-for (let [key, value] of Object.entries(car1)) {
-  console.log(key + " -> " + value);
+for (let cr of car1) {
+  console.log(cr);
 }
