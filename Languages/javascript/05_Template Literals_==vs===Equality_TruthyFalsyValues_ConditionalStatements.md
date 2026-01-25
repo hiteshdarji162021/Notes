@@ -271,6 +271,71 @@ if (isElementDisplayed) {
 
 ---
 
+## 5. Ternary Operator (`? :`)
+
+### Syntax
+
+```js
+condition ? expression1 : expression2;
+```
+
+---
+
+### Example 1: Find max value (if–else)
+
+```js
+let a = 10;
+let b = 5;
+let max;
+
+if (a > b) {
+  max = a;
+} else {
+  max = b;
+}
+
+console.log(`Max value is: ${max}`);
+```
+
+---
+
+### Example 2: Same logic using ternary operator
+
+```js
+let maxTernary = a > b ? a : b;
+console.log(`Max value using ternary operator is: ${maxTernary}`);
+```
+
+---
+
+### Example 3: Real-time login example
+
+```js
+let isloggedin = true;
+
+isloggedin ? showDashboard() : showLoginPage();
+
+function showDashboard() {
+  console.log("User is logged in, showing dashboard");
+}
+
+function showLoginPage() {
+  console.log("User is not logged in, showing login page");
+}
+```
+
+## usecase for ternary operator
+
+- To write short, readable conditional logic for simple pass/fail or value selection.
+
+🔹 When NOT to Use Ternary (Important)
+
+❌ Complex conditions
+❌ Multiple nested ternary
+❌ Long logic
+
+## 👉 Use if-else instead.
+
 ## 🧠 Final Key Takeaways
 
 - Expressions are evaluated **left to right**
@@ -278,5 +343,7 @@ if (isElementDisplayed) {
 - Use `===` always
 - Understand truthy/falsy clearly
 - JavaScript does **type coercion** automatically
+- Use **ternary operator** only for **simple conditions**
+- Avoid complex logic inside ternary operator
 
 ---

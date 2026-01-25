@@ -1,6 +1,11 @@
-# JavaScript Loops & Ternary Operator – Detailed Notes
+# What covered in notes
 
-These notes explain **while**, **for**, **do-while loops**, and the **ternary operator** with **clear examples, comments, use cases, and comparison tables** to help students understand _when and why_ to use each construct.
+- for loop
+- while loop
+- do while loop
+
+## Why we learn loop and ternary operator?
+- To repeat actions like test execution, data iteration, and retries without writing duplicate code.
 
 ---
 
@@ -234,60 +239,7 @@ do {
 
 ---
 
-## 4️⃣ Ternary Operator (`? :`)
 
-### Syntax
-
-```js
-condition ? expression1 : expression2;
-```
-
----
-
-### Example 1: Find max value (if–else)
-
-```js
-let a = 10;
-let b = 5;
-let max;
-
-if (a > b) {
-  max = a;
-} else {
-  max = b;
-}
-
-console.log(`Max value is: ${max}`);
-```
-
----
-
-### Example 2: Same logic using ternary operator
-
-```js
-let maxTernary = a > b ? a : b;
-console.log(`Max value using ternary operator is: ${maxTernary}`);
-```
-
----
-
-### Example 3: Real-time login example
-
-```js
-let isloggedin = true;
-
-isloggedin ? showDashboard() : showLoginPage();
-
-function showDashboard() {
-  console.log("User is logged in, showing dashboard");
-}
-
-function showLoginPage() {
-  console.log("User is not logged in, showing login page");
-}
-```
-
----
 
 ## 🆚 Comparison Table (Very Important)
 
@@ -307,8 +259,6 @@ function showLoginPage() {
 - Use **`for` loop** when count is known
 - Use **`while` loop** for dynamic conditions
 - Use **`do-while`** when at least one execution is required
-- Use **ternary operator** only for **simple conditions**
-- Avoid complex logic inside ternary operator
 
 ---
 
@@ -317,8 +267,4 @@ function showLoginPage() {
 - `while` → unknown iterations
 - `for` → fixed iterations
 - `do-while` → must run once
-- ternary → shorthand for simple if–else
-
 ---
-
-✅ **End of Notes**
