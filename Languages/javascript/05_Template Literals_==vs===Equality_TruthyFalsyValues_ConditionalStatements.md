@@ -4,8 +4,8 @@
 
 - Template Literals
 - Equality (== and ===)
-- Conditions
 - Truthy & Falsy Values
+- Conditions
 
 ## Why we learn Template Literals,Equality, Conditions
 

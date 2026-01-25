@@ -4,11 +4,11 @@
 - Non-Primitive
 - Size of datatypes
 
-## 1. Why Are We Learning Primitive and Non-Primitive data type?
+## Why Are We Learning Primitive and Non-Primitive data type?
 
 - To understand how JavaScript stores and handles data in memory.
 
-## 2. Primitive Data Types (Immutable)
+## 1. Primitive Data Types (Immutable)
 
 > **Primitive data types store a single value and are immutable**  
 > Immutable means **value cannot be changed in place, only replaced**.
@@ -66,7 +66,7 @@ console.log(name2); // Rahul
 
 ---
 
-## 3. Non-Primitive Data Types (Mutable)
+## 2. Non-Primitive Data Types (Mutable)
 
 > **Non-primitive data types store reference (memory address) and are mutable**  
 > Mutable means **value can be changed without creating new object**.
@@ -152,7 +152,7 @@ Objects    → Heap  → Mutable
 
 ---
 
-## 4. Size of Primitive Data Types (Approximate)
+## 3. Size of Primitive Data Types (Approximate)
 
 > ⚠️ JavaScript does NOT define fixed sizes.  
 > Sizes depend on the JavaScript engine (Chrome/Edge = V8, Firefox = SpiderMonkey). that way size is not important in javascript.

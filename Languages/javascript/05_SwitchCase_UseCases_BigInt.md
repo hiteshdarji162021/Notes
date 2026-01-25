@@ -1,12 +1,45 @@
-# JavaScript – if–else vs switch case (Use Cases & Best Practices)
+# What covered in notes
 
-This document explains **when to use `if–else` and when to use `switch case`**, with **real-world use cases**, **code examples**, and **practical thoughts** for students and working professionals.
+- switch case
+- if–else vs switch case
+- BigInt
 
----
+## Why Are We Learning switch case, diff between if-else and switch case, Bigint?
+
+- switch case - To handle multiple fixed conditions in a clean and readable way.
+- diff between switch case and ifelse - ifelse is best for complex conditions, while switch case is best for matching one value against many options.
+- BigInt - To safely work with very large numbers that exceed JavaScript’s normal number limit.
 
 ## 1. 🔹 Common Use Cases for `switch case`
 
 `switch case` is best when we compare **one variable against multiple fixed values**.
+
+```js
+let browser1 = "safari";
+
+switch (browser1.toLowerCase()) {
+  case "chrome":
+    console.log("You are using Chrome");
+    break;
+  case "firefox":
+    console.log("You are using Firefox");
+    break;
+  case "safari":
+    console.log("You are using Safari");
+    break;
+  default:
+    console.log("Unknown Browser");
+}
+```
+
+### Why `switch case` is better here
+
+- Clean and readable
+- Easy to extend
+- Clear intent
+- Best for fixed options
+
+---
 
 ### Typical Use Cases
 
@@ -65,35 +98,6 @@ if (browser === "chrome") {
 - Each condition is checked **one by one**
 - Code becomes lengthy
 - Less readable when values increase
-
----
-
-## ✅ Best Practice: Use `switch case` for Fixed Values
-
-```js
-let browser1 = "safari";
-
-switch (browser1.toLowerCase()) {
-  case "chrome":
-    console.log("You are using Chrome");
-    break;
-  case "firefox":
-    console.log("You are using Firefox");
-    break;
-  case "safari":
-    console.log("You are using Safari");
-    break;
-  default:
-    console.log("Unknown Browser");
-}
-```
-
-### Why `switch case` is better here
-
-- Clean and readable
-- Easy to extend
-- Clear intent
-- Best for fixed options
 
 ---
 
@@ -207,22 +211,24 @@ console.log("Grade:", grade1);
 
 ---
 
-## 3. Why Do We Need BigInt?
+# 3. Why Do We Need BigInt?
 
 JavaScript `Number` type has **limitations** when dealing with very large integers.
 
-### Safe Integer Range in JavaScript
+---
+
+## 1️⃣ Safe Integer Range in JavaScript
 
 ```js
 console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
 console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991
 ```
 
-👉 Any integer **beyond this range cannot be trusted** using `Number`.
+👉 Any integer **beyond this range cannot be trusted** when using `Number`.
 
 ---
 
-## 2️⃣ Other Important Number Limits
+## 2️⃣ Other Important Number Limits (Floating-Point)
 
 ```js
 console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
@@ -232,32 +238,34 @@ console.log(Number.MIN_VALUE); // 5e-324
 - `MAX_VALUE` → Largest possible number JavaScript can represent
 - `MIN_VALUE` → Smallest positive number JavaScript can represent
 
-⚠️ These are **not safe integers**, they are floating-point limits.
+⚠️ These are **floating‑point limits**, not safe integers.
 
 ---
 
 ## 3️⃣ What is BigInt?
 
-> **BigInt is a data type that allows us to work with integers larger than `Number.MAX_SAFE_INTEGER`.**
+> **BigInt is a data type that allows working with integers larger than `Number.MAX_SAFE_INTEGER` with exact precision.**
 
-### How to Create a BigInt
+---
+
+## 4️⃣ How to Create a BigInt
 
 ```js
 let val = 5n; // `n` at the end makes it BigInt
 console.log(val);
 ```
 
-👉 Always add **`n` at the end** of the number.
+👉 Always add **`n` at the end** of the integer.
 
 ---
 
-## 4️⃣ Important Rules of BigInt
+## 5️⃣ Important Rules of BigInt
 
 ### ✅ Rule 1: Only Integers Allowed
 
 ```js
-10n      // ✅ valid
-10.5n    // ❌ invalid (BigInt does not support decimals)
+10n   // ✅ valid
+10.5n // ❌ invalid (BigInt does not support decimals)
 ```
 
 ---
@@ -272,13 +280,13 @@ console.log(10n + 10n); // ✅ Works
 console.log(10 + 10n); // ❌ TypeError
 ```
 
-👉 **You cannot mix `Number` and `BigInt` in arithmetic operations**.
+👉 **Number and BigInt cannot be mixed** in arithmetic operations.
 
 ---
 
-## 5️⃣ Working with Very Large Numbers
+## 6️⃣ Working with Very Large Numbers
 
-### Using BigInt (Correct Result)
+### ✅ Using BigInt (Correct Result)
 
 ```js
 let n1 = 1111111111111111111111n;
@@ -287,11 +295,11 @@ let n2 = 2222222222222222222222n;
 console.log(n1 + n2); // 3333333333333333333333n
 ```
 
-✔️ Accurate result
+✔️ Exact and accurate result.
 
 ---
 
-### Using Number (Incorrect / Unsafe Result)
+### ❌ Using Number (Unsafe Result)
 
 ```js
 let p1 = 1111111111111111111111;
@@ -300,49 +308,47 @@ let p2 = 2222222222222222222222;
 console.log(p1 + p2); // 3.333333333333333e+21
 ```
 
-❌ Result is shown in scientific notation and **precision is lost**.
+❌ Precision is lost and result is unreliable.
 
 ---
 
-## 6️⃣ BigInt vs Number (Comparison Table)
+## 7️⃣ BigInt vs Number (Comparison)
 
-| Feature             | Number                 | BigInt    |
-| ------------------- | ---------------------- | --------- |
-| Max safe integer    | Limited                | Unlimited |
-| Decimal support     | ✅ Yes                 | ❌ No     |
-| Precision           | ❌ Lost for large ints | ✅ Exact  |
-| `n` suffix required | ❌ No                  | ✅ Yes    |
-| Mixing allowed      | ✅ Yes                 | ❌ No     |
+| Feature                  | Number  | BigInt    |
+| ------------------------ | ------- | --------- |
+| Max safe integer         | Limited | Unlimited |
+| Decimal support          | ✅ Yes  | ❌ No     |
+| Precision for large ints | ❌ Lost | ✅ Exact  |
+| `n` suffix required      | ❌ No   | ✅ Yes    |
+| Mixing allowed           | ✅ Yes  | ❌ No     |
 
 ---
 
-## 7️⃣ When Should You Use BigInt?
+## 8️⃣ When Should You Use BigInt?
 
 ✅ Use BigInt when:
 
 - Working with **very large integers**
 - Financial systems (IDs, counters)
 - Cryptography
-- Database-generated large IDs
+- Database‑generated large IDs
 
 ❌ Do NOT use BigInt when:
 
-- You need decimal values
-- Performance is critical and numbers are small
+- Decimal values are required
+- Numbers are small and performance is critical
 
 ---
 
-## 🧠 Memory Hook (For Students)
+## 🧠 Memory Hook
 
 > **Large integer + accuracy needed → BigInt**  
 > **Decimal or normal range → Number**
 
 ---
 
-## 🎯 Interview One-Liner
+## 🎯 Interview One‑Liner
 
-> BigInt is a JavaScript data type used to represent integers larger than `Number.MAX_SAFE_INTEGER` and requires `n` at the end of the value.
+> **BigInt is a JavaScript data type used to represent integers larger than `Number.MAX_SAFE_INTEGER` and requires an `n` suffix.**
 
 ---
-
-✅ **End of Notes**
