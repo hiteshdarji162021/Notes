@@ -1,6 +1,11 @@
 # What covered in notes
 
 - `export` & `import`
+- Single export
+- Multiple Export at Once
+- Default Export
+- Importing Modules (Named + Default + Alias)
+- Import Everything Using `* as`
 - Private Variables & Methods (`#`)
 - Static Variables & Static Methods
 
@@ -339,5 +344,3 @@ write data in excel
 > Modules organize code, private fields protect data, and static members share behavior across objects — together they form clean, scalable JavaScript architecture.
 
 ---
-
-✅ This document is **student-ready**, **interview-ready**, and **future-proof**.

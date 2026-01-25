@@ -1,15 +1,20 @@
 # JavaScript Import–Export, Inheritance & Overriding
 
-> **Goal of this document**: After reading this once, a student should clearly understand
->
-> - how `import` / `export` works for classes
-> - inheritance (IS-A relationship)
-> - method overriding vs variable hiding vs static method behavior
-> - real-time use cases
+# What covered in notes
+
+- Import and export class
+- Inheritance (IS-A Relationship)
+- function Overriding vs Variable vs Static
+
+## Why we learn?
+
+- Import and export class - for inheritance
+- Inheritance - reuse class and method.
+- function Overriding- use same function parent and child
 
 ---
 
-## 1️⃣ Basic Theory (Very Simple Language)
+## 1. Basic Theory (Very Simple Language)
 
 ### What is `export` / `import`?
 
@@ -20,7 +25,7 @@ Each JS file is its **own scope**.
 
 ---
 
-## 2️⃣ Exporting Variables & Classes
+## 2. Exporting Variables & Classes
 
 ### Code (Export File: `19.exportclass.js`)
 
@@ -80,7 +85,7 @@ static → non-static   : object reference
 
 ---
 
-## 3️⃣ Importing Class & Variable
+## 3. Importing Class & Variable
 
 ### Code (Import File)
 
@@ -120,7 +125,7 @@ read data
 
 ---
 
-## 4️⃣ Inheritance (IS-A Relationship)
+## 4. Inheritance (IS-A Relationship)
 
 > **Inheritance = one class gets properties & methods of another class**
 
@@ -198,7 +203,7 @@ export { Car, BMW };
 
 ---
 
-## 5️⃣ Using Inheritance & Overriding
+## 5. Using Inheritance & Overriding
 
 ### Code
 
@@ -230,7 +235,7 @@ car loading
 
 ---
 
-## 6️⃣ Runtime Polymorphism (Very Important)
+## 6. Runtime Polymorphism (Very Important)
 
 ```js
 let b1 = new BMW();
@@ -262,7 +267,7 @@ BMW auto park feature
 
 ---
 
-## 7️⃣ Overriding vs Variable vs Static (VERY IMPORTANT)
+## 7. Overriding vs Variable vs Static (VERY IMPORTANT)
 
 ### Variable (NOT overridden – only hidden)
 
@@ -286,7 +291,7 @@ Car.billing();
 
 ---
 
-## 8️⃣ Student Notes (Take Seriously)
+## 8. Student Notes (Take Seriously)
 
 ```txt
 1. Override happens ONLY for methods
@@ -299,7 +304,7 @@ Car.billing();
 
 ---
 
-## 9️⃣ Comparison Table
+## 9. Comparison Table
 
 | Feature                | Java | JavaScript |
 | ---------------------- | ---- | ---------- |
@@ -311,7 +316,7 @@ Car.billing();
 
 ---
 
-## 🔟 Real-Time Use Cases
+## 10. Real-Time Use Cases
 
 ### Automation Framework
 
@@ -326,7 +331,7 @@ Car.billing();
 
 ---
 
-## 1️⃣1️⃣ Best Practices
+## 11. Best Practices
 
 ✔ Use inheritance only when IS-A relationship exists
 ✔ Prefer method overriding over variable hiding
