@@ -10,7 +10,11 @@
 
 ## 1. `console.log()` vs `process.stdout.write()`
 
-### 🔹 `console.log()`
+Both are used to print output, but they behave differently and are useful in different automation scenarios.
+
+---
+
+## 🔹 `console.log()`
 
 ```js
 console.log("hitesh");
@@ -27,11 +31,12 @@ darji
 **Explanation**
 
 - Automatically adds a new line
+- Accepts any data type (number, object, array, etc.)
 - Best for debugging and learning
 
 ---
 
-### 🔹 `process.stdout.write()` (No New Line)
+## 🔹 `process.stdout.write()` (No New Line)
 
 ```js
 process.stdout.write("gabbar");
@@ -47,12 +52,13 @@ gabbarisback
 
 **Explanation**
 
-- No automatic new line
+- Does NOT add a new line automatically
 - Accepts only strings
+- Gives fine control over output
 
 ---
 
-### Creating New Line Manually
+## 🔹 Creating New Line Manually
 
 ```js
 process.stdout.write("gabbar \n");
@@ -70,7 +76,7 @@ back
 
 ---
 
-### Number to String Conversion
+## 🔹 Number to String Conversion (Required for `process.stdout.write`)
 
 ```js
 process.stdout.write(10 + "");
@@ -87,7 +93,46 @@ process.stdout.write("10");
 
 ---
 
-## ✅ Preferred Way (Recommended)
+## 🔍 Comparison Table
+
+| Feature             | `console.log()` | `process.stdout.write()` |
+| ------------------- | --------------- | ------------------------ |
+| New line            | Auto            | Manual (`\n`)            |
+| Accepts non-strings | ✅ Yes          | ❌ No                    |
+| Debugging           | ⭐ Best         | ❌ Not ideal             |
+| Output control      | Limited         | Full                     |
+| Use in scripts      | Common          | Advanced                 |
+
+---
+
+## 🎯 Automation / QA Use Cases
+
+### `console.log()`
+
+- Debugging test failures
+- Printing API responses
+- Logging objects and arrays
+- Learning and quick checks
+
+### `process.stdout.write()`
+
+- Progress indicators (loading dots, counters)
+- Clean CLI tools
+- Custom test runners
+- Controlled reporting output
+
+---
+
+## 🏆 Final Recommendation
+
+> **Use `console.log()` for debugging and learning.**  
+> **Use `process.stdout.write()` when you need precise control over console output (CLI tools, progress logs).**
+
+---
+
+## 2. ways of writting file path
+
+- Preferred Way (Recommended)
 
 ```js
 let path1 = "c:/users/documents/file.txt";
