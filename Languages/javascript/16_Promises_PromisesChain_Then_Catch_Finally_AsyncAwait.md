@@ -1,8 +1,10 @@
 # What covered in notes
 
 - promises
+- Promise status - resolve, reject and pending
+- Promise.all(), Promise.race(), Promise.any(),Promise.allSettle()
 
-## Why we learn function?
+## Why we learn Promises?
 
 - Promises- A **Promise** in JavaScript represents a value that is **not available now**, but **will be available in the future**.
 
