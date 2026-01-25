@@ -1,9 +1,7 @@
-import { TestUtil, age } from "./19.exportclass.js";
+let user1 = { name: "Hitesh" };
+let user2 = user1;
 
-let tu = new TestUtil();
+user2.name = "Rahul";
 
-tu.readData();
-tu.writeData();
-//tu.#connectDB(); //private method can not access outside the class
-console.log(age);
-TestUtil.print(tu); //Call by object refrence
+console.log(user1.name); // Rahul
+console.log(user2.name); // Rahul

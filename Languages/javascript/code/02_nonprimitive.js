@@ -12,3 +12,12 @@ let userMap = new Map(); // Map
 console.log("map type of", typeof userMap); //Object
 let uniqueSet = new Set([1, 2, 3]);
 console.log("set type of ", typeof uniqueSet); //Object
+
+
+let user1 = { name: "Hitesh" };
+let user2 = user1;
+
+user2.name = "Rahul";
+
+console.log(user1.name); // Rahul
+console.log(user2.name); // Rahul

@@ -1,7 +1,8 @@
 # What covered in notes
-# `var` 
-# `let` 
-# `const`
+
+- `var`
+- `let`
+- `const`
 
 ---
 
@@ -90,20 +91,21 @@ Explanation:
 let a = 10;
 
 function test() {
-  let a = 20; 
-  console.log(a); 
+  let a = 20;
+  console.log(a);
 
   if (true) {
-    let a = 30; 
-    console.log(a); 
+    let a = 30;
+    console.log(a);
   }
 
   console.log(a); //20
 }
 
 test();
-console.log(a); 
+console.log(a);
 ```
+
 **Output:**
 
 ```
@@ -148,20 +150,19 @@ Explanation:
 const a = 10;
 
 function test() {
-  const a = 20; 
-  console.log(a); 
+  const a = 20;
+  console.log(a);
 
   if (true) {
-    const a = 30; 
-    console.log(a); 
+    const a = 30;
+    console.log(a);
   }
 
   console.log(a); // 20 -its because of block scope
 }
 
 test();
-console.log(a); 
-
+console.log(a);
 ```
 
 **Output:**
