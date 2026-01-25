@@ -1,9 +1,16 @@
 # JavaScript Memory Model – Stack vs Heap vs Garbage Collection
 
-> **Goal**: Understand **where data is stored**, **how memory is allocated**, and **how garbage collection works** using simple language and clear examples.
-> This is one of the **most misunderstood but most important concepts** in JavaScript.
+# What covered in notes
 
----
+- Stack memory
+- Heap memory
+- Garbage Collection
+
+## Why we learn?
+
+- Stack memory - To understand how primitive values, function calls, and execution flow are handled efficiently.
+- Heap memory - To understand how objects, arrays, and shared data are stored and referenced in real applications.
+- Garbage Collection - To avoid memory leaks and performance issues by knowing when and how unused objects are cleaned up.
 
 ## 1 What is Stack Memory?
 
@@ -795,5 +802,3 @@ let y = x;
 ```
 
 ---
-
-
