@@ -25,32 +25,38 @@ for (let i = 0; i < fruits1.length; i++) {
     break;
   }
 }
+```
 
 **Output**
 
 ```
-
 Using index for loop:
 Apple
 Banana
 Orange
+
+```
 
 ---
 
 #### Example: Reverse order
 
 ```js
-for (let i = users.length - 1; i >= 0; i--) {
-  console.log(users[i]);
+console.log("Using index for loop:");
+let fruits1 = ["Apple", "Banana", "Orange", "Mango", "Grapes"];
+for (let i = fruits1.length - 1; i >= 0; i--) {
+  console.log(fruits1[i]);
 }
 ```
 
 **Output**
 
 ```
-Tester
-Manager
-Admin
+Grapes
+Mango
+Orange
+Banana
+Apple
 ```
 
 ---
