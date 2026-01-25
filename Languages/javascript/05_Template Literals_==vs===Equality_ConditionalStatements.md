@@ -121,6 +121,12 @@ console.log(typeof undefined); // undefined
 | {}           |
 | function(){} |
 
+**Only 8 values are falsy in JavaScript:**
+
+> `false`, `0`, `-0`, `0n`, `""`, `null`, `undefined`, `NaN`
+
+👉 **Everything else is truthy** and will execute inside an `if` condition.
+
 ### ❌ Falsy Values – Execution Check
 
 ### JavaScript Code
@@ -211,15 +217,6 @@ true → EXECUTED
 {} → EXECUTED
 function(){} → EXECUTED
 ```
-
----
-
-### 📌 Final Rule (Very Important)
-
-> **Only 8 values are falsy in JavaScript:**  
-> `false`, `0`, `-0`, `0n`, `""`, `null`, `undefined`, `NaN`
-
-👉 **Everything else is truthy** and will execute inside an `if` condition.
 
 ---
 
