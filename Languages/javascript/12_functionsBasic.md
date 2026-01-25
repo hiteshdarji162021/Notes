@@ -1,5 +1,3 @@
-# JavaScript Functions – Types, Hoisting, Parameters, Return & Overloading Patterns
-
 # What covered in notes
 
 - function

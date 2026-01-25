@@ -1,7 +1,18 @@
 # JavaScript Functions – Default Params, Function Expressions, Arrow Functions, IIFE & Array Callbacks
 
-> **Goal**: Understand modern JavaScript function patterns using  
-> **Concept → Code → Output → Real Use Case**, aligned with **industry standards** for students and professionals.
+# What covered in notes
+
+- Default Params
+- Function Expressions
+- Arrow Functions
+- IIFE function
+
+## Why we learn function?
+
+- Default Params - To handle missing arguments safely and reduce extra condition checks in functions.
+- Function Expressions - To assign functions to variables and pass them as values for flexible, modular code.
+- Arrow Functions - To write shorter, cleaner functions and avoid common this-binding issues.
+- IIFE function - To execute code immediately and avoid polluting the global scope.
 
 ---
 
@@ -74,7 +85,7 @@ sum(5, 4);
 function openBrowser(browserName = "chrome") {
   switch (browserName.trim().toLowerCase()) {
     case "chrome":
-      console.log("chrome browser", browserName);
+      console.log("chrome browser:->", browserName);
       break;
     default:
       console.log("incorrect browser so by default go with chrome browser");
@@ -82,12 +93,14 @@ function openBrowser(browserName = "chrome") {
 }
 
 openBrowser("test");
+openBrowser();
 ```
 
 ### Output
 
 ```
 incorrect browser so by default go with chrome browser
+chrome browser:->chrome
 ```
 
 ### Environment Example
@@ -275,7 +288,6 @@ SUBODH
 
 ---
 
-
 ## 🔥 Comparison Table (SAVE THIS)
 
 | Feature          | Function Declaration | Function Expression | Arrow Function | IIFE |
@@ -300,5 +312,3 @@ SUBODH
 ❌ Avoid overloading hacks
 
 ---
-
-📌 **This document is suitable for GitHub, interviews, automation frameworks, and long-term reference.**
