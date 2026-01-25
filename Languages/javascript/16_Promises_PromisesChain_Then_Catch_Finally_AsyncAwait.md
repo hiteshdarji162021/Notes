@@ -361,13 +361,9 @@ Promise.allSettled([p1, p2, p3]).then((results) => console.log(results));
 ]
 ```
 
-# Promise.any() –
+## Promise.any() –
 
 `Promise.any()` is a **powerful but often ignored** Promise method. It is extremely useful in **real automation scenarios** where **any one success is enough**.
-
----
-
-## 11. What is `Promise.any()`?
 
 > **`Promise.any()` resolves as soon as ANY one promise resolves.**  
 > It ignores rejected promises **unless ALL promises fail**.
@@ -510,7 +506,7 @@ results.forEach((res, index) => {
 | `Promise.all`        | ✅ Yes           | ❌ No         | All steps must pass    |
 | `Promise.race`       | ❌               | ❌            | First event wins       |
 | `Promise.allSettled` | ❌               | ✅ Yes        | Reporting & monitoring |
-| `Promise.any`        | First success    | ✅ Yes        | Fallback logic         |
+| `Promise.any`        | ❌               | ❌            | Fallback logic         |
 
 ---
 
