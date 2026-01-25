@@ -5,7 +5,7 @@
 - ASCII values
 - increment/decrement operators
 
-🔹 Why learn String Concatenation, Operators(+ - \* /) , ASCII, Increment / Decrement Operators
+## Why learn String Concatenation, Operators(+ - \* /) , ASCII, Increment / Decrement Operators
 
 - String Concatenation- To create dynamic messages, logs, and readable test assertions.
 - Operators - To perform basic calculations correctly in test logic and validations.
