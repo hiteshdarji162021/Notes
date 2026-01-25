@@ -1,17 +1,34 @@
-# JavaScript – Increment/Decrement, Template Literals, Equality & Conditions
+# JavaScript – Template Literals, Equality, Conditions
 
-These notes explain **increment/decrement operators, template literals, == vs ===, truthy/falsy values, type coercion, and if–else conditions** with **step-by-step explanations** so students clearly understand _why_ each output happens.
+# What covered in notes
+
+- Template Literals
+- Equality (== and ===)
+- Conditions
+- Truthy & Falsy Values
+
+## Why we learn Template Literals,Equality, Conditions
+
+- Template Literals- To build clean, readable dynamic strings for logs, errors, and assertions.
+- Equality (== and ===)- To avoid false test results by comparing values and types correctly.
+- Conditions(ifelse)- To control test flow based on application behavior and validations.
+- Truthy & Falsy Values- To prevent unexpected condition failures in automation scripts.
 
 ---
 
-
-
-## 2️⃣ Template Literals (Backticks ``)
+## 1. Template Literals (Backticks ``)
 
 ```js
 let msg = `Hello Hitesh Darji
 welcome to Playwright training`;
 console.log(msg);
+```
+
+**Output**
+
+```
+Hello Hitesh Darji
+            welcome to Playwright training
 ```
 
 ### Why Template Literals?
@@ -24,6 +41,12 @@ console.log(msg);
 let empname = "Hitesh Darji";
 let age = 33;
 console.log(`hey ${empname} and your age is ${age}`);
+```
+
+**Output**
+
+```
+hey Hitesh Darji and your age is 33
 ```
 
 ---
@@ -40,7 +63,7 @@ let m3 = `it's my code`;
 
 ---
 
-## 4️⃣ == vs === (VERY IMPORTANT)
+## 2. == vs === (VERY IMPORTANT)
 
 ```js
 console.log(true == 1); // true
@@ -71,7 +94,7 @@ console.log(typeof undefined); // undefined
 
 ---
 
-## 5️⃣ Truthy & Falsy Values (IMPORTANT TABLE)
+## 3. Truthy & Falsy Values (IMPORTANT TABLE)
 
 ### ❌ Falsy Values
 
@@ -206,26 +229,7 @@ function(){} → EXECUTED
 
 ---
 
-## 6️⃣ Boolean Arithmetic & Type Coercion
-
-```js
-console.log(true + false); // 1
-console.log(true + true); // 2
-console.log(false + false); // 0
-
-console.log(1 + true); // 2
-console.log("1" + false); // 1false
-
-console.log(1 - true); // 0
-console.log("1" - false); // 1
-
-console.log("true" + true); // truetrue
-console.log("true" - true); // NaN
-```
-
----
-
-## 7️⃣ if–else Conditions
+## 4. if–else Conditions
 
 ```js
 let a = 30;
@@ -279,5 +283,3 @@ if (isElementDisplayed) {
 - JavaScript does **type coercion** automatically
 
 ---
-
-✅ **End of Notes**

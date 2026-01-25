@@ -16,7 +16,7 @@ console.log("" == 0); //true
 console.log("" === 0); //false
 
 console.log([] == 0); //true
-console.log([] === 0); //false
+//console.log([] === 0); //false
 
 //special case -interview question
 console.log(null == undefined); //true

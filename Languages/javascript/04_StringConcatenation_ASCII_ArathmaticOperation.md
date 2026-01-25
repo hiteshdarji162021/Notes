@@ -155,7 +155,7 @@ console.log("5" % "Hello"); // NaN
 
 ---
 
-## 7. Unary Operators
+## Unary Operators
 
 ### Unary Plus (`+`)
 
