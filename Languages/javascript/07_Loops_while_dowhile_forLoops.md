@@ -4,7 +4,7 @@
 - while loop
 - do while loop
 
-## Why we learn loop and ternary operator?
+## Why we learn loops?
 - To repeat actions like test execution, data iteration, and retries without writing duplicate code.
 
 ---
