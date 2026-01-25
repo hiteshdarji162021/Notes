@@ -17,20 +17,25 @@
 #### Example: Print item with index
 
 ```js
-let users = ["Admin", "Manager", "Tester"];
-
-for (let i = 0; i < users.length; i++) {
-  console.log(i + " => " + users[i]);
+console.log("Using index for loop:");
+let fruits1 = ["Apple", "Banana", "Orange", "Mango", "Grapes"];
+for (let i = 0; i < fruits1.length; i++) {
+  console.log(fruits1[i]);
+  if (fruits1[i] === "Orange") {
+    break;
+  }
 }
-```
 
 **Output**
 
 ```
-0 => Admin
-1 => Manager
-2 => Tester
-```
+
+Using index for loop:
+Apple
+Banana
+Orange
+
+---
 
 #### Example: Reverse order
 
@@ -61,34 +66,45 @@ Admin
 #### Example: Process values
 
 ```js
-let prices = [100, 200, 300];
-
-for (let price of prices) {
-  console.log(price * 2);
+console.log("Using for..of loop:");
+let fruits2 = ["Apple", "Banana", "Orange", "Mango", "Grapes"];
+for (let fruit of fruits2) {
+  console.log(fruit);
+  if (fruit === "Orange") {
+    break;
+  }
 }
 ```
 
 **Output**
 
 ```
-200
-400
-600
+Using for..of loop:
+Apple
+Banana
+Orange
 ```
 
-#### Example: Stop when condition met
+#### Example: Reverse order
 
 ```js
-for (let price of prices) {
-  if (price === 200) break;
-  console.log(price);
+console.log("Using for..of loop:");
+let fruits2 = ["Apple", "Banana", "Orange", "Mango", "Grapes"];
+for (let fruit of fruits2.reverse()) {
+  //reverse order
+  console.log(fruit);
 }
 ```
 
 **Output**
 
 ```
-100
+Using for..of loop:
+Grapes
+Mango
+Orange
+Banana
+Apple
 ```
 
 ---
@@ -104,35 +120,61 @@ for (let price of prices) {
 #### Example: Print formatted output
 
 ```js
-let files = ["a.txt", "b.txt", "c.txt"];
-
-files.forEach((file, index) => {
-  console.log(index + 1 + ": " + file);
+let fruits3 = ["Apple", "Banana", "Orange", "Mango", "Grapes"];
+console.log("Using forEach() method:");
+fruits3.forEach(function (fruit) {
+  console.log(fruit);
 });
 ```
 
 **Output**
 
 ```
-1: a.txt
-2: b.txt
-3: c.txt
+Using forEach() method:
+Apple
+Banana
+Orange
+Mango
+Grapes
+```
+
+```js
+//4. forEach() with arrow function
+let fruits31 = ["Apple", "Banana", "Orange", "Mango", "Grapes"];
+console.log("Using forEach() with arrow function:");
+fruits31.forEach((fruit) => console.log(fruit));
+```
+
+**Output**
+
+```
+Using forEach() with arrow function:
+Apple
+Banana
+Orange
+Mango
+Grapes
+
 ```
 
 #### ❌ Limitation Example (Cannot break)
 
 ```js
-files.forEach((file) => {
-  if (file === "b.txt") return;
-  console.log(file);
+
+let fruits3 = ["Apple", "Banana", "Orange", "Mango", "Grapes"];
+console.log("Using forEach() method:");
+fruits3.forEach(function (fruit) {
+  if(fruit==="Banana"){
+      console.log(fruit);
+       break;
+  }
 });
 ```
 
 **Output**
 
 ```
-a.txt
-c.txt
+SyntaxError: Illegal break statement
 ```
 
 ---
@@ -156,11 +198,11 @@ for (let i in f) {
 
 ### 🔍 Architect Summary (Very Important)
 
-| Loop Type | When to Use           | Key Advantage          | Limitation                                           |
-| --------- | --------------------- | ---------------------- | ---------------------------------------------------- |
-| `for`     | Index-based logic     | Full control           | More code                                            |
-| `for..of` | Value-based iteration | Clean & readable       | No index by default                                  |
-| `forEach` | Apply action to all   | Short syntax           | Cannot break                                         |
-| `for..in` | Inspect index / keys  | Gives key/index easily | ❌ Not recommended for arrays.its for iterate object |
+| Loop Type | When to Use           | Key Advantage          | Limitation                                                 |
+| --------- | --------------------- | ---------------------- | ---------------------------------------------------------- |
+| `for`     | Index-based logic     | Full control           | More code                                                  |
+| `for..of` | Value-based iteration | Clean & readable       | No index by default                                        |
+| `forEach` | Apply action to all   | Short syntax           | Cannot break                                               |
+| `for..in` | Inspect index / keys  | Gives key/index easily | ❌ Not recommended for arrays.recommand for iterate object |
 
 ---

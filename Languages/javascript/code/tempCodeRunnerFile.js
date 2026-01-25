@@ -1,3 +1,8 @@
-let empname = "Hitesh Darji";
-let age = 33;
-console.log(`hey ${empname} and your age is ${age}  `);
+let fruits311 = ["Apple", "Banana", "Orange", "Mango", "Grapes"];
+console.log("Using forEach() method:");
+fruits311.forEach(function (fruit) {
+  if(fruit=="Mango"){
+      console.log(fruit);
+       break;
+  }
+});
