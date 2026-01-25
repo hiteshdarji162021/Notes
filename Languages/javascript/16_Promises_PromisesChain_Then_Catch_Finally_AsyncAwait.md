@@ -16,7 +16,7 @@ Think of Promise like a **real-life promise**:
 
 ---
 
-## Why Promise is Required?
+## 1. Why Promise is Required?
 
 Before Promise, JavaScript used **callbacks**, which caused:
 
@@ -33,7 +33,7 @@ Promise solves this by:
 
 ---
 
-## Promise States
+## 2. Promise States
 
 A Promise has **3 states**:
 
@@ -217,7 +217,7 @@ doubleAmountAfter2Seconds(5)
 
 ---
 
-## 8. `Promise.all()`
+## 3. `Promise.all()`
 
 > Runs multiple promises **in parallel** and waits until **ALL succeed**.
 
@@ -284,7 +284,7 @@ await Promise.all([
 
 ---
 
-## 9. `Promise.race()`
+## 4. `Promise.race()`
 
 > Resolves or rejects as soon as the **FIRST promise settles**.
 
@@ -317,6 +317,14 @@ promise 11 pass
 
 ---
 
+#### Real-Time Use Cases
+
+- API timeout handling
+- Fastest server selection
+- UI success vs error detection
+
+---
+
 ### ✅ Playwright Web Use Case (Timeout or Success)
 
 ```js
@@ -332,7 +340,7 @@ await Promise.race([
 
 ---
 
-## 10. `Promise.allSettled()` (Very Important in Automation)
+## 5. `Promise.allSettled()` (Very Important in Automation)
 
 > Waits for **ALL promises to finish**, regardless of pass or fail.
 
@@ -363,7 +371,15 @@ Promise.allSettled([p1, p2, p3]).then((results) => console.log(results));
 ]
 ```
 
-## Promise.any() –
+#### Real-Time Use Cases
+
+- Optional widgets
+- Analytics tracking
+- Reporting systems
+
+---
+
+## 6. Promise.any() –
 
 `Promise.any()` is a **powerful but often ignored** Promise method. It is extremely useful in **real automation scenarios** where **any one success is enough**.
 
@@ -509,6 +525,14 @@ results.forEach((res, index) => {
 | `Promise.race`       | ❌               | ❌            | First event wins       |
 | `Promise.allSettled` | ❌               | ✅ Yes        | Reporting & monitoring |
 | `Promise.any`        | ❌               | ❌            | Fallback logic         |
+
+| Feature         | async/await  | Promise.all | Promise.race | allSettled | any      |
+| --------------- | ------------ | ----------- | ------------ | ---------- | -------- |
+| Readability     | ⭐⭐⭐⭐⭐   | ⭐⭐⭐      | ⭐⭐⭐       | ⭐⭐⭐     | ⭐⭐⭐   |
+| Parallel        | ❌           | ✅          | ✅           | ✅         | ✅       |
+| Fail fast       | ❌           | ✅          | ✅           | ❌         | ❌       |
+| Partial success | ❌           | ❌          | ❌           | ✅         | ✅       |
+| Best use        | Flow control | Setup       | Timeout      | Reporting  | Fallback |
 
 ---
 

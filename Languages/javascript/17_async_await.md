@@ -1,8 +1,18 @@
-# Async & Await – Complete Guide (Student + Future‑Proof Notes)
+# What covered in notes
+
+- Async & Await
+- Parallel Execution using Promise.all + await
+- Sequential Execution
+
+## Why we learn Promises?
+
+- async and await - modern way for perform sync operation and wait for some operation.
+- Parallel Execution using Promise.all + await - For fast execution.
+- Sequential Execution - When sequnace is important for execution
 
 ---
 
-## 1️⃣ What is Async & Await?
+## 1. What is Async & Await?
 
 `async` and `await` are **syntax built on top of Promises** that make asynchronous code:
 
@@ -66,7 +76,7 @@ Problems:
 ## 4️⃣ Modern way to use Promise
 
 ```js
-function getUserData() {
+async function getUserData() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       let success = true;
@@ -156,7 +166,7 @@ let users = await fetchData(); // array of objects
 
 ---
 
-## 7️⃣ Parallel Execution using Promise.all + await (BEST PRACTICE)
+## 2. Parallel Execution using Promise.all + await (BEST PRACTICE)
 
 ### Functions
 
@@ -187,7 +197,7 @@ success
 
 ---
 
-## 8️⃣ Sequential Execution (Slower – Avoid if possible)
+## 3. Sequential Execution (Slower – Avoid if possible)
 
 ```js
 let get = await getUserData();
@@ -204,7 +214,7 @@ console.log(get, show);
 ### Use Case: Email / Logging
 
 ```js
-function sendEmail(emailid) {
+async function sendEmail(emailid) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       console.log(`Email sent to ${emailid}`);
@@ -274,175 +284,8 @@ checkout order
 
 ---
 
-## 1️⃣1️⃣ Promise Helper Methods (Very Important)
-
----
-
-### 🔹 Promise.all()
-
-**What it does**  
-Runs all promises in parallel and resolves **only when ALL succeed**. If **any one fails**, it goes to `catch`.
-
-#### Code Example
-
-```js
-function p1() {
-  return new Promise((resolve) => setTimeout(() => resolve("A"), 1000));
-}
-function p2() {
-  return new Promise((resolve) => setTimeout(() => resolve("B"), 2000));
-}
-
-Promise.all([p1(), p2()])
-  .then((result) => console.log(result))
-  .catch((err) => console.log(err));
-```
-
-#### Output
-
-```
-['A', 'B']
-```
-
-#### Real-Time Use Cases
-
-- Dashboard data loading
-- Playwright multiple window handling
-- Parallel API calls
-
----
-
-### 🔹 Promise.race()
-
-**What it does**  
-Returns the **first settled promise** (success OR failure).
-
-#### Code Example
-
-```js
-function fast() {
-  return new Promise((resolve) => setTimeout(() => resolve("Fast"), 1000));
-}
-function slow() {
-  return new Promise((resolve) => setTimeout(() => resolve("Slow"), 3000));
-}
-
-Promise.race([fast(), slow()])
-  .then((result) => console.log(result))
-  .catch((err) => console.log(err));
-```
-
-#### Output
-
-```
-Fast
-```
-
-#### Real-Time Use Cases
-
-- API timeout handling
-- Fastest server selection
-- UI success vs error detection
-
----
-
-### 🔹 Promise.allSettled() ⭐
-
-**What it does**  
-Waits for **all promises**, regardless of success or failure, and returns their status.
-
-#### Code Example
-
-```js
-function successPromise() {
-  return Promise.resolve("Success");
-}
-function failPromise() {
-  return Promise.reject("Failed");
-}
-
-Promise.allSettled([successPromise(), failPromise()]).then((results) =>
-  console.log(results),
-);
-```
-
-#### Output
-
-```
-[
-  { status: 'fulfilled', value: 'Success' },
-  { status: 'rejected', reason: 'Failed' }
-]
-```
-
-#### Real-Time Use Cases
-
-- Optional widgets
-- Analytics tracking
-- Reporting systems
-
----
-
-### 🔹 Promise.any()
-
-**What it does**  
-Returns the **first successful promise**. Ignores failures. Fails only if **ALL fail**.
-
-#### Code Example
-
-```js
-function fail1() {
-  return Promise.reject("Error 1");
-}
-function success1() {
-  return Promise.resolve("Data loaded");
-}
-
-Promise.any([fail1(), success1()])
-  .then((result) => console.log(result))
-  .catch((err) => console.log(err));
-```
-
-#### Output
-
-```
-Data loaded
-```
-
-#### Real-Time Use Cases
-
-- Fallback APIs
-- A/B testing
-- Old UI vs new UI detection
-
----
-
-| Feature         | async/await  | Promise.all | Promise.race | allSettled | any      |
-| --------------- | ------------ | ----------- | ------------ | ---------- | -------- |
-| Readability     | ⭐⭐⭐⭐⭐   | ⭐⭐⭐      | ⭐⭐⭐       | ⭐⭐⭐     | ⭐⭐⭐   |
-| Parallel        | ❌           | ✅          | ✅           | ✅         | ✅       |
-| Fail fast       | ❌           | ✅          | ✅           | ❌         | ❌       |
-| Partial success | ❌           | ❌          | ❌           | ✅         | ✅       |
-| Best use        | Flow control | Setup       | Timeout      | Reporting  | Fallback |
-
----
-
-## 1️⃣3️⃣ Best Practices (FINAL)
-
-✔ Prefer async/await over then/catch
-✔ Use Promise.all with await for parallel tasks
-✔ Avoid sequential awaits when possible
-✔ Always use try/catch with await
-✔ Use allSettled for optional tasks
-✔ Use race for timeout logic
-✔ Fire-and-forget without await when result not required
-
----
-
 ## Final Summary (One Line)
 
 > **Async/Await is the cleanest way to control Promises. Mastering it means mastering modern JavaScript.**
 
 ---
-
-✅ This document gives **complete understanding** of Async/Await + Promises
