@@ -1,11 +1,19 @@
-# JavaScript & V8 Engine
+# What covered in notes
 
-> **Audience:** Students & Working Professionals
-> **Purpose:** Strong JavaScript foundation
+- Introduction of Javascript
+- Javascript Architecture
 
----
+## 1. Why we learning javascript?
 
-## 1. What is JavaScript and Why Is It Popular?
+- JavaScript is becoming more popular day by day in the software industry.
+- Most modern frontend frameworks like React and Next.js, and backend frameworks like NestJS, are built using JavaScript or TypeScript.
+- Web browsers natively understand JavaScript, so it runs directly without any extra compilation.
+- Modern automation tools like Playwright and Cypress are designed JavaScript/TypeScript first.
+- Although Playwright supports Java and Python, new features and APIs are introduced first in JavaScript/TypeScript.
+- Node.js is built on JavaScript, which gives better compatibility with modern tools, libraries, and automation ecosystems.
+- Since frontend applications run in the browser using JavaScript, and browsers natively understand JavaScript by default, writing automation in JavaScript gives better alignment with actual application behavior.
+
+## 2. What is JavaScript?
 
 ![alt text](images/image-3.png)
 
@@ -15,17 +23,9 @@
 
 - To add **Logic** to web pages.HTML and CSS can not do this things.
 
-### Why JavaScript Is So Popular?
-
-- Runs in **every browser**
-- Easy to learn, powerful to use
-- Works on **Frontend + Backend (Node.js)**
-- Huge ecosystem (npm)
-- Backbone of modern frameworks (React, Next, Angular, Vue)
-
 ---
 
-## 2. JavaScript Engines & Execution Flow
+## 3. JavaScript Engines & Execution Flow
 
 ### JavaScript Engines in Browsers
 
@@ -37,7 +37,7 @@
 
 ---
 
-## 3. JavaScript Outside Browser – Node.js
+## 4. JavaScript Outside Browser – Node.js
 
 **Node.js** allows JavaScript to run outside the browser.
 
@@ -54,7 +54,7 @@
 
 ---
 
-## 4. Popular IDEs and Their Focus
+## 5. Popular IDEs and Their Focus
 
 | IDE                | Optimized For               |
 | ------------------ | --------------------------- |
@@ -66,7 +66,7 @@
 
 ---
 
-## 5. JavaScript Architecture (V8 Engine)
+## 6. JavaScript Architecture (V8 Engine)
 
 ![alt text](images/image-6.png)
 
@@ -356,7 +356,7 @@ There was a **large performance gap** between them.
 
 ---
 
-## 6. What Is Node.js?
+## 7. What Is Node.js?
 
 > **“Node.js is a JavaScript runtime environment built on the V8 engine. It allows JavaScript to run outside the browser by providing core libraries and system-level APIs. ”**
 
@@ -384,7 +384,7 @@ Notes:
 
 ---
 
-## 7. Error Detection Comparison (100 LOC Example)
+## 8. Error Detection Comparison (100 LOC Example)
 
 | Language   | When errors are found |
 | ---------- | --------------------- |
@@ -393,7 +393,7 @@ Notes:
 
 ---
 
-## 8. Runtime & JIT Summary
+## 9. Runtime & JIT Summary
 
 | Language   | AOT        | JIT         | Runtime |
 | ---------- | ---------- | ----------- | ------- |
@@ -402,7 +402,7 @@ Notes:
 
 ---
 
-## 9. Performance (General)
+## 10. Performance (General)
 
 | Language   | Runtime Speed          |
 | ---------- | ---------------------- |
@@ -413,7 +413,7 @@ Notes:
 
 ---
 
-## 10. Development Speed
+## 11. Development Speed
 
 | Language   | Dev Speed | Why                |
 | ---------- | --------- | ------------------ |
@@ -423,7 +423,7 @@ Notes:
 
 ---
 
-## 11. Installing & Running JavaScript
+## 12. Installing & Running JavaScript
 
 ### Step 1: Initialize Project
 
@@ -452,7 +452,7 @@ node index.js
 
 ---
 
-## 12. Commands to view Bytecode
+## 13. Commands to view Bytecode
 
 ```bash
 For print bytecode
