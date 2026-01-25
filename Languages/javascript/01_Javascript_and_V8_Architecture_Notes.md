@@ -25,28 +25,7 @@
 
 ---
 
-## 2. Why Big & Complex Projects Use TypeScript?
-
-### Problem with JavaScript in Large Projects
-
-- No strict type checking
-- Errors found at runtime
-- Hard to maintain large codebases
-
-### Why TypeScript?
-
-- Adds **static typing** on top of JavaScript
-- Errors caught at **compile time**
-- Better **code readability & maintainability**
-- Excellent **IDE support & auto-suggestions**
-
-👉 **Conclusion:**
-Small scripts → JavaScript
-Large & enterprise apps → **TypeScript**
-
----
-
-## 3. JavaScript Engines & Execution Flow
+## 2. JavaScript Engines & Execution Flow
 
 ### JavaScript Engines in Browsers
 
@@ -58,7 +37,7 @@ Large & enterprise apps → **TypeScript**
 
 ---
 
-## 4. JavaScript Outside Browser – Node.js
+## 3. JavaScript Outside Browser – Node.js
 
 **Node.js** allows JavaScript to run outside the browser.
 
@@ -75,7 +54,7 @@ Large & enterprise apps → **TypeScript**
 
 ---
 
-## 5. Popular IDEs and Their Focus
+## 4. Popular IDEs and Their Focus
 
 | IDE                | Optimized For               |
 | ------------------ | --------------------------- |
@@ -87,7 +66,7 @@ Large & enterprise apps → **TypeScript**
 
 ---
 
-## 6. JavaScript Architecture (V8 Engine)
+## 5. JavaScript Architecture (V8 Engine)
 
 ![alt text](images/image-6.png)
 
@@ -377,7 +356,7 @@ There was a **large performance gap** between them.
 
 ---
 
-## 7. What Is Node.js?
+## 6. What Is Node.js?
 
 > **“Node.js is a JavaScript runtime environment built on the V8 engine. It allows JavaScript to run outside the browser by providing core libraries and system-level APIs. ”**
 
@@ -405,7 +384,7 @@ Notes:
 
 ---
 
-## 8. Error Detection Comparison (100 LOC Example)
+## 7. Error Detection Comparison (100 LOC Example)
 
 | Language   | When errors are found |
 | ---------- | --------------------- |
@@ -414,7 +393,7 @@ Notes:
 
 ---
 
-## 9. Runtime & JIT Summary
+## 8. Runtime & JIT Summary
 
 | Language   | AOT        | JIT         | Runtime |
 | ---------- | ---------- | ----------- | ------- |
@@ -423,7 +402,7 @@ Notes:
 
 ---
 
-## 10. Performance (General)
+## 9. Performance (General)
 
 | Language   | Runtime Speed          |
 | ---------- | ---------------------- |
@@ -434,7 +413,7 @@ Notes:
 
 ---
 
-## 11. Development Speed
+## 10. Development Speed
 
 | Language   | Dev Speed | Why                |
 | ---------- | --------- | ------------------ |
@@ -444,7 +423,7 @@ Notes:
 
 ---
 
-## 12. Installing & Running JavaScript
+## 11. Installing & Running JavaScript
 
 ### Step 1: Initialize Project
 
@@ -454,9 +433,10 @@ npm init  -> ask input and create Package.json   OR
 npm init -y  -> Create Package.json
 
 And set Type ="module". Type="common" for old lagacy code of javascript project.
-![alt text](image.png)
 
 ```
+
+![alt text](images/image-7.png)
 
 👉 This creates `package.json`
 
@@ -472,7 +452,7 @@ node index.js
 
 ---
 
-## 13. Commands to view Bytecode
+## 12. Commands to view Bytecode
 
 ```bash
 For print bytecode
