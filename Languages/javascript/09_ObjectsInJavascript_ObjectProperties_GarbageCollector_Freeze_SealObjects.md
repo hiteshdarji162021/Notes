@@ -1,8 +1,22 @@
-> **Goal**: Understand JavaScript Objects with **Concept → Code → Output → Real Use Case** so learning is useful **now and in future**.
+# What covered in notes
 
----
+- About Object
+- Object CRED operation (Read, Add, Update, Delete)
+- Dot vs Bracket Notation (Dynamic & Special Keys)
+- Iterating Object using for..in  and for..of loop
+- Object.freeze() and Object.seal() and differance
+- JSON.stringify() and JSON.parse() and differance
+- diff  between Object Reference (`=`) vs Copy (`...`) 
+- Object memory allocation
 
-## 1️⃣ What is an Object? (Concept + Use Case)
+## Why we learn about Object?
+
+-  We learn Objects to store and manage related data using meaningful key–value pairs, which makes complex data easy to read, update, and validate.
+
+## Why Object required in javascript?
+- Plese note even array exist Object required because Arrays store ordered lists of values, but they lack meaningful names for each value. Objects were introduced to store related data with descriptive keys, making code readable and maintainable.
+
+## 1.  Detailed Explaination of Object
 
 ### Concept
 
@@ -38,7 +52,7 @@ console.log(user);
 
 ---
 
-## 2️⃣ Object CRUD (Read, Add, Update, Delete)
+### Object CRUD (Read, Add, Update, Delete)
 
 ### Code
 
@@ -80,7 +94,7 @@ console.log(user);
 
 ---
 
-## 3️⃣ Dot vs Bracket Notation (Dynamic & Special Keys)
+## 2.  Dot vs Bracket Notation (Dynamic & Special Keys)
 
 ### Code
 
@@ -112,7 +126,7 @@ SG Highway
 
 ---
 
-## 4️⃣ Iterating Object (`for..in`)
+## 3.  Iterating Object (`for..in`)
 
 ### Concept
 
@@ -148,67 +162,9 @@ model => x1
 
 ---
 
-## 5️⃣ Object Reference Assignment (IMPORTANT CONCEPT)
 
-### Concept
 
-> Objects are assigned by **reference**, not by value.
-
----
-
-### Code
-
-```js
-let u1 = { name: "Hitesh" };
-let u2 = { name: "Ronak" };
-
-u1 = u2;
-
-console.log(u1);
-console.log(u2);
-```
-
-### Output
-
-```
-{ name: 'Ronak' }
-{ name: 'Ronak' }
-```
-
-### Use Case
-
-- Shared configuration
-- Global app state
-
----
-
-## 6️⃣ When NOT to Use Reference (Automation Warning)
-
-### Code
-
-```js
-const payload = { role: "user" };
-
-const p1 = payload;
-p1.role = "admin";
-
-console.log(payload);
-```
-
-### Output
-
-```
-{ role: 'admin' }
-```
-
-### Use Case
-
-❌ Causes flaky tests  
-✅ Always copy payloads in automation
-
----
-
-## 7️⃣ Null Reference & Garbage Collection
+### Null Reference & Garbage Collection
 
 ### Code
 
@@ -232,11 +188,11 @@ null
 
 ---
 
-## 8️⃣ `Object.freeze()` – Full Lock
+## 4.  `Object.freeze()` and `Object.seal()` 
 
 ### Concept
 
-> `Object.freeze()` makes an object **completely immutable**.
+> `Object.freeze()` makes an object **completely immutable**. Full lock.
 
 ❌ Cannot add property  
 ❌ Cannot update property  
@@ -401,7 +357,7 @@ orderPayload.quantity = 2; // ✅ allowed
 
 ---
 
-## 🔟 JSON.stringify() & JSON.parse() (Object ↔ JSON)
+## 5. JSON.stringify() & JSON.parse() (Javascript Object ↔ JSON)
 
 ### Concept
 
@@ -409,7 +365,7 @@ orderPayload.quantity = 2; // ✅ allowed
 
 ---
 
-### Example: Object ➜ JSON (`JSON.stringify`)
+### Example: JavaScript Object ➜ JSON (`JSON.stringify`)
 
 ```js
 let user3 = {
@@ -444,7 +400,7 @@ string
 
 ---
 
-### Example: JSON ➜ Object (`JSON.parse`)
+### Example: JSON ➜ JavaScript Object (`JSON.parse`)
 
 ```js
 let user4 = `{
@@ -621,7 +577,7 @@ address -> {"city":"dehgam","zip":382305}
 
 ---
 
-## 1️⃣3️⃣ Object Reference (`=`) vs Copy (`...`) – Deep Explanation
+## 6. Object Reference (`=`) vs Copy (`...`) – Deep Explanation
 
 ### 🔹 Core Concept
 
@@ -744,7 +700,7 @@ console.log(user);
 
 ---
 
-## 1️⃣4️⃣ Heap vs Stack Memory (Must Know)
+## 17. Heap vs Stack Memory (Must Know)
 
 ### Stack Memory
 

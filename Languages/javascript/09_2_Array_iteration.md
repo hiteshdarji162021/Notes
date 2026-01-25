@@ -185,7 +185,7 @@ SyntaxError: Illegal break statement
 
 ---
 
-### `for..in`
+### 4. `for..in`
 
 ```js
 let users = ["Admin", "Manager", "Tester"];
