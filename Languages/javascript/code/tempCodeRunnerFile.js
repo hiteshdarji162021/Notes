@@ -1,8 +1,12 @@
-let car1 = {
-  name: "bmw",
-  price: 40,
-  model: "x1",
+let user1 = {
+  name: undefined,
+  age: 33,
+  ispermenent: true,
 };
-for (let cr of car1) {
-  console.log(cr);
+function getInfo({ name='ronak', age,city='nandol' }) {
+  console.log(name);
+  console.log(age);
+  console.log(city)
 }
+
+getInfo(user1);
