@@ -780,3 +780,20 @@ First ends
 > - Heap is powerful but complex
 
 ---
+
+## 17. Heap vs Stack Memory (Must Know)
+
+### Stack Memory
+
+- Stores primitive values
+- Stores object **references**
+- Fast access
+
+```js
+let x = 10;
+let y = x;
+```
+
+---
+
+
