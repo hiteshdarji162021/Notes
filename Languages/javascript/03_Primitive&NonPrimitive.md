@@ -1,18 +1,17 @@
-## 5. JavaScript Data Types (Primitive & Non-Primitive)
+# What covered in notes
 
-JavaScript data types are divided into **two main categories**:
+- Primitive data type
+- Non-Primitive
+- Size of datatypes
 
-- **Primitive Data Types**
-- **Non-Primitive (Reference) Data Types**
+## 1. Why Are We Learning Primitive and Non-Primitive data type?
 
-This classification is **same for JavaScript and TypeScript at runtime**.
+- To understand how JavaScript stores and handles data in memory.
 
----
-
-## 1️⃣ Primitive Data Types
+## 2. Primitive Data Types (Immutable)
 
 > **Primitive data types store a single value and are immutable**  
-> (Value cannot be changed, only replaced, its mutable)
+> Immutable means **value cannot be changed in place, only replaced**.
 
 ### ✅ List of Primitive Data Types (7)
 
@@ -30,27 +29,47 @@ This classification is **same for JavaScript and TypeScript at runtime**.
 
 ```js
 let age = 30;
-console.log("number type of", typeof age); //number
+console.log("number type of", typeof age); // number
+
 let names = "Hitesh";
-console.log("string type of", typeof names); //string
+console.log("string type of", typeof names); // string
+
 let isActive = true;
-console.log("boolean type of", typeof isActive); //boolean
+console.log("boolean type of", typeof isActive); // boolean
+
 let x;
-console.log("undined type of", typeof x); //undefined
+console.log("undefined type of", typeof x); // undefined
+
 let data = null;
-console.log("null type of", typeof data); //object
-let id = Symbol("id"); // Symbol
-console.log("symbol type of", typeof id); //symbol
-let bigNum = 123456789n; // BigInt
-console.log("big integer type of", typeof bigNum); //bigint
+console.log("null type of", typeof data); // object (JS bug, remember)
+
+let id = Symbol("id");
+console.log("symbol type of", typeof id); // symbol
+
+let bigNum = 123456789n;
+console.log("bigint type of", typeof bigNum); // bigint
 ```
 
-## NonPrimitive
+---
 
-## 2️⃣ Non-Primitive (Reference) Data Types
+### 🔹 Immutable Proof Example (Very Important)
 
-> **Non-primitive data types store references (memory address) and are mutable**  
-> (Value can be changed without changing the reference)
+```js
+let name1 = "Hitesh";
+let name2 = name1;
+
+name2 = "Rahul";
+
+console.log(name1); // Hitesh
+console.log(name2); // Rahul
+```
+
+---
+
+## 3. Non-Primitive Data Types (Mutable)
+
+> **Non-primitive data types store reference (memory address) and are mutable**  
+> Mutable means **value can be changed without creating new object**.
 
 ### ✅ List of Non-Primitive Data Types
 
@@ -67,22 +86,73 @@ console.log("big integer type of", typeof bigNum); //bigint
 
 ```js
 let user = { name: "Hitesh", age: 30 };
-console.log("object type of ", typeof user); //Object
-let numbers = [1, 2, 3, 4]; // Array
-console.log("array type is", typeof numbers); //Object
+console.log("object type of", typeof user); // object
+
+let numbers = [1, 2, 3, 4];
+console.log("array type of", typeof numbers); // object
+
 function greet() {
   console.log("Hello");
 }
-console.log("function type of ", typeof greet); //function
-let today = new Date(); //Object
-console.log("date type of ", typeof today); //Object
-let userMap = new Map(); // Map
-console.log("map type of", typeof userMap); //Object
+console.log("function type of", typeof greet); // function
+
+let today = new Date();
+console.log("date type of", typeof today); // object
+
+let userMap = new Map();
+console.log("map type of", typeof userMap); // object
+
 let uniqueSet = new Set([1, 2, 3]);
-console.log("set type of ", typeof uniqueSet); //Object
+console.log("set type of", typeof uniqueSet); // object
 ```
 
-## 6. Size of Primitive Data Types (Approximate)
+---
+
+### 🔹 Mutable Proof Example (Very Important)
+
+```js
+let user1 = { name: "Hitesh" };
+let user2 = user1;
+
+user2.name = "Rahul";
+
+console.log(user1.name); // Rahul
+console.log(user2.name); // Rahul
+```
+
+✅ Same reference, value changed → **Mutable**
+
+```js
+let arr1 = [1, 2, 3];
+let arr2 = arr1;
+
+arr2.push(4);
+
+console.log(arr1); // [1,2,3,4]
+console.log(arr2); // [1,2,3,4]
+```
+
+---
+
+## 🔥 Interview & QA Automation Summary
+
+| Type          | Stored As | Mutable | Copy Behavior     |
+| ------------- | --------- | ------- | ----------------- |
+| Primitive     | Value     | ❌ No   | Copy by value     |
+| Non-Primitive | Reference | ✅ Yes  | Copy by reference |
+
+---
+
+### 🧠 Memory Rule (Easy to Remember)
+
+```
+Primitive  → Stack → Immutable
+Objects    → Heap  → Mutable
+```
+
+---
+
+## 4. Size of Primitive Data Types (Approximate)
 
 > ⚠️ JavaScript does NOT define fixed sizes.  
 > Sizes depend on the JavaScript engine (Chrome/Edge = V8, Firefox = SpiderMonkey). that way size is not important in javascript.

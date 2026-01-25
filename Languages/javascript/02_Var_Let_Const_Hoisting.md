@@ -1,4 +1,7 @@
-# JavaScript: `var` vs `let` vs `const`
+# What covered in notes
+# `var` 
+# `let` 
+# `const`
 
 ---
 
@@ -28,19 +31,28 @@ Understanding these three is **mandatory** for:
 var a = 10;
 
 function test() {
-  var a = 20; // re-declaration allowed (function scoped)
+  var a = 20;
   console.log(a); // 20
 
   if (true) {
-    var a = 30; // same variable (function scoped)
+    var a = 30;
     console.log(a); // 30
   }
 
-  console.log(a); // 30
+  console.log(a); // 30  - its print 30 due to functional scope
 }
 
 test();
 console.log(a); // 10
+```
+
+**Output:**
+
+```
+20
+30
+30
+10
 ```
 
 Characteristics:
@@ -78,19 +90,27 @@ Explanation:
 let a = 10;
 
 function test() {
-  let a = 20; // block-scoped variable
-  console.log(a); // 20
+  let a = 20; 
+  console.log(a); 
 
   if (true) {
-    let a = 30; // new variable (block scope)
-    console.log(a); // 30
+    let a = 30; 
+    console.log(a); 
   }
 
-  console.log(a); // 20
+  console.log(a); //20
 }
 
 test();
-console.log(a); // 10
+console.log(a); 
+```
+**Output:**
+
+```
+20
+30
+20
+10
 ```
 
 Characteristics:
@@ -128,19 +148,29 @@ Explanation:
 const a = 10;
 
 function test() {
-  const a = 20; // block-scoped constant
-  console.log(a); // 20
+  const a = 20; 
+  console.log(a); 
 
   if (true) {
-    const a = 30; // new constant (block scope)
-    console.log(a); // 30
+    const a = 30; 
+    console.log(a); 
   }
 
-  console.log(a); // 20
+  console.log(a); // 20 -its because of block scope
 }
 
 test();
-console.log(a); // 10
+console.log(a); 
+
+```
+
+**Output:**
+
+```
+20
+30
+20
+10
 ```
 
 Characteristics:
@@ -167,7 +197,6 @@ ReferenceError: Cannot access 'a' before initialization
 Explanation:
 
 - `const` is also hoisted
-- Stays in **TDZ** until initialized
 - Must be initialized at declaration
 
 ---
