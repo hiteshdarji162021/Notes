@@ -1,20 +1,31 @@
 # OOP Concepts in TypeScript – Inheritance, Interface, Abstraction (Complete Guide)
 
-> **Purpose**: This document is created for **students and framework developers** to clearly understand **Inheritance, Interfaces, Abstract Classes, `implements`, `extends`, `override`, `super`, and Interface-as-Type** using **real, runnable TypeScript code** and **real automation framework use‑cases**.
+# What covered in notes
+
+- Inheritance
+- Interface
+- INTERFACE AS TYPE
+- Interface intersection (`&`)
+- Abstraction
+- Encapsulation
+
+## Why we learn?
+
+- Inheritance → Used to reuse and extend existing class behavior.
+- Interface → Used to define a strict contract that classes must follow.
+- Interface as Type → Used to describe the shape of data and enforce type safety.
+- Abstraction → Used to hide implementation details and expose only what is necessary.
+- Encapsulation → Used to protect internal state by controlling access through methods.
 
 ---
 
-## Visual Architecture (Concept Diagram)
+## 1. Inheritance
 
 This diagram visually explains **how inheritance and interfaces flow together** in the Medical example.
 
-👉 Use this image while explaining to students **before showing code**.
-
 ![alt text](images/inheritanceinterfaceflow.png)
 
-- Image one correction who interface also extend class. please note practically we never do this things but its possible in typescript.
-
-### How students should read this diagram
+### Image theory
 
 1. **Top boxes (WHO, UNSC)**
    - who interface also extends class (only possible in javascript that interface extends class. Normally class extends interface)
@@ -43,7 +54,7 @@ This diagram answers the most common student confusion:
 
 ---
 
-# PART 1: INTERFACE + INHERITANCE (Medical Example)
+### PART 1: INTERFACE + INHERITANCE (Medical Example)
 
 ## 1. `admin` class (Concrete class)
 
@@ -57,7 +68,7 @@ export class admin {
 
 ---
 
-## 2. `who` interface (Interface extending a class)
+### 2. `who` interface (Interface extending a class)
 
 ```ts
 import { admin } from "./admin";
@@ -75,7 +86,7 @@ export interface who extends admin {
 
 ---
 
-## 3. `UNSC` interface
+### 3. `UNSC` interface
 
 ```ts
 export interface UNSC {
@@ -85,7 +96,7 @@ export interface UNSC {
 
 ---
 
-## 4. `USmedical` interface (Multiple inheritance)
+### 4. `USmedical` interface (Multiple inheritance)
 
 ```ts
 import { UNSC } from "./UNSC";
@@ -106,7 +117,7 @@ export interface USmedical extends who, UNSC {
 
 ---
 
-## 5. `UKMedical` interface
+### 5. `UKMedical` interface
 
 ```ts
 export interface UKMedical {
@@ -119,7 +130,7 @@ export interface UKMedical {
 
 ---
 
-## 6. `Indiamedical` interface
+### 6. `Indiamedical` interface
 
 ```ts
 export interface Indiamedical {
@@ -131,7 +142,7 @@ export interface Indiamedical {
 
 ---
 
-## 7. `Medical` base class (Single inheritance)
+### 7. `Medical` base class (Single inheritance)
 
 ```ts
 export class Medical {
@@ -143,7 +154,7 @@ export class Medical {
 
 ---
 
-## 8. `MaxHospital` class (REAL implementation)
+### 8. `MaxHospital` class (REAL implementation)
 
 ```ts
 import { Indiamedical } from "./Indiamedical";
@@ -213,7 +224,7 @@ export class MaxHospital
 
 ---
 
-## 9. Execution Code + Output
+### 9. Execution Code + Output
 
 ```ts
 import { MaxHospital } from "./MaxHospital";
@@ -236,7 +247,7 @@ console.log(mx.min_free);
 
 ---
 
-# PART 2: ABSTRACT CLASS (Page Object Model Example)
+## 2. ABSTRACT CLASS (Page Object Model Example)
 
 ## 10. Abstract `Page` class
 
@@ -266,7 +277,7 @@ export abstract class Page {
 
 ---
 
-## 11. `LoginPage` implementation
+### `LoginPage` implementation
 
 ```ts
 export class LoginPage extends Page {
@@ -294,7 +305,7 @@ export class LoginPage extends Page {
 
 ---
 
-## 12. Execution
+### Execution
 
 ```ts
 let lp = new LoginPage("amazon", 40);
@@ -309,9 +320,7 @@ lp.login("admin", "admin");
 
 ---
 
-# PART 3: INTERFACE AS TYPE (Composition)
-
-## 13. Interfaces
+## 3. INTERFACE AS TYPE (Composition)
 
 ```ts
 export interface User {
@@ -328,7 +337,7 @@ export interface Customer {
 
 ---
 
-## 14. Interface intersection (`&`)
+## 4. Interface intersection (`&`)
 
 ```ts
 let user: User & Customer = {
@@ -380,9 +389,7 @@ console.log(user.salary);
 
 ### Notes
 
-## 1. What is Abstraction?
-
-### Simple definition (student-friendly)
+## 5. Abstraction
 
 > **Abstraction means showing only what is needed and hiding unnecessary details.**
 
@@ -404,7 +411,7 @@ console.log(user.salary);
 
 ---
 
-## 3. Abstract Class
+### Abstract Class
 
 ### Definition
 
@@ -456,7 +463,7 @@ interface LoginActions {
 
 ---
 
-## 5. Multiple Interface Inheritance (TypeScript Feature)
+### Multiple Interface Inheritance (TypeScript Feature)
 
 ⚠️ **Important difference**
 
@@ -568,7 +575,7 @@ class ATM {
 
 ---
 
-## 9. Practical Playwright Framework Use‑Cases
+### . Practical Playwright Framework Use‑Cases
 
 ### Interface – Tool Independence
 
