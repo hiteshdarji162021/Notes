@@ -1,5 +1,3 @@
-# JavaScript Import–Export, Inheritance & Overriding
-
 # What covered in notes
 
 - Import and export class
