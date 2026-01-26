@@ -1,5 +1,3 @@
-# OOP Concepts in TypeScript – Inheritance, Interface, Abstraction (Complete Guide)
-
 # What covered in notes
 
 - Inheritance
