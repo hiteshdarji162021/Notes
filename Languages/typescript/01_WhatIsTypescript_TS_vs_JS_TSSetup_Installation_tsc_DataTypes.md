@@ -209,6 +209,26 @@ my-typescript-project
 
 This comparison helps you understand **why TypeScript exists**.
 
+| Feature               | JavaScript                             | TypeScript                                                           |
+| --------------------- | -------------------------------------- | -------------------------------------------------------------------- |
+| Type System           | Dynamically typed (checked at runtime) | Statically typed with optional annotations (checked at compile time) |
+| Compilation           | Runs directly in browser or Node.js    | Must be compiled/transpiled to JavaScript (`.ts → .js`)              |
+| Syntax                | Standard ECMAScript syntax             | Superset of JavaScript with type syntax                              |
+| Error Detection       | Errors found at runtime                | Errors caught at compile time (before execution)                     |
+| Tooling Support       | Basic IDE support                      | Advanced IDE support (auto-complete, refactor, type hints)           |
+| Interfaces & Types    | Not supported                          | Interfaces, types, enums, tuples, generics supported                 |
+| Classes & OOP         | ES6 classes supported                  | ES6 classes + access modifiers (`public`, `private`, `protected`)    |
+| Modules               | ES6 modules                            | ES6 modules + namespaces                                             |
+| Refactoring Safety    | Risky (runtime errors possible)        | Safe refactoring due to static typing                                |
+| Code Maintainability  | Harder for large projects              | Much better for large and long-term projects                         |
+| Learning Curve        | Easy for beginners                     | Slightly steep due to types and config                               |
+| Coding Speed          | Faster initially                       | Slightly slower initially, faster long-term                          |
+| Scalability           | Not ideal for very large apps          | Designed for large-scale applications                                |
+| Community & Ecosystem | Very large and mature                  | Very large and growing rapidly                                       |
+| Testing & Automation  | Good, but less safe                    | Excellent for automation frameworks                                  |
+| Framework Preference  | Used in simple scripts                 | Preferred in Angular, Playwright, NestJS                             |
+| Real-world Usage      | Small apps, scripts, quick POCs        | Enterprise apps, automation frameworks                               |
+
 ---
 
 ## 13 add tsconfig.json file
@@ -235,30 +255,6 @@ This comparison helps you understand **why TypeScript exists**.
 
 > **JavaScript finds errors at runtime**  
 > **TypeScript finds errors before running the code**
-
----
-
-## JavaScript vs TypeScript – Detailed Comparison
-
-| Feature               | JavaScript                             | TypeScript                                                           |
-| --------------------- | -------------------------------------- | -------------------------------------------------------------------- |
-| Type System           | Dynamically typed (checked at runtime) | Statically typed with optional annotations (checked at compile time) |
-| Compilation           | Runs directly in browser or Node.js    | Must be compiled/transpiled to JavaScript (`.ts → .js`)              |
-| Syntax                | Standard ECMAScript syntax             | Superset of JavaScript with type syntax                              |
-| Error Detection       | Errors found at runtime                | Errors caught at compile time (before execution)                     |
-| Tooling Support       | Basic IDE support                      | Advanced IDE support (auto-complete, refactor, type hints)           |
-| Interfaces & Types    | Not supported                          | Interfaces, types, enums, tuples, generics supported                 |
-| Classes & OOP         | ES6 classes supported                  | ES6 classes + access modifiers (`public`, `private`, `protected`)    |
-| Modules               | ES6 modules                            | ES6 modules + namespaces                                             |
-| Refactoring Safety    | Risky (runtime errors possible)        | Safe refactoring due to static typing                                |
-| Code Maintainability  | Harder for large projects              | Much better for large and long-term projects                         |
-| Learning Curve        | Easy for beginners                     | Slightly steep due to types and config                               |
-| Coding Speed          | Faster initially                       | Slightly slower initially, faster long-term                          |
-| Scalability           | Not ideal for very large apps          | Designed for large-scale applications                                |
-| Community & Ecosystem | Very large and mature                  | Very large and growing rapidly                                       |
-| Testing & Automation  | Good, but less safe                    | Excellent for automation frameworks                                  |
-| Framework Preference  | Used in simple scripts                 | Preferred in Angular, Playwright, NestJS                             |
-| Real-world Usage      | Small apps, scripts, quick POCs        | Enterprise apps, automation frameworks                               |
 
 ---
 
