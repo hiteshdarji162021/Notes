@@ -21,6 +21,7 @@ Open **VS Code → Extensions Marketplace** and search for:
 
 - Author: Toan Vu
 - Purpose: Auto-generate constructor for TypeScript classes
+  ![alt text](images/image.png)
 
 Click **Install** and reload VS Code if required.
 
@@ -61,6 +62,7 @@ Use shortcut:
    ```
 2. Select:
    **TypeScript: Generate Constructor**
+   ![alt text](images/constimage.png)
 3. Press **Enter**
 
 ---
