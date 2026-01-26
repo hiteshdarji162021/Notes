@@ -1,4 +1,10 @@
-# TypeScript Data Types – Beginner Friendly Notes
+# What covered in notes
+
+- Datatype in Typescript
+
+## Why we learn?
+
+- Datatype in Typescript - Data types help TypeScript catch bugs early and make code predictable and safe.
 
 ---
 
@@ -386,5 +392,3 @@ console.log(p1);
 > **TypeScript = JavaScript + type safety**
 
 ---
-
-(End of notes)
