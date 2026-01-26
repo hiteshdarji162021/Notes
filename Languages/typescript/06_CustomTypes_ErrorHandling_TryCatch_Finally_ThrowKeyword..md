@@ -1,13 +1,14 @@
 # TypeScript `type` & Error Handling (try / catch / finally)
 
-> **Purpose**: This canvas is for **students and Playwright / framework developers** to understand:
+# What covered in notes
 
-- TypeScript `type` (union, literal, object types)
-- Optional properties
-- Compile-time safety
-- Runtime errors
-- `try`, `catch`, `finally`, `throw`
-- Real-world usage in automation & framework code
+- Type
+- Error Handling (try / catch / finally)
+
+## Why we learn?
+
+- Type - Used to create reusable and flexible data definitions with strong type safety.
+- Error Handling (try / catch / finally) - Used to handle runtime failures gracefully and keep the application or tests stable.
 
 ---
 
