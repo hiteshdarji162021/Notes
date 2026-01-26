@@ -1,5 +1,3 @@
-# TypeScript Functions, Function Overloading & Access Modifiers
-
 # What covered in notes
 
 - TypeScript Functions
@@ -7,6 +5,10 @@
 - Access Modifiers
 
 ## Why we learn?
+
+- TypeScript Functions - Used to define clear input and output contracts so bugs are caught at compile time.
+- Function Overloading - Used to handle multiple use cases with the same function name while keeping type safety.
+- Access Modifiers - Used to control access to class members and enforce clean, maintainable design.
 
 ---
 
@@ -209,7 +211,7 @@ TypeScript prevents incorrect return shapes.
 - Prefer `interface` or `type` for real projects
 - Very common in APIs and automation frameworks
 
-## 3️⃣ Class & Access Specifiers
+## 3. Class & Access Specifiers
 
 ### Employee Class
 
@@ -256,7 +258,7 @@ User.start();
 
 ---
 
-## 4️⃣ Function Overloading Examples
+## 4. Function Overloading Examples
 
 ### 4.1 Calculator Example
 
@@ -395,7 +397,7 @@ Use case:
 
 ---
 
-## 5️⃣ Best Practices (Industry)
+## 5. Best Practices (Industry)
 
 ✅ Always define return types
 
@@ -411,7 +413,7 @@ Use case:
 
 ---
 
-## 6️⃣ Final Comparison Table
+## 6. Final Comparison Table
 
 | Feature     | Purpose       | Real Use               |
 | ----------- | ------------- | ---------------------- |

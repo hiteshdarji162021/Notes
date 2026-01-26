@@ -1,10 +1,26 @@
-# TypeScript OOP & Design Patterns – Beginner Friendly Practical Guide
+# What covered in notes
 
-> 🎯 **Goal**: Understand **WHY + HOW + WHEN** using practical examples
+- Class & Object
+- readonly Keyword
+- Inheritance
+- super Keyword
+- Private Constructor
+- Singleton Pattern
+- Builder Pattern
+
+## Why we learn?
+
+- Class & Object → Used to structure code into reusable, real-world entities.
+- readonly Keyword → Used to prevent accidental modification of important data.
+- Inheritance → Used to reuse and extend existing functionality.
+- super Keyword → Used to access parent class properties and methods.
+- Private Constructor → Used to restrict object creation from outside a class and prevent inheritance.
+- Singleton Pattern → Used to ensure only one instance of a class exists.
+- Builder Pattern → Used to create complex objects step-by-step in a readable way.
 
 ---
 
-# 1️⃣ Class & Object
+# 1. Class & Object
 
 ## 🔹 Theory (Very Simple)
 
@@ -67,7 +83,7 @@ user is driving: Abhi
 
 ---
 
-# 2️⃣ readonly Keyword
+# 2. readonly Keyword
 
 ## 🔹 Theory
 
@@ -93,7 +109,7 @@ u1.shares = 900; // Compile-time error
 
 ---
 
-# 3️⃣ Inheritance (Parent → Child)
+# 3. Inheritance (Parent → Child)
 
 ## 🔹 Theory
 
@@ -163,7 +179,7 @@ BMW auto parking
 
 ---
 
-# 4️⃣ super Keyword (Parent Access)
+# 4. super Keyword (Parent Access)
 
 ## 🔹 Theory (Very Simple)
 
@@ -297,7 +313,7 @@ Company is: TCS
 
 ---
 
-# 5️⃣ Private Constructor
+# 5. Private Constructor
 
 ## 🔹 Theory
 
@@ -346,7 +362,7 @@ write excel
 
 ---
 
-# 5️⃣ Singleton Pattern
+## 6. Singleton Pattern
 
 ## 🔹 Theory
 
@@ -405,7 +421,7 @@ getting customer info
 
 ---
 
-# 6️⃣ Builder Pattern (Fluent / Chaining)
+## 7. Builder Pattern (Fluent / Chaining)
 
 ## 🔹 Theory
 
@@ -527,40 +543,6 @@ console.log(payload);
 - Test data creation
 - API payloads
 - UI workflows
-
----
-
-# 7️⃣ Single-Turn Pattern
-
-## 🔹 Theory
-
-- One call → final result
-- No follow-up calls
-- Stateless
-
----
-
-```ts
-function login(username: string, password: string): boolean {
-  return username === "admin" && password === "admin123";
-}
-
-console.log(login("admin", "admin123"));
-```
-
-### Output
-
-```
-true
-```
-
----
-
-## 🔹 Use case
-
-- Validation
-- Calculations
-- Quick checks
 
 ---
 
