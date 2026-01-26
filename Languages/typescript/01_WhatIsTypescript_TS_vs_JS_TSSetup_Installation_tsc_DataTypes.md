@@ -1,12 +1,14 @@
 # What covered in notes
 
-- Typescript Setup 
+- Typescript Setup
 - Diff Javascript and Typescript
 
 ## Why we learn?
--  Typescript - For Compex website automation Typescript give typesafty and complile time give more clearity on error. 
+
+- Typescript - We use TypeScript instead of JavaScript in projects to catch errors at compile time, improve code maintainability, and make large applications safer and easier to scale.”
 
 ---
+
 ## 1. What is TypeScript? (Very Simple)
 
 - TypeScript is **JavaScript with rules**
