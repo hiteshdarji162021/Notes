@@ -105,3 +105,20 @@ function getUserData(): {} {
 
 let user = getUserData();
 console.log(user);
+
+
+interface User {
+  name: string;
+  age: number;
+}
+
+function fetchUser(): User {
+  return {
+    name: "Hitesh",
+    age: 30
+  };
+}
+
+const user1 = fetchUser();
+
+console.log(user1);

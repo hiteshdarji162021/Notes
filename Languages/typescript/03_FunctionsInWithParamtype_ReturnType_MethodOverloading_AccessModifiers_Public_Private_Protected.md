@@ -1,10 +1,16 @@
 # TypeScript Functions, Function Overloading & Access Modifiers
 
+# What covered in notes
+
+- TypeScript Functions
+- Function Overloading
+- Access Modifiers
+
+## Why we learn?
+
 ---
 
-## 1️⃣ Theory (Easy for Students)
-
-### 1.1 What is a Function Return Type?
+## 1 What is a Function Return Type?
 
 A **return type** tells TypeScript what kind of value a function will return.
 
@@ -23,40 +29,6 @@ Common return types:
 - `never` → never finishes (error or infinite loop)
 - `array` → `string[]`, `number[]`
 - `object` → `{}` or typed object
-
----
-
-### 1.2 What is Function Overloading?
-
-Function overloading means:
-
-> **Same function name, different parameter types or count**
-
-Rules in TypeScript:
-
-1. Multiple method signatures (no body)
-2. Only **one implementation** with logic
-3. Used for better type safety
-
-Why needed:
-
-- Real-world APIs behave differently based on inputs
-- Cleaner and readable code
-- Avoids multiple function names
-
----
-
-### 1.3 Access Specifiers (OOP)
-
-Access specifiers control **where variables and methods can be accessed**.
-
-| Modifier    | Accessible Where         |
-| ----------- | ------------------------ |
-| `public`    | Everywhere               |
-| `protected` | Same class + child class |
-| `private`   | Same class only          |
-
-Default in TypeScript = `public`
 
 ---
 
@@ -137,6 +109,106 @@ Use case:
 
 ---
 
+### 2.6 Object return type
+
+```ts
+function getUser(): { name: string; age: number } {
+  return {
+    name: "Hitesh",
+    age: 30,
+  };
+}
+```
+
+✔ Function must return both `name` and `age`
+✔ Wrong type or missing key → compile-time error
+
+---
+
+### Why Use Object Return Types
+
+- Enforces return structure
+- Improves readability
+- Prevents runtime bugs
+- Helps IDE auto-complete
+
+---
+
+### Better Approach: Using Interface (Recommended)
+
+```ts
+interface User {
+  name: string;
+  age: number;
+}
+
+function fetchUser(): User {
+  return {
+    name: "Hitesh",
+    age: 30,
+  };
+}
+
+const user1 = fetchUser();
+
+console.log(user1);
+```
+
+### Output
+
+```ts
+{ name: 'Hitesh', age: 30 }
+```
+
+✔ Cleaner
+✔ Reusable
+✔ Scalable
+
+---
+
+### Object Return Type in Automation (Playwright)
+
+```ts
+function getTestResult(): { status: string; duration: number } {
+  return {
+    status: "PASSED",
+    duration: 1200,
+  };
+}
+```
+
+Useful for:
+
+- Test summaries
+- Custom reporters
+- Result aggregation
+
+---
+
+### Common Mistake
+
+```ts
+function getData(): { id: number } {
+  return { id: 1, name: "test" }; // ❌ Extra property error
+}
+```
+
+TypeScript prevents incorrect return shapes.
+
+---
+
+### Interview Tip
+
+> Use object return types when a function returns **structured data** instead of a single value.
+
+---
+
+### Summary
+
+- Object return types define **exact return shape**
+- Prefer `interface` or `type` for real projects
+- Very common in APIs and automation frameworks
+
 ## 3️⃣ Class & Access Specifiers
 
 ### Employee Class
@@ -188,6 +260,8 @@ User.start();
 
 ### 4.1 Calculator Example
 
+- We can implment method only once so use any keyword if use function overloading.
+
 ```ts
 class Calc {
   add(a: number, b: number): number;
@@ -215,12 +289,43 @@ c1.add("hi", "js"); // hijs
 class EComm {
   search(name: string, color: string): string[];
   search(name: string, price: number): string[];
+  search(name: string, price: number, seller: string): string[];
+  search(name: string, price: number, seller: string, zip: number): string[];
+  search(name: string, color: string, seller: string, zip: number): string[];
 
-  search(name: string, value: string | number): string[] {
-    console.log("searching...");
-    return ["macbook", "imac"];
+  search(
+    name: string,
+    colorOrPrice: string | number,
+    seller?: string,
+    zip?: number,
+  ): string[] {
+    console.log("searhing the product.....");
+    console.log(`${name} - ${colorOrPrice}, - ${seller} - ${zip}`);
+    return ["macbook pro", "imac", "ipad"];
   }
 }
+
+let ec = new EComm();
+ec.search("macbook pro", "white");
+ec.search("apple", 1000);
+ec.search("imac", 400, "amazon");
+ec.search("canon", 500, "amazon", 90900);
+ec.search("Apple", "black", "flipkart", 989898);
+```
+
+### Output
+
+```ts
+searhing the product.....
+macbook pro - white, - undefined - undefined
+searhing the product.....
+apple - 1000, - undefined - undefined
+searhing the product.....
+imac - 400, - amazon - undefined
+searhing the product.....
+canon - 500, - amazon - 90900
+searhing the product.....
+Apple - black, - flipkart - 989898
 ```
 
 Use case:
@@ -243,11 +348,43 @@ function login(
   otpOrPassword: string | number,
   role?: string,
 ): boolean {
-  if (typeof otpOrPassword === "number") {
-    return true;
+  if (username && otpOrPassword) {
+    if (typeof otpOrPassword === "number") {
+      console.log(`login with username: ${username} and otp: ${otpOrPassword}`);
+      return true;
+    } else if (role) {
+      console.log(
+        `login with username: ${username} and password: ${otpOrPassword} and role: ${role}`,
+      );
+      return true;
+    } else {
+      console.log(
+        `login with username: ${username} and password: ${otpOrPassword}`,
+      );
+      return true;
+    }
+  } else {
+    console.log("invalid credentails..");
+    return false;
   }
-  return true;
 }
+
+console.log(login("admin", "admin"));
+console.log(login("admin", 9090));
+console.log(login("naveen", "naveen123", "administrator"));
+//console.log(login('admin', 9090, 'seller'));//CT error
+//console.log(login('admin')); //CT error
+```
+
+### Output
+
+```ts
+login with username: admin and password: admin
+true
+login with username: admin and otp: 9090
+true
+login with username: naveen and password: naveen123 and role: administrator
+true
 ```
 
 Use case:
