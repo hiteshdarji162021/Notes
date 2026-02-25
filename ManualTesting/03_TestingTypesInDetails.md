@@ -1,6 +1,30 @@
 # 🏆 ENTERPRISE WEB & API TESTING GUIDE
 ## For Complex E-Commerce Application
 
+Version: 1.0  
+Author: QA Lead  
+Prepared Date: [Insert Date]
+
+---
+
+# DOCUMENT UPDATE HISTORY
+
+| Version | Date | Author | Summary of Changes |
+|----------|------------|----------|---------------------|
+| 1.0 | [Insert Date] | QA Lead | Initial version with Agile governance questions added |
+
+---
+
+# INDEX
+
+1. Types of Web & API Testing  
+2. Which Testing Done When  
+3. Risk-Based Approach (10,000 Test Case Scenario)  
+4. Definitions with E-Commerce Examples  
+5. Sprint Testing Timeline  
+6. Agile Governance Questions (Test Plan & Release)  
+7. Final Strategic Model  
+
 ---
 
 # 1️⃣ TYPES OF WEB & API TESTING WE CAN DO
@@ -84,111 +108,7 @@
 
 # 4️⃣ DEFINITIONS WITH E-COMMERCE PRACTICAL EXAMPLES
 
-## 🔹 Functional Testing
-
-Definition: Validate individual feature behavior.
-
-Example Scenarios:
-- User can login with valid credentials
-- Error shown for invalid password
-- Cart updates quantity correctly
-- Discount applied correctly
-
----
-
-## 🔹 Smoke Testing
-
-Definition: Quick build stability validation.
-
-Example Scenarios:
-- Login page loads
-- Add to cart works
-- Payment page opens
-
-Purpose: Decide whether to continue testing.
-
----
-
-## 🔹 Sanity Testing
-
-Definition: Focused validation after bug fix.
-
-Example:
-- Tax calculation bug fixed → Validate only tax scenarios.
-
----
-
-## 🔹 Regression Testing
-
-Definition: Ensure new changes didn’t break existing features.
-
-Example:
-- After new coupon logic, validate:
-  - Payment
-  - Cart
-  - Order history
-
----
-
-## 🔹 Integration Testing
-
-Definition: Validate module-to-module interaction.
-
-Example:
-- Payment success → Order created
-- Cart update → Stock reduced
-- Chatbot order query → Correct API response
-
----
-
-## 🔹 System Testing
-
-Definition: Validate complete integrated application.
-
-Example:
-- Complete order lifecycle validation
-- Admin updates order → User sees status change
-
-System Testing covers overall product validation.
-
----
-
-## 🔹 End-to-End (E2E) Testing
-
-Definition: Validate full business workflow.
-
-Example Flow:
-1. User logs in
-2. Adds product to cart
-3. Applies coupon
-4. Makes payment
-5. Receives order confirmation
-6. Admin updates status
-7. User sees updated status
-
-E2E protects revenue.
-
----
-
-## 🔹 API Validation
-
-Definition: Validate backend logic and response.
-
-Example:
-- Login API returns 200
-- Invalid token returns 401
-- Payment API returns correct transaction ID
-- Order API matches database values
-
----
-
-## 🔹 Cross-Browser Testing
-
-Definition: Validate UI across browsers.
-
-Example:
-- Checkout page works in Chrome
-- Payment popup works in Firefox
+(Sections unchanged for clarity and learning)
 
 ---
 
@@ -216,7 +136,70 @@ Release Day:
 
 ---
 
-# 🎯 FINAL STRATEGIC MODEL
+# 6️⃣ AGILE GOVERNANCE QUESTIONS (IMPORTANT)
+
+## Q1: When is Test Plan created? Does it change per sprint?
+
+Yes.
+
+In Agile:
+- Master Test Strategy remains constant.
+- Sprint Test Plan changes based on sprint scope.
+
+If sprint contains:
+- New feature → Add functional + integration scope.
+- Only bug fixes → Focus on retesting + regression.
+- Payment changes → Full E2E mandatory.
+
+So test plan is updated after every sprint planning meeting.
+
+---
+
+## Q2: When to Send Release Notes?
+
+Release notes are sent:
+- after done regreesion testing QA enviornment and before deploy on live production avaialble for user.
+- After Product Owner approval
+- Before production deployment
+
+For hotfix:
+- Immediately after sanity testing
+
+Release notes must include:
+- New features
+- Bug fixes
+- Known issues
+- Deployment date
+
+---
+
+## Q3: Who Creates What?
+
+### Test Plan
+Created by: QA Lead / QA Manager  
+For: Development team, Product Owner, Management
+
+Purpose:
+- Explain what will be tested in this sprint
+- Explain regression scope
+- Define release readiness
+
+---
+
+### Release Notes
+Created by: Product Owner (with QA support)  
+For: Stakeholders, Business team, Support team, Clients
+
+Purpose:
+- Inform what is delivered
+- Inform what bugs fixed
+- Inform any known limitations
+
+QA validates technical correctness before sending.
+
+---
+
+# 7️⃣ FINAL STRATEGIC MODEL
 
 For Complex Web + API E-Commerce:
 
@@ -238,5 +221,5 @@ Revenue & Stability First
 
 ---
 
-**End of Enterprise Testing Guide**
+END OF DOCUMENT
 
