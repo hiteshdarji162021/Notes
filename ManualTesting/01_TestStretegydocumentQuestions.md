@@ -258,5 +258,125 @@ With it, quality becomes controlled and measurable.
 
 ---
 
-END OF DOCUMENT
+# 🏆 Test Strategy vs Test Plan — Enterprise QA Guide
+
+This document explains the clear difference between **Test Strategy** and **Test Plan** used in modern organizations.
+
+---
+
+# 1. TEST STRATEGY
+
+## Purpose
+Test Strategy defines the **overall testing direction for the organization or program**.
+
+It answers:
+- What testing will be performed?
+- When testing activities occur in SDLC?
+- What quality standards must be followed?
+
+## Level
+Organization / Program Level
+
+## Owner
+QA Architect / Head of QA
+
+## Update Frequency
+Rare (Yearly or major transformation)
+
+## Covers
+- Testing vision
+- Test pyramid model
+- Automation strategy
+- Test levels (Unit, Component, API, E2E)
+- Shift Left & Shift Right approach
+- Environments strategy
+- Quality gates
+- Definition of Done
+- Tools standard
+- Risk-based testing approach
+
+## Key Question Answered
+**WHAT to test and WHEN to test**
+
+---
+
+# 2. TEST PLAN
+
+## Purpose
+Test Plan explains how testing will be executed for a specific project.
+
+It converts strategy into execution.
+
+It answers:
+- How testing will be performed?
+- Who will perform testing?
+- How resources are allocated?
+- How defects and reporting handled?
+
+## Level
+Project Level
+
+## Owner
+QA Lead / Test Manager
+
+## Update Frequency
+Updated per project or scope change
+
+## Covers
+- Project scope
+- Test approach
+- Test environments
+- Resource planning
+- Schedule
+- Test deliverables
+- Entry & Exit criteria
+- Defect management
+- Reporting plan
+
+## Key Question Answered
+**HOW testing will be executed**
+
+---
+
+# 3. SIMPLE COMPARISON
+
+| Aspect | Test Strategy | Test Plan |
+|---|---|---|
+| Focus | Direction | Execution |
+| Level | Organization | Project |
+| Owner | QA Architect | QA Lead |
+| Changes | Rare | Frequent |
+| Defines | WHAT & WHEN | HOW |
+
+---
+
+# 4. ENTERPRISE FLOW
+
+Organization Test Strategy
+        ↓
+Project Test Plan
+        ↓
+Sprint Testing Execution
+        ↓
+Test Reporting
+
+---
+
+# 5. MEMORY RULE
+
+Strategy → Think & Decide
+Plan → Execute & Deliver
+
+OR
+
+Strategy = WHAT + WHEN
+Plan = HOW
+
+---
+
+# FINAL STATEMENT
+
+Test Strategy provides the organization-wide quality direction, while the Test Plan operationalizes that strategy for project execution.
+
+
 

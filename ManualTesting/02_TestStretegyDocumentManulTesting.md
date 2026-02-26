@@ -238,7 +238,37 @@ Severity:
 
 ---
 
-# 13. RELEASE QUALITY GATES
+# 13. DEFINITION OF DONE (ORGANIZATION STANDARD)
+
+## Purpose
+Definition of Done (DoD) defines **minimum quality conditions that must be satisfied before any feature, story, or release is considered complete** across the organization.
+
+All projects must follow this standard DoD.
+
+## Organization Definition of Done
+A work item is considered DONE only when:
+
+- Requirement acceptance criteria implemented
+- Code completed and peer reviewed
+- Unit tests implemented and passed
+- Integration/API validation completed
+- Test cases created and reviewed
+- Automation added (where applicable)
+- Regression testing passed
+- No open Critical (P1) defects
+- High defects risk accepted or fixed
+- CI/CD pipeline successful
+- Documentation updated
+- Traceability maintained in Jira/Xray
+
+## Usage Across Levels
+- Organization Test Strategy → Defines DoD
+- Project Test Plan → May extend DoD if needed
+- Sprint Execution → Team validates DoD before story closure
+
+---
+
+# 14. RELEASE QUALITY GATES
 
 Release allowed only if:
 - No critical defects
@@ -248,7 +278,7 @@ Release allowed only if:
 
 ---
 
-# 14. QUALITY METRICS
+# 15. QUALITY METRICS
 
 We track:
 - Defect leakage
@@ -261,7 +291,7 @@ Reviewed monthly.
 
 ---
 
-# 15. STANDARD TOOLS
+# 16. STANDARD TOOLS
 
 | Area | Tool |
 |------|------|
@@ -274,7 +304,7 @@ Reviewed monthly.
 
 ---
 
-# 16. ROLES & RESPONSIBILITIES
+# 17. ROLES & RESPONSIBILITIES
 
 | Role | Responsibility |
 |------|---------------|
@@ -287,7 +317,7 @@ Reviewed monthly.
 
 ---
 
-# 17. TRACEABILITY
+# 18. TRACEABILITY
 
 Requirement → Test Case → Automation → Execution → Defect → Release
 
@@ -295,7 +325,7 @@ Everything must be traceable.
 
 ---
 
-# 18. AI IN QUALITY ENGINEERING
+# 19. AI IN QUALITY ENGINEERING
 
 Organization encourages:
 - AI test generation
@@ -305,7 +335,7 @@ Organization encourages:
 
 ---
 
-# 19. CONTINUOUS IMPROVEMENT
+# 20. CONTINUOUS IMPROVEMENT
 
 Regular activities:
 - QA maturity review
@@ -315,7 +345,7 @@ Regular activities:
 
 ---
 
-# 20. GOVERNANCE
+# 21. GOVERNANCE
 
 All projects must follow this strategy.
 Exceptions require QA Architect approval.

@@ -188,15 +188,15 @@ Python mainly uses:
 
 Used to perform mathematical calculations.
 
-| Operator | Name           | Example  | Output |
-| -------- | -------------- | -------- | ------ |
-| +        | Addition       | 10 + 5   | 15     |
-| -        | Subtraction    | 10 - 5   | 5      |
-| \*       | Multiplication | 10 \* 5  | 50     |
-| /        | Division       | 10 / 5   | 2.0    |
-| %        | Modulus        | 10 % 3   | 1      |
-| \*\*     | Power          | 2 \*\* 3 | 8      |
-| //       | Floor Division | 10 // 3  | 3      |
+| Operator | Name           | Example | Output |
+| -------- | -------------- | ------- | ------ |
+| +        | Addition       | 10 + 5  | 15     |
+| -        | Subtraction    | 10 - 5  | 5      |
+| \*       | Multiplication | 10 * 5  | 50     |
+| /        | Division       | 10 / 5  | 2.0    |
+| %        | Modulus        | 10 % 3  | 1      |
+| \*\*     | Power          | 2 ** 3  | 8      |
+| //       | Floor Division | 10 // 3 | 3      |
 
 #### Example Code
 
