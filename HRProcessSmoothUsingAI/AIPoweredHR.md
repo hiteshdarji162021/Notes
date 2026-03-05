@@ -255,7 +255,34 @@ HR confirms and the system sends the offer letter instantly to the candidate.
 
 ---
 
-# Phase 3 — Action Plan for Implementation — Action Plan for Implementation
+# Phase 3 — Action Plan for Implementation
+
+Before technology implementation begins, the first step should be internal alignment. HR or an internal innovation champion should present the hiring challenges and the proposed AI-driven solution to senior leadership.
+
+This ensures management understands the operational pain points and approves the digital transformation initiative.
+
+---
+
+## Action 0 — Present Hiring Challenges & AI Proposal to Leadership
+
+HR or a process improvement owner should prepare a short proposal explaining:
+
+• current hiring problems (manual forms, repeated data entry, lack of transparency)
+• time lost by candidates and HR teams
+• delays in offer letter generation
+• fragmented systems used during hiring
+
+The proposal should also demonstrate the **AI-driven hiring workflow** described in this document.
+
+Objective of this step:
+
+• align HR and management
+• obtain leadership approval
+• secure budget and resources
+
+Once leadership approves the initiative, the company can begin implementing the digital hiring system.
+
+--- — Action Plan for Implementation
 
 To implement this transformation, companies should follow a structured roadmap.
 
