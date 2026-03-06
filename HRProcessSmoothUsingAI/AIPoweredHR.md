@@ -341,6 +341,89 @@ Implement template‑based offer generation triggered by HR approval.
 
 ---
 
+# Phase 4 — Build vs Buy: Available HR Technology Solutions
+
+Before developing a completely new platform, companies should evaluate whether to **build a custom system** or **use existing HR technology platforms** that already support many of these capabilities.
+
+---
+
+## Option 1 — Use Existing HR Platforms (Fastest Implementation)
+
+Several modern HR platforms already provide digital hiring and onboarding capabilities.
+
+Examples of commonly used platforms:
+
+• Keka (India)
+• Darwinbox
+• Zoho People
+• Workday
+• BambooHR
+• Greenhouse (Recruitment focused)
+
+Typical capabilities available in these systems:
+
+• candidate application portal
+• digital onboarding forms
+• document management
+• HR approval workflows
+• payroll integration
+
+Advantages:
+
+• faster implementation
+• lower development cost
+• proven enterprise systems
+
+Limitations:
+
+• limited customization
+• AI resume parsing may be basic
+• background verification integration may still require manual processes
+• transparency dashboards may not be fully candidate‑centric
+
+---
+
+## Option 2 — Build Custom AI Hiring Platform
+
+Organizations with strong technology teams may choose to build a custom system tailored to their hiring workflow.
+
+A custom platform can include advanced capabilities such as:
+
+• AI resume parsing
+• automated BGV form generation
+• intelligent document verification
+• real‑time transparency dashboards
+• automated approval workflows
+• AI‑assisted candidate validation
+
+Advantages:
+
+• fully customized hiring workflow
+• deeper AI integration
+• better transparency and automation
+• competitive advantage in talent acquisition
+
+Limitations:
+
+• higher initial development effort
+• longer implementation timeline
+
+---
+
+## Recommended Approach
+
+For most organizations the best strategy is a **hybrid approach**:
+
+1. Start with an existing HR platform such as Keka, Darwinbox, or Zoho People for core HR operations.
+
+2. Extend the system with **AI services** for resume parsing, workflow automation, and transparency dashboards.
+
+3. Integrate BGV vendors and approval workflows through APIs.
+
+This approach delivers the benefits of both speed and innovation while minimizing development risk.
+
+---
+
 # Expected Outcomes
 
 By implementing this system, companies will achieve:
