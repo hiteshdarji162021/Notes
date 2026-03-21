@@ -1,4 +1,4 @@
-# 🚀 Enterprise Git Strategy for QA Automation (Principal Engineer Level)
+\# 🚀 Enterprise Git Strategy for QA Automation (Principal Engineer Level)
 
 ---
 
@@ -13,7 +13,7 @@ Design a **scalable Git process** for:
 ## 2. 🌳 Branching Strategy (Industry Standard)
 
 ### 🔹 Main Branches
-- `main` → Production (stable, tagged releases only)
+- `master` → Production (stable, tagged releases only)
 - `develop` → Integration branch (all features merge here)
 
 ### 🔹 Supporting Branches
@@ -115,7 +115,7 @@ git push origin v1.0.0
 ```
 
 ### Release Flow:
-1. Merge develop → main
+1. Merge develop → master
 2. Tag release
 3. Run CI/CD
 
@@ -157,7 +157,7 @@ git revert <commit-id>
 ### Option 3: Hard Reset (Dangerous)
 ```bash
 git reset --hard <commit-id>
-git push -f origin main
+git push -f origin master
 ```
 
 ---
@@ -226,28 +226,101 @@ git reset --hard HEAD^
 
 ## 11. 🆕 New & Modern Git Commands (MUST KNOW)
 
-### 🔹 git switch (Modern replacement of checkout)
+---
+
+### 🔹 1. git switch (Modern checkout replacement)
+
+#### ❓ Why needed?
+- Old `git checkout` used for multiple purposes (confusing)
+- Now split into **switch (branch)** + **restore (files)**
+
+#### ✅ Real Use Case
 ```bash
 git switch -c feature/QA-101
 ```
 
-### 🔹 git restore
-```bash
-git restore file.java
-```
-👉 Undo file changes
+👉 Scenario:
+- Developer starts new feature
+- Cleaner and safer than checkout
 
-### 🔹 git worktree
-```bash
-git worktree add ../new-feature feature/QA-101
-```
-👉 Multiple branches parallel
+---
 
-### 🔹 git sparse-checkout
+### 🔹 2. git restore (Undo file changes safely)
+
+#### ❓ Why needed?
+- Earlier we used confusing commands like:
+  - `git checkout -- file`
+
+#### ✅ Real Use Case (Step-by-Step)
+
+👉 Scenario: You changed file but want to undo
+
+```bash
+git status
+git restore login.java
+```
+
+👉 Result:
+- File reverted to last committed state
+
+---
+
+### 🔹 3. git worktree (Parallel development)
+
+#### ❓ Problem before?
+- One repo = one branch working
+- Switching branches again & again = slow
+
+#### ✅ Solution
+
+```bash
+git worktree add ../login-feature feature/QA-101
+```
+
+#### ✅ Real Scenario
+
+- You are fixing bug in master
+- Also developing feature
+
+👉 Instead of switching:
+- Open 2 folders
+- Work parallel
+
+---
+
+### 🔹 4. git sparse-checkout (Large repo optimization)
+
+#### ❓ Problem before?
+- Big repo (microservices, automation + backend + UI)
+- Clone takes time
+
+#### ✅ Solution
+
 ```bash
 git sparse-checkout init
+git sparse-checkout set automation/
 ```
-👉 Large repo optimization
+
+#### ✅ Real Scenario
+
+- Repo has:
+  - backend
+  - frontend
+  - automation
+
+👉 QA needs only automation folder
+👉 Saves time + memory
+
+---
+
+### 🔥 Summary (Why modern commands matter)
+
+| Command | Old Problem | New Benefit |
+|--------|------------|-------------|
+| switch | checkout confusion | clean branch handling |
+| restore | risky undo | safe file revert |
+| worktree | branch switching slow | parallel work |
+| sparse-checkout | heavy repo | optimized usage |
 
 ---
 
@@ -260,7 +333,7 @@ git sparse-checkout init
 - CI must pass
 
 ### ❌ Avoid
-- Direct push to main
+- Direct push to master
 - Large commits
 - Force push (without approval)
 
@@ -269,10 +342,71 @@ git sparse-checkout init
 ## 13. 🧠 Final Architecture (For 100 Engineers)
 
 ```
-feature → develop → release → main
+feature → develop → release → master
                 ↓
              CI/CD
 ```
+
+---
+
+## 13.1 🔍 Deep Explanation of Flow (MUST UNDERSTAND)
+
+### 🎯 Why this flow exists?
+
+Each stage has a **clear responsibility**:
+
+### 🔹 feature → develop
+- Individual work merged
+- Integration happens
+- Early automation validation
+
+👉 If something breaks → impact limited
+
+---
+
+### 🔹 develop → release
+- All features combined
+- Full system testing
+- Stabilization phase
+
+👉 No new feature allowed
+👉 Only bug fixes
+
+---
+
+### 🔹 release → master
+- Production-ready code
+- Fully tested
+- Tagged version
+
+👉 Only stable code goes to master
+
+---
+
+### 🔥 Real Example (Your Team of 5)
+
+- Dev1 → Login
+- Dev2 → Order
+- Dev3 → Payment
+- Dev4 → Profile
+- Dev5 → Search
+
+👉 All go → develop (integration)
+👉 Automation runs → detect issues
+👉 Fix in develop
+👉 Create release branch
+👉 Final regression
+👉 Merge to master
+
+---
+
+### ⚠️ What if we skip steps?
+
+| Skip | Problem |
+|------|--------|
+| No develop | direct production risk |
+| No release | no stabilization phase |
+| Direct master | high failure rate |
 
 ---
 
@@ -302,7 +436,7 @@ git push origin --delete feature/QA-101-login-tests
 ### 🔹 Release Branch Deletion Rule
 
 ✅ Delete AFTER:
-- Release is **merged into main**
+- Release is **merged into master**
 - Tag created (e.g. v1.0.0)
 - Production is stable
 
@@ -320,7 +454,7 @@ git push origin --delete release/v1.0.0
 ### 🔹 Hotfix Branch Deletion Rule
 
 ✅ Delete AFTER:
-- Fix merged into **main AND develop**
+- Fix merged into **master AND develop**
 
 ---
 
@@ -350,7 +484,129 @@ git checkout -b recovered-branch <commit-id>
 
 ---
 
-## 15. 🔚 Final Advice (Principal Engineer Level)
+## 15. 🚀 Release Branch Strategy (CRITICAL FOR QA AUTOMATION)
+
+### 🎯 When to Use Release Branch?
+
+Use release branch when:
+- Multiple features are ready
+- Need final **stabilization (automation run)**
+- Preparing for production execution
+
+👉 Example:
+```bash
+git checkout develop
+git pull origin develop
+git checkout -b release/v1.0.0
+```
+
+---
+
+### 🔹 What to Do in Release Branch?
+
+- Run full automation suite
+- Fix minor bugs only (no new features)
+- Final data/config updates
+
+👉 Commit Example:
+```bash
+git commit -m "QA-500: Fix flaky tests in release"
+```
+
+---
+
+### 🔹 Merge Flow
+
+```bash
+# Release → master (production)
+git checkout master
+git merge release/v1.0.0
+
+# Tag
+git tag v1.0.0
+git push origin v1.0.0
+
+# Back merge to develop
+git checkout develop
+git merge release/v1.0.0
+```
+
+---
+
+### 🔹 Checkout Release Version (Very Important)
+
+👉 To test old release:
+```bash
+git checkout v1.0.0
+```
+
+👉 To create hotfix from release:
+```bash
+git checkout -b hotfix/QA-999 v1.0.0
+```
+
+---
+
+### 🔹 Rollback Strategy from Release
+
+#### Option 1: Using Tag (BEST)
+```bash
+git checkout v1.0.0
+```
+
+#### Option 2: Reset master
+```bash
+git checkout master
+git reset --hard v1.0.0
+git push -f origin master
+```
+
+#### Option 3: Revert
+```bash
+git revert <commit-id>
+```
+
+---
+
+### 🔹 New Project Setup (How to Use Release Strategy)
+
+#### Step 1: Initial Setup
+```bash
+git init
+git checkout -b develop
+git checkout -b master
+```
+
+#### Step 2: First Feature
+```bash
+git checkout -b feature/QA-101
+```
+
+#### Step 3: First Release
+```bash
+git checkout develop
+git checkout -b release/v1.0.0
+```
+
+#### Step 4: Production
+```bash
+git checkout master
+git merge release/v1.0.0
+git tag v1.0.0
+```
+
+---
+
+### 🔥 Golden Rule
+
+- Feature → develop
+- Develop → release
+- Release → master (production)
+- Tag every release
+
+---
+
+## 16. 🔚 Final Advice (Principal Engineer Level)
 
 - Git is not just command → it's **governance system**
 - Your QA repo = **product itself**
@@ -361,18 +617,59 @@ git checkout -b recovered-branch <commit-id>
 
 ---
 
-## ✔️ Summary
+## 17. 🏆 Team Best Practices (MUST FOLLOW)
 
-- Use **feature branch strategy**
-- Always link **JIRA ID**
-- Follow **PR template**
-- Use **tags for release**
-- Automation must control merge
+### 🔥 Mandatory Rules
+
+- ✅ Always use JIRA ID in branch + commit + PR
+- ✅ PR required (no direct push to master)
+- ✅ CI must pass before merge
+- ✅ Small commits (avoid large changes)
 
 ---
 
-👉 If you want next level: I can design
-- GitHub branch protection rules
-- CI/CD pipeline (Jenkins/GitHub Actions)
-- Automation release dashboard
+### 🔹 Branch Rules
+
+- feature → develop only
+- NEVER → feature → master
+- release only for stabilization
+
+---
+
+### 🔹 Automation Rules
+
+- ❌ No test → No merge
+- ❌ Flaky test → Fix before merge
+- ✅ Daily automation run on develop
+
+---
+
+### 🔹 Clean Repo Rules
+
+- Delete feature branch after merge
+- Use tag for release
+- Avoid unused branches
+
+---
+
+### 🔹 Safety Rules
+
+- Avoid force push
+- Use revert instead of reset (team repo)
+- Always review PR
+
+---
+
+### 🔥 Golden Principle
+
+> Stability > Speed
+
+---
+
+### 🚀 Final Thought
+
+If your Git is strong → your product is stable
+If your Git is weak → production will fail
+
+---
 
