@@ -150,7 +150,7 @@ challenges have you faced?
 7. Capitalize first letter of each word and convert others to lowercase. Input = "hiTeSh daRji", Output="Hitesh Darji"
 
 ## Medium
-1.From array, find duplicate value of array?  input = [10,30,20,40,50,10,20], output= [10,20]
+1. From array, find duplicate value of array?  input = [10,30,20,40,50,10,20], output= [10,20]
 2. From Array,find unique value. input = [10,30,20,40,50,10,20], output= [30,40,50]
 3. charctercount. Input: "aaabbc", Output: "a3b2c1"
 4. Given array [10,20,30,40,42,52,5,9,45,100], find 52 present in Array or not.
