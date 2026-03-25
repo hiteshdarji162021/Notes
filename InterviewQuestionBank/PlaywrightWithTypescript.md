@@ -199,3 +199,16 @@ containing value "laptop".
 7. How do you handle conflicts within a team?
 
 ---
+
+## MANAGEMENT / LEAD LEVEL QUESTIONS
+
+1. What do you expect from your team apart from technical skills?
+2. How many team members have you handled?
+3. Have you taken interviews?
+4. What do you expect from developers for better automation?
+5. How do you guide and mentor your team?
+6. How do you handle tight deadlines?
+7. Describe a critical problem you solved.
+8. How do you resolve conflicts in a team?
+9. If tasks are more than capacity, how do you handle delivery?
+10. How do you decide automation approach under pressure?
