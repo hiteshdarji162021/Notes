@@ -87,6 +87,7 @@ challenges have you faced?
 15. How do you run tests in parallel?
 16. How do you reuse login/session using storageState ?
 
+
 ## Advanced
 1. Which Playwright features have you used in your framework?
 2. What are the ways to manage test data in Playwright? Which is best?
@@ -101,6 +102,8 @@ challenges have you faced?
 11. How do you ensure code quality in automation (code reviews, standards, best practices)?
 12. How do you integrate Playwright with CI/CD? Which tools and workflows have you used?
 13. Do you have experience running tests on the cloud?
+14. What is Object Destructuring? What is the use of that?
+15. What is array Destructuring? what is the use of that?
 
 ---
 
