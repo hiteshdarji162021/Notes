@@ -47,63 +47,76 @@ scenarios like API response handling or test data modeling? Provide examples.
 
 ## Basic
 1. What is Playwright architecture? How is it different from Selenium?
-2. Difference between npm and npx .
-3. What is the purpose of package.json ?
-4. Command to run tests in Chrome only.
-5. How do you run a specific test/tag (e.g., smoke)?
-6. How do you handle HTTP authentication popups?
-7. Which browsers are supported in Playwright? Bundled vs system?
-8. What is browserContext and why is it important?
-9. Types of locators. Which is best and why?
-10. How do you perform right-click, double-click, and drag-and-drop in Playwright?
-11. How do you get a value from an input field?
-12. Difference between .check() vs .click() .
-13. Types of waits in Playwright.
-14. Types of assertions. Levels of assertions (page level, locator level, value level).
-15. What are hooks and their use?
-16. Use of test.describe and test.describe.serial .
-17. How do you get innerText from one locator as well as multiple locators?
-18. How do you use Playwright Trace Viewer, video, and screenshots for debugging failures?
-19. How do you handle SSL errors?
-20. How do you set HTTP credentials (authentication) in Playwright?
+2. What is locator stretegy in playwright? which are effective locators?
+3. Difference between npm and npx .
+4. What is the purpose of package.json ?
+5. Command to run tests in Chrome only.
+6. How do you run a specific test/tag (e.g., smoke)?
+7. How do you handle HTTP authentication popups?
+8. Which browsers are supported in Playwright? Bundled vs system?
+9. What is browserContext and why is it important?
+10. Types of locators. Which is best and why?
+11. How do you perform right-click, double-click, and drag-and-drop in Playwright?
+12. How do you get a value from an input field?
+13. Difference between .check() vs .click() .
+14. Types of waits in Playwright.
+15. Types of assertions. Levels of assertions (page level, locator level, value level).
+16. What are hooks and their use?
+17. Use of test.describe and test.describe.serial .
+18. How do you get innerText from one locator as well as multiple locators?
+19. How do you use Playwright Trace Viewer, video, and screenshots for debugging failures?
+20. How do you handle SSL errors?
+21. How do you set HTTP credentials (authentication) in Playwright?
 
 ## Medium
 1. How do you handle alerts (dialogues)?
-2. How do you handle a search box using filter() and hasText() ?
-3. How do you handle multiple tabs/windows?
-4. Why are iframes used in applications? How do you handle them in Playwright, and what
+2. How playwright auto wait work?
+3. How do you handle a search box using filter() and hasText() ?
+4. How do you handle multiple tabs/windows?
+5. Why are iframes used in applications? How do you handle them in Playwright, and what
 challenges have you faced with nested or dynamic iframes?
-5. Why is Shadow DOM used in modern applications? How does Playwright handle it, and what
+1. Why is Shadow DOM used in modern applications? How does Playwright handle it, and what
 challenges have you faced?
-6. How do you handle SVG and pseudo-elements?
-7. Difference between page.on() vs page.waitForEvent() with examples.
-8. When do you use page.evaluate() ? Provide a real use case.
-9. How do you handle lazy loading / infinite scrolling?
-10. How do you upload single and multiple files?
-11. How do you download and validate files?
-12. How do you handle flaky tests?
-13. How do you manage dynamic test data?
-14. How do you design a reusable Page Object Model?
-15. How do you run tests in parallel?
-16. How do you reuse login/session using storageState ?
+1. How do you handle SVG and pseudo-elements?
+2. Difference between page.on() vs page.waitForEvent() with examples.
+3. When do you use page.evaluate() ? Provide a real use case.
+4. How do you handle lazy loading / infinite scrolling?
+5.  How do you upload single and multiple files?
+6.  How do you download and validate files?
+7.  How do you handle flaky tests?
+8.  How do you manage dynamic test data?
+9.  How do you design a reusable Page Object Model?
+10. How do you run tests in parallel?
+11. How do you reuse login/session using storageState ?
+12. How you executre javascript in playwright?
 
 
 ## Advanced
 1. Which Playwright features have you used in your framework?
-2. What are the ways to manage test data in Playwright? Which is best?
-3. What are fixtures in Playwright? Which built-in fixtures have you used?
-4. Explain one custom fixture you created. What problem did it solve?
-5. How do you handle multiple environments (QA, UAT, Prod) using fixtures or config?
-6. How do you debug flaky tests in real projects? Provide one example.
-7. What was the most challenging automation problem you faced? How did you solve it?
-8. Explain the folder structure of your automation framework.
-9. How would you design an automation framework to manage 10k+ tests?
-10. How do you use route() for network mocking? Provide a real scenario.
-11. How do you ensure code quality in automation (code reviews, standards, best practices)?
-12. How do you integrate Playwright with CI/CD? Which tools and workflows have you used?
-13. Do you have experience running tests on the cloud?
-14. What is Object Destructuring? What is the use of that?
-15. What is array Destructuring? what is the use of that?
+2. How you handle authenticate in api automaiton?
+3. How do you debug the playwright test?
+4. How to handle multiple enviroment in playwright?
+5. How due to handle test dependecy in playwright?
+6. How do you handle borwser permssion?
+7. Types of asssertion in palywright? soft vs hard? in hard, page level, locator level and value level?
+8. what is test annotiationi in playwright?
+9. how you handle retry logic?
+10. how do you wait until element disapper?
+11. what are best practices in playwright?
+12. What are the ways to manage test data in Playwright? Which is best?
+13. What are fixtures in Playwright? Which built-in fixtures have you used?
+14. Explain one custom fixture you created. What problem did it solve?
+15. How do you handle multiple environments (QA, UAT, Prod) using fixtures or config?
+16. How do you debug flaky tests in real projects? Provide one example.
+17. What was the most challenging automation problem you faced? How did you solve it?
+18. Explain the folder structure of your automation framework.
+19. How would you design an automation framework to manage 10k+ tests?
+20. How do you use route() for network mocking? Provide a real scenario.
+21. How do you ensure code quality in automation (code reviews, standards, best practices)?
+22. How do you integrate Playwright with CI/CD? Which tools and workflows have you used?
+23. Do you have experience running tests on the cloud?
+24. What is Object Destructuring? What is the use of that?
+25. What is array Destructuring? what is the use of that?
 
 ---
 
