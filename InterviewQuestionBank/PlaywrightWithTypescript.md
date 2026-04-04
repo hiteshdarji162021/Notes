@@ -89,6 +89,7 @@ challenges have you faced?
 10. How do you run tests in parallel?
 11. How do you reuse login/session using storageState ?
 12. How you executre javascript in playwright?
+13. 
 
 
 ## Advanced
