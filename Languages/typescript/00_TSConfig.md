@@ -7,6 +7,77 @@ Each option below includes:
 - 💻 Code examples (what changes in your TS code)
 
 ---
+```json
+{
+  "compilerOptions": {
+
+    // ── Output ─────────────────────────────────────────────
+    "target":                          "ES2022",   // stable Node 18 target
+    "module":                          "commonjs", // Playwright-compatible
+    "lib":                             ["ES2022","DOM"], // no DOM — Node project
+    "noEmit":                          true,       // PW runs TS directly
+
+    // ── Module resolution ──────────────────────────────────
+    "moduleResolution":                "node",
+    "esModuleInterop":                 true,
+    "resolveJsonModule":               true,
+    "allowSyntheticDefaultImports":    true,
+
+    // ── Path aliases ───────────────────────────────────────
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*":      ["pages/*"],
+      "@components/*": ["components/*"],
+      "@fixtures/*":   ["fixtures/*"],
+      "@api/*":        ["api/*"],
+      "@models":       ["models/index.ts"],
+      "@data/*":       ["test-data/*"],
+      "@utils/*":      ["utils/*"]
+    },
+
+    // ── Strict type checking ───────────────────────────────
+    "strict":                          true,
+    "noImplicitAny":                   true,
+    "strictNullChecks":                true,
+    "noUncheckedIndexedAccess":        true,  // kept from original
+    "exactOptionalPropertyTypes":      true,  // kept from original
+
+    // ── Style options (uncommented from original) ──────────
+    "noImplicitReturns":               true,
+    "noImplicitOverride":              true,
+    "noUnusedLocals":                  true,
+    "noUnusedParameters":              true,
+    "noFallthroughCasesInSwitch":      true,
+
+    // ── Decorators (Allure @step support) ──────────────────
+    "experimentalDecorators":          true,
+    "emitDecoratorMetadata":           true,
+
+    // ── Source maps ────────────────────────────────────────
+    "sourceMap":                       true,  // kept from original
+    "inlineSources":                   true,
+
+    // ── Misc ───────────────────────────────────────────────
+    "skipLibCheck":                    true,  // kept from original
+    "forceConsistentCasingInFileNames": true
+  },
+
+  "include": [
+    "pages/**/*",        "components/**/*",
+    "fixtures/**/*",     "api/**/*",
+    "models/**/*",       "test-data/**/*",
+    "utils/**/*",        "tests/**/*",
+    "playwright.config.ts"
+  ],
+
+  "exclude": [
+    "node_modules",  "dist",
+    "playwright-report",  "test-results",
+    "allure-results",     "allure-report"
+  ]
+}
+
+```
 
 # 🧾 compilerOptions
 
